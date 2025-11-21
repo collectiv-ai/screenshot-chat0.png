@@ -29,12 +29,12 @@
 17. [Community Structure](#17-community-structure)  
 18. [Roadmap 2025–2030](#18-roadmap-2025–2030)  
 19. [Long-Term Vision](#19-long-term-vision)  
-20. [Conclusion](#20-conclusion)
+20. [Conclusion](#20-conclusion)  
+21. [Human-Centered & Ethical Foundation](#21-human-centered--ethical-foundation)
 
 ---
 
 # 1. Executive Summary
-
 CollectivAI is a democratic, transparent and citizen-centered AI ecosystem designed for Europe.  
 It proposes a future where AI infrastructure is governed by the public, aligned with European values, and accessible to all citizens, researchers, developers and institutions.
 
@@ -43,7 +43,6 @@ This whitepaper outlines the foundational philosophy, architecture, governance f
 ---
 
 # 2. Vision
-
 CollectivAI envisions a unified, sovereign and open AI infrastructure for Europe — a public good that ensures:
 
 - Transparency  
@@ -53,12 +52,9 @@ CollectivAI envisions a unified, sovereign and open AI infrastructure for Europe
 - Citizen participation  
 - Long-term digital sovereignty  
 
-The system is built on **European values**, **European technology**, and **European governance**.
-
 ---
 
 # 3. Problem Statement
-
 Current AI ecosystems are dominated by non-European technology corporations.  
 This creates:
 
@@ -74,9 +70,7 @@ Europe needs a sovereign alternative aligned with its values of privacy, human d
 ---
 
 # 4. Why Europe Needs Democratic AI
-
-Europe stands at a crossroads:  
-either accept foreign AI monopolies — or build its own **open, democratic AI infrastructure**.
+Europe must choose between accepting foreign AI monopolies or building its own democratic, ethical AI.
 
 CollectivAI supports:
 
@@ -87,264 +81,203 @@ CollectivAI supports:
 - Public oversight  
 - Technological independence  
 - Educational access  
-- Civic empowerment  
 
 ---
 
 # 5. System Architecture
-
-CollectivAI is built on five layers:
+CollectivAI consists of five architectural layers:
 
 ### **1. Compute Layer**
-Distributed nodes across Europe:
-- macOS M2/M3 hardware  
-- Linux compute nodes  
-- Hackberry CM5  
-- Jetson Orin  
-- Raspberry Pi  
-- UTM Virtual Nodes  
+Distributed nodes across Europe (macOS, Linux, ARM, VM-based).
 
 ### **2. AI Model Layer**
-- Multilingual LLMs  
-- Domain-specific models  
-- Explainable AI  
-- Reproducible model builds  
-- Public checkpoints  
+Open, explainable and reproducible multilingual models.
 
 ### **3. Governance Layer**
-- Voting  
-- Proposals  
-- On-chain audit  
-- Role verification  
+Voting, proposals, transparency.
 
 ### **4. Data Layer**
-- Federated learning  
-- Encrypted computation  
-- Citizen-owned data  
-- GDPR compliance  
+Federated, encrypted, citizen-owned.
 
 ### **5. Interface Layer**
-- APIs  
-- Dashboards  
-- Civic apps  
-- Developer tools  
+APIs, apps, dashboards, civic tools.
 
 ---
 
 # 6. Node Infrastructure
+Nodes include:
 
-CollectivAI supports several node categories:
-
-### **Personal AI Nodes**
 - macOS M2/M3  
-- Linux desktops  
-- UTM-based systems  
-
-### **ARM Civic Nodes**
+- Linux Desktops  
+- UTM Compute Nodes  
 - Hackberry CM5  
 - Raspberry Pi  
 - Jetson Orin  
+- Institutional clusters  
 
-### **Institutional Nodes**
-- Universities  
-- Research centers  
-- Public institutions  
-
-Node goals:
-
-- Low energy  
-- High participation  
-- Scalability  
-- Security  
-- Neutrality  
+Goals: Low energy, high participation, scalability.
 
 ---
 
 # 7. Security Architecture
+Key principles:
 
-Security is foundational to CollectivAI:
-
-### ✔ Zero-Knowledge Verification  
-### ✔ End-to-End Encryption  
-### ✔ Reproducible Builds  
-### ✔ Federated Privacy  
-### ✔ Tamper-Proof Logs  
-### ✔ Open-Source Security Modules  
-### ✔ Transparent Governance Records  
-
-All computations are verifiable and audit-ready.
+- Zero-Knowledge Proofs  
+- End-to-End Encryption  
+- Reproducible Builds  
+- Federation & Privacy  
+- Transparent governance logs  
+- Open-source security modules  
 
 ---
 
 # 8. Governance Framework
+Three-layer democratic model:
 
-CollectivAI uses a **three-layer democratic model**:
-
-## **1. Citizen Layer**
-- Proposals  
+## **1. Citizens**
+- Public proposals  
 - Voting  
-- Review  
-- Community input  
+- Discussion  
 
-## **2. Expert Layer**
-- Ethical validation  
-- Scientific evaluation  
+## **2. Experts**
+- Ethical review  
+- Technical validation  
 - Security audits  
 
-## **3. Developer Layer**
+## **3. Developers**
 - Infrastructure maintenance  
+- Model updates  
 - Code contributions  
-- Model reviews  
-
-Governance is public, auditable and transparent.
 
 ---
 
 # 9. Ethical AI Principles
-
-CollectivAI follows strong EU-aligned ethical principles:
+CollectivAI follows EU-aligned ethics:
 
 - Explainability  
 - Fairness  
 - Non-discrimination  
-- Privacy by Design  
 - Transparency  
 - Inclusiveness  
+- Privacy by design  
 - Safety  
 - Accountability  
 
 ---
 
 # 10. Data Management & Privacy
+Based on:
 
-Data remains fully owned and controlled by the citizen.  
-Technologies include:
-
-- Federated training  
+- Federated learning  
 - Encrypted computation  
-- Zero-knowledge proofs  
-- Consent-based data usage  
-- Tamper-proof access logs  
-- Full GDPR alignment  
+- GDPR compliance  
+- Consent-based usage  
+- Citizen-controlled data  
+- Audit trails  
 
 ---
 
 # 11. Model Transparency
-
-All AI models in CollectivAI must be:
+Models must be:
 
 - Open-source  
 - Auditable  
 - Reproducible  
 - Explainable  
-- Documented  
-
-Training datasets must be transparent and legally compliant.
 
 ---
 
 # 12. Use Cases
-
-CollectivAI enables applications across:
+Areas supported:
 
 - Education  
 - Healthcare  
-- Scientific research  
-- Climate modeling  
-- Public administration  
-- Citizen participation  
+- Climate research  
+- Public services  
 - Smart cities  
 - Cyber defense  
+- Scientific research  
 - Innovation hubs  
 
 ---
 
 # 13. Application Layer
-
-Developers can build with:
+Developers can use:
 
 - REST APIs  
 - Web dashboards  
-- Civic apps  
 - Local inference tools  
-- Governance portals  
+- Civic participation portals  
 
 ---
 
 # 14. EU Integration & Regulations
-
-CollectivAI aligns with:
+Aligned with:
 
 - GDPR  
 - EU AI Act  
 - Digital Services Act  
 - Cyber Resilience Act  
-- EU Digital Identity Framework  
+- eIDAS 2.0  
 
 ---
 
 # 15. Funding Strategy
-
-Funding sources include:
+Sources include:
 
 - Horizon Europe  
 - Digital Europe Programme  
 - Public-private partnerships  
 - Research grants  
 - Membership models  
-- Public donations  
 
 ---
 
 # 16. Sustainability Model
+Achieved through:
 
-CollectivAI ensures long-term sustainability through:
-
-- Low-power ARM hardware  
-- Volunteer compute nodes  
-- Educational deployments  
-- Scalable decentralized architecture  
+- ARM-based low-power nodes  
+- Volunteer compute  
+- Federated architecture  
+- Environmentally efficient models  
 
 ---
 
 # 17. Community Structure
+Includes:
 
-CollectivAI welcomes:
-
-- Researchers  
 - Developers  
+- Researchers  
 - Citizens  
-- Ethical boards  
-- Open-source contributors  
 - Institutions  
+- Ethical boards  
+- Contributors  
 
 ---
 
 # 18. Roadmap 2025–2030
-
 ### **2025 – Foundation**
-Whitepaper, alpha architecture, governance design.
+Whitepaper, alpha systems.
 
 ### **2026 – Pilots**
-EU city pilots, civic nodes.
+City pilots, civic nodes.
 
 ### **2027 – Governance Launch**
-Public voting, audits.
+Public voting, expert oversight.
 
-### **2028 – Infrastructure Expansion**
-Distributed EU-wide AI network.
+### **2028 – EU AI Infrastructure**
+Distributed AI grid.
 
-### **2029 – Multilingual AI Models**
-European language suite.
+### **2029 – Multilingual Model Suite**
+European languages.
 
-### **2030 – Sovereign Public AI Grid**
-A unified, citizen-driven AI infrastructure.
+### **2030 – Sovereign AI Grid**
+EU-wide public infrastructure.
 
 ---
 
 # 19. Long-Term Vision
-
-By 2035, CollectivAI aims to be Europe's core public AI infrastructure:
+By 2035, CollectivAI aims to be Europe’s core public AI infrastructure:
 
 - Ethical  
 - Transparent  
@@ -355,11 +288,59 @@ By 2035, CollectivAI aims to be Europe's core public AI infrastructure:
 ---
 
 # 20. Conclusion
-
-CollectivAI provides the blueprint for a shared European AI future — built on fairness, transparency, security, innovation and democratic participation.  
-Europe deserves an AI system aligned with its values.  
-CollectivAI is the foundation for that future.
+CollectivAI provides the blueprint for a fair, safe and democratic European AI ecosystem.
 
 ---
 
-<p align="center"><b>CollectivAI – Building Democratic AI for Europe</b></p>
+# 21. Human-Centered & Ethical Foundation
+
+CollectivAI is built on the principle that **AI must help humanity, not harm it**.  
+Its mission is to strengthen society, improve life, and protect the values that define Europe.
+
+## 🌱 Climate & Environment
+- Climate prediction  
+- Renewable optimization  
+- Smart resource planning  
+- Ecological monitoring  
+
+## 💶 Economy & Stability
+- Economic forecasting  
+- Crisis prevention  
+- Support for SMEs  
+- Fair market insights  
+
+## 🧬 Science & Research
+- Research acceleration  
+- Medical discovery  
+- Drug development  
+- Genomics analysis  
+
+## 🌍 Geopolitical Stability
+- Risk assessment  
+- Early-warning systems  
+- Diplomacy support  
+- Anti-disinformation AI  
+
+## 🧠 Quality of Life
+- Stress-reducing assistants  
+- Social care AI  
+- Accessibility tools  
+
+## 🤝 Social & Ethical Support
+- Bias detection  
+- Fairness auditing  
+- Transparent oversight  
+
+## 🌐 A Helper, Not an Opponent
+CollectivAI is designed to:
+
+- uplift society  
+- protect democracy  
+- enhance wellbeing  
+- build resilience  
+- preserve dignity  
+- secure the future  
+
+---
+
+<p align="center"><b>CollectivAI – Building Ethical, Democratic AI for Europe</b></p>
