@@ -1,24 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>CollectivAI</title>
-  <style>
+<meta charset="UTF-8">
+<title>CollectivAI</title>
+
+<style>
     body {
-      background: #ffffff;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #f8f8f8;
+        font-family: Arial, sans-serif;
     }
-    img {
-      width: 1280px; /* Größe anpassbar */
+
+    .logo-container {
+        text-align: center;
     }
-  </style>
+
+    .logo-container img {
+        width: 340px;     /* 🔥 Größere Logo-Größe */
+        max-width: 80%;   /* passt sich auf Handy an */
+    }
+
+    .subtitle {
+        font-size: 22px;
+        margin-top: 12px;
+        color: #444;
+        font-weight: 400;
+    }
+
+    .title {
+        font-size: 42px;
+        margin-top: 10px;
+        font-weight: 600;
+    }
+</style>
+
 </head>
 <body>
-  <img src="logo.png" alt="CollectivAI Logo">
+
+<div class="logo-container">
+    <img src="logo.png" alt="CollectivAI Logo">
+    <div class="title">CollectivAI</div>
+    <div class="subtitle">Democratic AI for Europe</div>
+</div>
+
 </body>
 </html>
