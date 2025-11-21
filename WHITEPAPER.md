@@ -3,7 +3,7 @@
 **Version 1.0 – 2025**
 
 <p align="center">
-  <img src="docs/logo.png" width="280"/>
+  <img src="logo.png" width="280"/>
 </p>
 
 ---
