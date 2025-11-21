@@ -6,28 +6,47 @@
 
 <style>
     body {
-        background: #ffffff;
-        font-family: Arial, sans-serif;
         margin: 0;
-        padding: 0;
+        height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
+        background: #f8f8f8;
+        font-family: Arial, sans-serif;
+        text-align: center;
     }
 
-    img {
-        width: 60vw;                 /* 60% der Bildschirmbreite */
-        max-width: 600px;            /* maximale Größe auf Desktop */
-        min-width: 200px;            /* minimale Größe auf Handy */
-        height: auto;
+    .logo-container {
+        max-width: 90%;
+    }
+
+    .logo-container img {
+        width: 40vw;         /* 🔥 Desktop: 40% der Bildschirmbreite */
+        max-width: 280px;    /* 🔥 Maximum: 360px */
+        min-width: 120px;    /* 🔥 Minimum: für Handy */
+    }
+
+    .title {
+        font-size: clamp(24px, 4vw, 42px);   /* Responsive Titel */
+        font-weight: 400;
+        margin-top: 15px;
+    }
+
+    .subtitle {
+        font-size: clamp(14px, 2.5vw, 22px); /* Responsive Untertitel */
+        margin-top: 8px;
+        color: #444;
     }
 </style>
 
 </head>
 <body>
 
+<div class="logo-container">
     <img src="logo.png" alt="CollectivAI Logo">
+    <div class="title">CollectivAI</div>
+    <div class="subtitle">Democratic AI for Europe</div>
+</div>
 
 </body>
 </html>
