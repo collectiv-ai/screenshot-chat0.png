@@ -1,19 +1,55 @@
 <p align="center">
-  <img src="logo.png"width="400"/>
+  <img src="logo.png" width="400"/>
 </p>
 
 <h1 align="center">CollectivAI</h1>
-<h3 align="center">Democratic AI for Europe</h3>
+<h3 align="center">Democratic • Ethical • Human-Centered AI for Europe</h3>
 
 <p align="center">
-CollectivAI is an open, transparent and democratic AI ecosystem designed for the European public.<br>
-It provides a sovereign, ethical and community-governed artificial intelligence infrastructure aligned with European values.
+CollectivAI is a sovereign, transparent, and democratic AI ecosystem designed for the European public.<br>
+Its mission is to create AI that strengthens society, protects democracy, improves life, and serves humanity — never the opposite.
 </p>
 
 ---
 
 ## 🚀 Mission
-To build Europe's first **public AI infrastructure**, owned and governed by its citizens — not by corporations or foreign governments.
+
+To build Europe's first **public, democratic and ethical AI infrastructure** —  
+owned by its citizens, aligned with European values, and designed to:
+
+- protect democracy  
+- support the economy  
+- stabilize geopolitics  
+- accelerate science and research  
+- safeguard the climate  
+- improve quality of life  
+- preserve human dignity  
+
+**AI must uplift people. Not replace them. Not harm them. Not control them.**
+
+---
+
+## 🌍 Human-Centered Ethical AI
+
+CollectivAI is built on the principle that AI must:
+
+### ✔ help humanity  
+### ✔ protect society  
+### ✔ enhance wellbeing  
+### ✔ promote peace  
+### ✔ strengthen democracy  
+### ✔ preserve life & dignity  
+
+It supports:
+
+- climate protection  
+- economic stability  
+- medical research  
+- crisis prevention  
+- social wellbeing  
+- citizen empowerment  
+
+This is AI for the future — **AI for good**.
 
 ---
 
@@ -22,7 +58,7 @@ To build Europe's first **public AI infrastructure**, owned and governed by its 
 📄 **Full Whitepaper (PDF):**  
 👉 [docs/CollectivAI_Whitepaper_Full.pdf](docs/CollectivAI_Whitepaper_Full.pdf)
 
-📄 **Markdown Version:**  
+📄 **Full Markdown Version:**  
 👉 [WHITEPAPER.md](WHITEPAPER.md)
 
 ---
