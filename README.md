@@ -1,12 +1,14 @@
 <p align="center">
-  <img src="logo.png" width="400"/>
+  <img src="docs/logo.png" width="400"/>
 </p>
 
-# CollectivAI  
-### Democratic AI for Europe
+<h1 align="center">CollectivAI</h1>
+<h3 align="center">Democratic AI for Europe</h3>
 
-CollectivAI is an open, transparent and democratic AI ecosystem designed for the European public.  
+<p align="center">
+CollectivAI is an open, transparent and democratic AI ecosystem designed for the European public.<br>
 It provides a sovereign, ethical and community-governed artificial intelligence infrastructure aligned with European values.
+</p>
 
 ---
 
@@ -16,11 +18,12 @@ To build Europe's first **public AI infrastructure**, owned and governed by its 
 ---
 
 ## 📘 Whitepaper  
-📄 Full Whitepaper (PDF):  
-[CollectivAI_Whitepaper_Full.pdf](docs/CollectivAI_Whitepaper_Full.pdf)
 
-📄 Markdown Version:  
-[WHITEPAPER.md](WHITEPAPER.md)
+📄 **Full Whitepaper (PDF):**  
+👉 [docs/CollectivAI_Whitepaper_Full.pdf](docs/CollectivAI_Whitepaper_Full.pdf)
+
+📄 **Markdown Version:**  
+👉 [WHITEPAPER.md](WHITEPAPER.md)
 
 ---
 
