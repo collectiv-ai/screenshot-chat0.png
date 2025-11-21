@@ -1,0 +1,112 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000;
+    color: #fff;
+    font-family: Inter, Arial, sans-serif;
+    line-height: 1.7;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.logo {
+    width: 160px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: #b3b3b3;
+    margin-bottom: 30px;
+}
+
+/* BUTTONS */
+.btn {
+    background: #fff;
+    color: #000;
+    border: none;
+    padding: 14px 28px;
+    font-size: 1rem;
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.btn-outline {
+    border: 2px solid #fff;
+    padding: 12px 26px;
+    margin: 10px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 6px;
+}
+
+.section {
+    padding: 70px 20px;
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* LIST STYLING */
+.principle-list {
+    list-style: none;
+    font-size: 1.2rem;
+}
+
+.principle-list li {
+    margin: 10px 0;
+    color: #b3b3b3;
+}
+
+/* DIAGRAM */
+.diagram {
+    width: 70%;
+    margin-top: 20px;
+    opacity: 0.85;
+}
+
+/* ROADMAP */
+.roadmap {
+    display: flex;
+    overflow-x: auto;
+    gap: 40px;
+    justify-content: center;
+}
+
+.roadmap-item {
+    background: #111;
+    padding: 20px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    min-width: 180px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 40px;
+    color: #888;
+    border-top: 1px solid #222;
+}
