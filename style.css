@@ -60,7 +60,7 @@ body {
 
 /* LOGO */
 .logo {
-    width: 120px;
+    width: 360px;
     margin-bottom: 16px;
     transition: transform 0.4s ease;
 }
