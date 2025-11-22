@@ -19,3 +19,7 @@ function handleScrollReveal() {
 // Initial + Scroll
 window.addEventListener("scroll", handleScrollReveal);
 window.addEventListener("load", handleScrollReveal);
+body {
+    /* ... existierende Eigenschaften ... */
+    opacity: 0;
+}
