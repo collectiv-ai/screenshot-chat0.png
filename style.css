@@ -215,3 +215,7 @@ footer a:hover {
         gap: 20px;
     }
 }
+body {
+    /* ... existierende Eigenschaften ... */
+    opacity: 0;
+}
