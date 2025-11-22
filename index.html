@@ -6,206 +6,85 @@
     <title>CollectivAI – Human-Centered AI Infrastructure</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <!-- TOP NAV -->
-    <header class="top-nav">
-        <div class="nav-left">
-            <img src="logo.png" alt="CollectivAI Logo" class="nav-logo">
-            <span class="nav-title">CollectivAI</span>
-        </div>
-        <nav class="nav-links">
-            <a href="#about">About</a>
-            <a href="#principles">Principles</a>
-            <a href="#architecture">Architecture</a>
-            <a href="#use-cases">Use Cases</a>
-            <a href="#roadmap">Roadmap</a>
-        </nav>
-        <div class="nav-cta">
-            <a href="docs/CollectivAI_Whitepaper_Full.pdf" class="nav-btn">Whitepaper</a>
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <img src="logo.png" class="logo" alt="CollectivAI Logo">
+
+        <h1>CollectivAI</h1>
+        <h2>Human-Centered • Ethical • Democratic AI Infrastructure</h2>
+
+        <div class="hero-buttons">
+            <a href="docs/CollectivAI_Whitepaper_Full.pdf" class="btn">Whitepaper</a>
+            <a href="https://github.com/collectiv-ai/collectivai" class="btn-outline">GitHub</a>
         </div>
     </header>
 
-    <main>
-        <!-- HERO SECTION -->
-        <section class="hero" id="top">
-            <div class="hero-inner">
-                <div class="hero-text">
-                    <p class="hero-tagline">Human-Centered • Ethical • Democratic</p>
-                    <h1>CollectivAI</h1>
-                    <p class="hero-subtitle">
-                        A sovereign, transparent and ethical AI infrastructure designed to help humanity – 
-                        not replace it. CollectivAI unites research, governance and technology in one open ecosystem.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="docs/CollectivAI_Whitepaper_Full.pdf" class="btn primary">Read Whitepaper</a>
-                        <a href="https://github.com/collectiv-ai/collectivai" class="btn secondary">View on GitHub</a>
-                    </div>
-                </div>
-                <div class="hero-visual">
-                    <div class="hero-card">
-                        <span class="hero-label">Focus</span>
-                        <h2>AI that helps, not harms.</h2>
-                        <ul>
-                            <li>Supports climate & research</li>
-                            <li>Respects privacy & dignity</li>
-                            <li>Strengthens democracy & stability</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- WHAT IS COLLECTIVAI -->
+    <section class="section">
+        <h3>What is CollectivAI?</h3>
+        <p>
+            CollectivAI is a sovereign, transparent and ethical AI ecosystem designed for the future of humanity.  
+            Built on a decentralized network of compute nodes, it empowers citizens, researchers and developers  
+            with a secure, democratic and privacy-first AI infrastructure.
+        </p>
+    </section>
 
-        <!-- WHAT IS COLLECTIVAI -->
-        <section class="section" id="about">
-            <div class="section-inner">
-                <h2>What is CollectivAI?</h2>
-                <p class="section-lead">
-                    CollectivAI is a human-centered AI ecosystem built on a distributed network of compute nodes. 
-                    It empowers citizens, researchers and developers with an ethical, transparent and privacy-first AI infrastructure.
-                </p>
-                <p>
-                    Instead of concentrating power in a few companies, CollectivAI aims to create an 
-                    open, verifiable and democratic foundation for AI – designed to support society, not control it.
-                </p>
-            </div>
-        </section>
+    <!-- CORE PRINCIPLES -->
+    <section class="section">
+        <h3>Core Principles</h3>
+        <ul class="principle-list">
+            <li>Ethical & Human-Centered</li>
+            <li>Democratic Governance</li>
+            <li>Privacy by Design</li>
+            <li>Transparent & Auditable</li>
+            <li>Open-Source Infrastructure</li>
+            <li>Secure & Resilient</li>
+        </ul>
+    </section>
 
-        <!-- CORE PRINCIPLES -->
-        <section class="section bg-soft" id="principles">
-            <div class="section-inner">
-                <h2>Core Principles</h2>
-                <div class="grid cards-3">
-                    <div class="card">
-                        <h3>Ethical & Human-Centered</h3>
-                        <p>AI must protect people, improve life and respect human dignity. CollectivAI is built to help, not harm.</p>
-                    </div>
-                    <div class="card">
-                        <h3>Democratic Governance</h3>
-                        <p>Citizens, experts and developers share responsibility for how AI is built, deployed and supervised.</p>
-                    </div>
-                    <div class="card">
-                        <h3>Privacy by Design</h3>
-                        <p>Data belongs to the individual. CollectivAI prioritizes encryption, consent and minimal data usage.</p>
-                    </div>
-                    <div class="card">
-                        <h3>Transparent & Auditable</h3>
-                        <p>Models, decisions and updates should be explainable, reviewable and open for public scrutiny.</p>
-                    </div>
-                    <div class="card">
-                        <h3>Open-Source Infrastructure</h3>
-                        <p>The core of CollectivAI is open, allowing researchers and developers to verify, extend and improve it.</p>
-                    </div>
-                    <div class="card">
-                        <h3>Secure & Resilient</h3>
-                        <p>Designed to withstand failures, attacks and misuse through layered security and robust architecture.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- ARCHITECTURE -->
+    <section class="section">
+        <h3>Architecture Overview</h3>
+        <p>
+            CollectivAI is powered by a distributed global compute network:  
+            macOS nodes, Linux nodes, ARM devices, Hackberry CM5, Raspberry Pi, Jetson Orin and cloud-independent infrastructures.
+        </p>
+        <img src="architecture/diagrams/architecture.svg" class="diagram" alt="Architecture Diagram">
+    </section>
 
-        <!-- ARCHITECTURE -->
-        <section class="section" id="architecture">
-            <div class="section-inner">
-                <h2>Architecture Overview</h2>
-                <p class="section-lead">
-                    CollectivAI is powered by a distributed compute network: macOS nodes, Linux servers, ARM systems, 
-                    Hackberry CM5, Raspberry Pi, Jetson Orin and cloud-independent infrastructures.
-                </p>
-                <div class="architecture-layout">
-                    <div class="arch-text">
-                        <h3>Layered Design</h3>
-                        <ul>
-                            <li><strong>Compute Layer:</strong> Diverse hardware nodes running AI workloads.</li>
-                            <li><strong>Model Layer:</strong> Transparent, explainable and auditable AI models.</li>
-                            <li><strong>Governance Layer:</strong> Transparent voting and decision-making.</li>
-                            <li><strong>Data Layer:</strong> Federated, encrypted and consent-based data usage.</li>
-                            <li><strong>Interface Layer:</strong> APIs, dashboards and tools for humans and systems.</li>
-                        </ul>
-                    </div>
-                    <div class="arch-visual">
-                        <img src="architecture/diagrams/architecture.svg" class="diagram" alt="Architecture Diagram">
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- USE CASES -->
+    <section class="section">
+        <h3>Use Cases</h3>
+        <ul class="principle-list">
+            <li>Scientific Research & Acceleration</li>
+            <li>Climate Modeling & Environmental Protection</li>
+            <li>Economic Forecasting & Crisis Prevention</li>
+            <li>Healthcare & Medical AI</li>
+            <li>Smart Public Infrastructure</li>
+            <li>Ethics & Governance Systems</li>
+        </ul>
+    </section>
 
-        <!-- USE CASES -->
-        <section class="section bg-soft" id="use-cases">
-            <div class="section-inner">
-                <h2>Use Cases</h2>
-                <div class="grid cards-3">
-                    <div class="card">
-                        <h3>Scientific Research</h3>
-                        <p>Accelerating discovery in physics, biology, medicine and more with transparent AI tools.</p>
-                    </div>
-                    <div class="card">
-                        <h3>Climate & Environment</h3>
-                        <p>Modeling climate scenarios, optimizing energy usage and supporting sustainable planning.</p>
-                    </div>
-                    <div class="card">
-                        <h3>Economic Stability</h3>
-                        <p>Supporting early warning systems, economic analysis and crisis prevention.</p>
-                    </div>
-                    <div class="card">
-                        <h3>Healthcare</h3>
-                        <p>Decision support for medical professionals while preserving privacy and patient rights.</p>
-                    </div>
-                    <div class="card">
-                        <h3>Public Infrastructure</h3>
-                        <p>Smarter, more resilient services that remain accountable to citizens.</p>
-                    </div>
-                    <div class="card">
-                        <h3>Ethics & Governance</h3>
-                        <p>Built-in transparency, fairness auditing and democratic oversight of AI systems.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ROADMAP -->
-        <section class="section" id="roadmap">
-            <div class="section-inner">
-                <h2>Roadmap 2025–2030</h2>
-                <p class="section-lead">
-                    CollectivAI is a long-term project. The goal is to build a stable, ethical and resilient AI infrastructure step by step.
-                </p>
-                <div class="roadmap">
-                    <div class="roadmap-item">
-                        <span class="roadmap-year">2025</span>
-                        <p>Foundation & Alpha Infrastructure</p>
-                    </div>
-                    <div class="roadmap-item">
-                        <span class="roadmap-year">2026</span>
-                        <p>Pilots & Civic Nodes</p>
-                    </div>
-                    <div class="roadmap-item">
-                        <span class="roadmap-year">2027</span>
-                        <p>Governance Launch</p>
-                    </div>
-                    <div class="roadmap-item">
-                        <span class="roadmap-year">2028</span>
-                        <p>AI Grid Expansion</p>
-                    </div>
-                    <div class="roadmap-item">
-                        <span class="roadmap-year">2029</span>
-                        <p>Multilingual Model Suite</p>
-                    </div>
-                    <div class="roadmap-item">
-                        <span class="roadmap-year">2030</span>
-                        <p>Sovereign Public AI Network</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+    <!-- ROADMAP -->
+    <section class="section">
+        <h3>Roadmap 2025–2030</h3>
+        <div class="roadmap">
+            <div class="roadmap-item"><strong>2025</strong><br>Foundation & Alpha Infrastructure</div>
+            <div class="roadmap-item"><strong>2026</strong><br>EU City Pilots & Civic Nodes</div>
+            <div class="roadmap-item"><strong>2027</strong><br>Governance Launch</div>
+            <div class="roadmap-item"><strong>2028</strong><br>European AI Grid Expansion</div>
+            <div class="roadmap-item"><strong>2029</strong><br>Multilingual Model Suite</div>
+            <div class="roadmap-item"><strong>2030</strong><br>Sovereign Public AI Network</div>
+        </div>
+    </section>
 
     <!-- FOOTER -->
     <footer>
-        <div class="footer-inner">
-            <p>© 2025 CollectivAI — Human-Centered AI for Humanity</p>
-            <p><a href="mailto:info@collectivai.org">info@collectivai.org</a> · <a href="https://github.com/collectiv-ai/collectivai">GitHub</a></p>
-        </div>
+        <p>© 2025 CollectivAI — Human-Centered AI for Humanity</p>
+        <p><a href="mailto:info@collectivai.org">info@collectivai.org</a></p>
     </footer>
 
 </body>
