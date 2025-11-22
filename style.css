@@ -6,8 +6,8 @@
 }
 
 body {
-    background: #000;
-    color: #fff;
+    background: #ffffff;       /* Weiss */
+    color: #000000;            /* Schwarze Schrift */
     font-family: Inter, Arial, sans-serif;
     line-height: 1.7;
 }
@@ -27,19 +27,20 @@ h1 {
     font-size: 4rem;
     font-weight: 700;
     margin-bottom: 10px;
+    color: #000;       /* Schwarz */
 }
 
 h2 {
     font-size: 1.3rem;
     font-weight: 300;
-    color: #b3b3b3;
+    color: #333;       /* Dunkelgrau */
     margin-bottom: 30px;
 }
 
 /* BUTTONS */
 .btn {
-    background: #fff;
-    color: #000;
+    background: #000;      /* Schwarz */
+    color: #fff;           /* Weiß */
     border: none;
     padding: 14px 28px;
     font-size: 1rem;
@@ -49,14 +50,15 @@ h2 {
 }
 
 .btn-outline {
-    border: 2px solid #fff;
+    border: 2px solid #000;
     padding: 12px 26px;
     margin: 10px;
     text-decoration: none;
-    color: #fff;
+    color: #000;
     border-radius: 6px;
 }
 
+/* SECTION */
 .section {
     padding: 70px 20px;
     max-width: 900px;
@@ -67,9 +69,10 @@ h2 {
 h3 {
     font-size: 2rem;
     margin-bottom: 20px;
+    color: #000;
 }
 
-/* LIST STYLING */
+/* LISTS */
 .principle-list {
     list-style: none;
     font-size: 1.2rem;
@@ -77,14 +80,14 @@ h3 {
 
 .principle-list li {
     margin: 10px 0;
-    color: #b3b3b3;
+    color: #444;
 }
 
 /* DIAGRAM */
 .diagram {
     width: 70%;
     margin-top: 20px;
-    opacity: 0.85;
+    opacity: 0.95;
 }
 
 /* ROADMAP */
@@ -96,17 +99,24 @@ h3 {
 }
 
 .roadmap-item {
-    background: #111;
+    background: #f4f4f4;
     padding: 20px;
-    border: 1px solid #333;
+    border: 1px solid #ddd;
     border-radius: 8px;
     min-width: 180px;
+    color: #000;
 }
 
 /* FOOTER */
 footer {
     text-align: center;
     padding: 40px;
-    color: #888;
-    border-top: 1px solid #222;
+    color: #444;
+    border-top: 1px solid #ddd;
+    margin-top: 50px;
+}
+
+footer a {
+    color: #000;
+    text-decoration: none;
 }
