@@ -6,22 +6,62 @@
 }
 
 body {
-    background: #ffffff;       /* Weiß */
-    color: #000000;            /* Schwarze Schrift */
+    background: #ffffff;
+    color: #000000;
     font-family: Inter, Arial, sans-serif;
     line-height: 1.7;
     transition: background 0.4s ease, color 0.4s ease;
+    opacity: 0; /* für Fade-in, wird in script.js auf 1 gesetzt */
 }
 
 /* HERO */
 .hero {
-    text-align: center;
-    padding: 100px 20px 80px;
+    position: relative;
+    text-align: left;
+    padding: 80px 20px 80px;
+    overflow: hidden;
+    background: #ffffff;
 }
 
+/* dezenter animierter Hintergrund im Hero */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: -120px;
+    background:
+        radial-gradient(circle at 0% 0%, rgba(0,0,0,0.06), transparent 55%),
+        radial-gradient(circle at 100% 100%, rgba(0,0,0,0.04), transparent 60%);
+    opacity: 0.9;
+    z-index: -1;
+    animation: heroGlow 18s ease-in-out infinite alternate;
+}
+
+.hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.hero-text {
+    flex: 1 1 320px;
+    min-width: 280px;
+}
+
+.hero-preview {
+    flex: 1 1 320px;
+    min-width: 280px;
+    display: flex;
+    justify-content: center;
+}
+
+/* LOGO */
 .logo {
-    width: 380px;
-    margin-bottom: 20px;
+    width: 120px;
+    margin-bottom: 16px;
     transition: transform 0.4s ease;
 }
 
@@ -30,9 +70,9 @@ body {
 }
 
 h1 {
-    font-size: 4rem;
+    font-size: 3.2rem;
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
     color: #000;
 }
 
@@ -40,13 +80,25 @@ h2 {
     font-size: 1.3rem;
     font-weight: 300;
     color: #333;
-    margin-bottom: 30px;
+    margin-bottom: 18px;
+}
+
+.hero-sub {
+    color: #444;
+    margin-bottom: 26px;
+    max-width: 480px;
+}
+
+.hero-tagline {
+    margin-top: 16px;
+    font-size: 0.95rem;
+    color: #777;
 }
 
 /* BUTTONS */
 .hero-buttons {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
 }
 
@@ -55,7 +107,7 @@ h2 {
     display: inline-block;
     padding: 14px 28px;
     font-size: 1rem;
-    margin: 10px;
+    margin: 8px 10px 8px 0;
     text-decoration: none;
     border-radius: 999px;
     cursor: pointer;
@@ -87,12 +139,129 @@ h2 {
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
+/* APP CARD (Hero Preview) */
+.app-card {
+    width: 100%;
+    max-width: 360px;
+    background: #f8f8f8;
+    border-radius: 18px;
+    border: 1px solid #e1e1e1;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+    overflow: hidden;
+    transform: translateY(6px);
+    animation: floatUp 12s ease-in-out infinite alternate;
+}
+
+.app-card-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 14px;
+    background: #f0f0f0;
+    border-bottom: 1px solid #e1e1e1;
+    gap: 6px;
+}
+
+.app-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.app-dot.red { background: #ff5f57; }
+.app-dot.yellow { background: #febc2e; }
+.app-dot.green { background: #28c840; }
+
+.app-title {
+    margin-left: 10px;
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.app-card-body {
+    padding: 14px 16px 18px;
+    background: #fbfbfb;
+}
+
+.app-pill-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.pill {
+    padding: 5px 12px;
+    border-radius: 999px;
+    border: 1px solid #ddd;
+    font-size: 0.78rem;
+    color: #555;
+    background: #fff;
+}
+
+.pill.active {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+}
+
+.chat-bubble {
+    border-radius: 14px;
+    padding: 10px 12px;
+    font-size: 0.86rem;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.chat-bubble.user {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    text-align: left;
+}
+
+.chat-bubble.ai {
+    background: #000;
+    color: #fff;
+    text-align: left;
+}
+
+.status-bar {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #2ecc71;
+}
+
+.status-text {
+    letter-spacing: 0.02em;
+}
+
 /* SECTION */
 .section {
     padding: 70px 20px;
     max-width: 900px;
     margin: auto;
     text-align: center;
+}
+
+.section-alt {
+    background: #fafafa;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.section-sub {
+    margin-bottom: 28px;
+    color: #555;
 }
 
 h3 {
@@ -110,6 +279,42 @@ h3 {
 .principle-list li {
     margin: 10px 0;
     color: #444;
+}
+
+/* FEATURES GRID */
+.features-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.feature-card {
+    flex: 1 1 260px;
+    max-width: 280px;
+    background: #fff;
+    border-radius: 14px;
+    border: 1px solid #e4e4e4;
+    padding: 18px 18px 20px;
+    text-align: left;
+    box-shadow: 0 10px 26px rgba(0,0,0,0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card h4 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #111;
+}
+
+.feature-card p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 34px rgba(0,0,0,0.09);
 }
 
 /* DIAGRAM */
@@ -168,8 +373,6 @@ footer a:hover {
 }
 
 /* ANIMATIONS */
-
-/* Einfaches Fade-in von oben */
 .fade-in {
     opacity: 0;
     transform: translateY(10px);
@@ -196,10 +399,60 @@ footer a:hover {
     transform: translateY(0);
 }
 
+/* Hero Glow */
+@keyframes heroGlow {
+    0% {
+        transform: translate3d(0, 0, 0) scale(1);
+        opacity: 0.9;
+    }
+    50% {
+        transform: translate3d(0, -12px, 0) scale(1.03);
+        opacity: 1;
+    }
+    100% {
+        transform: translate3d(0, -20px, 0) scale(1.05);
+        opacity: 0.9;
+    }
+}
+
+/* App-Card Float */
+@keyframes floatUp {
+    0% {
+        transform: translateY(6px);
+    }
+    100% {
+        transform: translateY(-6px);
+    }
+}
+
 /* Mobile Optimierung */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+    .hero {
+        text-align: center;
+    }
+
+    .hero-inner {
+        flex-direction: column;
+    }
+
+    .hero-text {
+        align-items: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-sub {
+        max-width: none;
+    }
+
+    .hero-preview {
+        margin-top: 24px;
+    }
+
     h1 {
-        font-size: 2.8rem;
+        font-size: 2.6rem;
     }
 
     h2 {
