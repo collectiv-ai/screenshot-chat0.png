@@ -53,10 +53,7 @@ This is AI for the future — **AI for good**.
 
 ---
 
-## 📘 Whitepaper  
-
-📄 **Full Whitepaper (PDF):**  
-👉 [docs/CollectivAI_Whitepaper_Full.pdf](docs/CollectivAI_Whitepaper_Full.pdf)
+## 📘 Whitepaper
 
 📄 **Full Markdown Version:**  
 👉 [WHITEPAPER.md](WHITEPAPER.md)
