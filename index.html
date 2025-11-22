@@ -1,92 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CollectivAI – Human-Centered AI Infrastructure</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CollectivAI App – Human-Centered AI Control Center</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
-    <!-- HERO SECTION -->
-    <header class="hero fade-in">
+  <!-- HERO / APP SECTION -->
+  <header class="hero fade-in">
+    <div class="hero-inner">
+      <!-- Textseite -->
+      <div class="hero-text">
         <img src="logo.png" class="logo" alt="CollectivAI Logo">
 
-        <h1>CollectivAI</h1>
-        <h2>Human-Centered • Ethical • Democratic AI Infrastructure</h2>
+        <h1>CollectivAI App</h1>
+        <h2>Your human-centered control center for AI backends.</h2>
+
+        <p class="hero-sub">
+          Manage multiple AI providers like Gemini, GPT & custom APIs from a single,
+          privacy-first and ethical interface. One app, one workflow – many models.
+        </p>
 
         <div class="hero-buttons">
-            <a href="docs/CollectivAI_Whitepaper_Full.pdf" class="btn">Whitepaper</a>
-            <a href="https://github.com/collectiv-ai/collectivai" class="btn-outline">GitHub</a>
+          <a href="docs/CollectivAI_Whitepaper_Full.pdf" class="btn">Read Whitepaper</a>
+          <a href="https://github.com/collectiv-ai/collectivai" class="btn-outline">View on GitHub</a>
         </div>
-    </header>
 
-    <!-- WHAT IS COLLECTIVAI -->
-    <section class="section reveal">
-        <h3>What is CollectivAI?</h3>
-        <p>
-            CollectivAI is a sovereign, transparent and ethical AI ecosystem designed for the future of humanity.  
-            Built on a decentralized network of compute nodes, it empowers citizens, researchers and developers  
-            with a secure, democratic and privacy-first AI infrastructure.
+        <p class="hero-tagline">
+          CollectivAI App · Unified AI gateway for research, coding, crypto & security.
         </p>
-    </section>
+      </div>
 
-    <!-- CORE PRINCIPLES -->
-    <section class="section reveal">
-        <h3>Core Principles</h3>
-        <ul class="principle-list">
-            <li>Ethical & Human-Centered</li>
-            <li>Democratic Governance</li>
-            <li>Privacy by Design</li>
-            <li>Transparent & Auditable</li>
-            <li>Open-Source Infrastructure</li>
-            <li>Secure & Resilient</li>
-        </ul>
-    </section>
+      <!-- App-Vorschau -->
+      <div class="hero-preview">
+        <div class="app-card">
+          <div class="app-card-header">
+            <span class="app-dot red"></span>
+            <span class="app-dot yellow"></span>
+            <span class="app-dot green"></span>
+            <span class="app-title">CollectivAI · Router</span>
+          </div>
+          <div class="app-card-body">
+            <div class="app-pill-row">
+              <span class="pill active">Gemini</span>
+              <span class="pill">GPT</span>
+              <span class="pill">Ollama</span>
+              <span class="pill">Custom</span>
+            </div>
 
-    <!-- ARCHITECTURE -->
-    <section class="section reveal">
-        <h3>Architecture Overview</h3>
-        <p>
-            CollectivAI is powered by a distributed global compute network:  
-            macOS nodes, Linux nodes, ARM devices, Hackberry CM5, Raspberry Pi, Jetson Orin and cloud-independent infrastructures.
-        </p>
-        <img src="architecture/diagrams/architecture.svg" class="diagram" alt="Architecture Diagram">
-    </section>
+            <div class="chat-bubble user">
+              Route this prompt through the best backend for<br>
+              research, privacy and ethical constraints.
+            </div>
 
-    <!-- USE CASES -->
-    <section class="section reveal">
-        <h3>Use Cases</h3>
-        <ul class="principle-list">
-            <li>Scientific Research & Acceleration</li>
-            <li>Climate Modeling & Environmental Protection</li>
-            <li>Economic Forecasting & Crisis Prevention</li>
-            <li>Healthcare & Medical AI</li>
-            <li>Smart Public Infrastructure</li>
-            <li>Ethics & Governance Systems</li>
-        </ul>
-    </section>
+            <div class="chat-bubble ai">
+              ✓ Analyzing request<br>
+              ✓ Selecting backend: <strong>Gemini (research mode)</strong><br>
+              ✓ Applying privacy & ethics filters<br>
+              → Returning unified CollectivAI answer…
+            </div>
 
-    <!-- ROADMAP -->
-    <section class="section reveal">
-        <h3>Roadmap 2025–2030</h3>
-        <div class="roadmap">
-            <div class="roadmap-item"><strong>2025</strong><br>Foundation & Alpha Infrastructure</div>
-            <div class="roadmap-item"><strong>2026</strong><br>EU City Pilots & Civic Nodes</div>
-            <div class="roadmap-item"><strong>2027</strong><br>Governance Launch</div>
-            <div class="roadmap-item"><strong>2028</strong><br>European AI Grid Expansion</div>
-            <div class="roadmap-item"><strong>2029</strong><br>Multilingual Model Suite</div>
-            <div class="roadmap-item"><strong>2030</strong><br>Sovereign Public AI Network</div>
+            <div class="status-bar">
+              <span class="status-dot"></span>
+              <span class="status-text">Connected · API routing secured</span>
+            </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </header>
 
-    <!-- FOOTER -->
-    <footer class="fade-in">
-        <p>© 2025 CollectivAI — Human-Centered AI for Humanity</p>
-        <p><a href="mailto:info@collectivai.org">info@collectivai.org</a></p>
-    </footer>
+  <!-- SECTION: What is CollectivAI -->
+  <section class="section reveal">
+    <h3>What is CollectivAI?</h3>
+    <p>
+      CollectivAI is a human-centered AI infrastructure that routes your prompts to different
+      AI providers behind a single ethical and transparent control layer. The goal: AI that helps
+      people – in science, economy, climate and society – instead of creating more chaos.
+    </p>
+  </section>
 
-    <script src="script.js"></script>
+  <!-- SECTION: App Features -->
+  <section class="section section-alt reveal">
+    <h3>CollectivAI App · Key Features</h3>
+    <p class="section-sub">
+      One interface – many AI backends. Focus on decisions and research, not on switching tools.
+    </p>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <h4>Multi-Backend Routing</h4>
+        <p>
+          Plug in different AI providers (e.g. Gemini, GPT, custom APIs) and route each prompt
+          to the best backend based on task, cost and quality.
+        </p>
+      </div>
+      <div class="feature-card">
+        <h4>Ethical & Privacy Layer</h4>
+        <p>
+          Define rules for what data is allowed to leave your ecosystem. Protect sensitive
+          content while still using powerful models.
+        </p>
+      </div>
+      <div class="feature-card">
+        <h4>Unified Interface</h4>
+        <p>
+          One clean UI for research, coding, economics, climate models, security analysis and more –
+          on MacBook, desktop and mobile.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: Principles -->
+  <section class="section reveal">
+    <h3>Core Principles</h3>
+    <ul class="principle-list">
+      <li>Human-Centered & Ethical</li>
+      <li>Democratic Governance</li>
+      <li>Privacy by Design</li>
+      <li>Transparent & Auditable</li>
+      <li>Open-Source Infrastructure</li>
+      <li>Secure & Resilient</li>
+    </ul>
+  </section>
+
+  <!-- SECTION: Architecture -->
+  <section class="section reveal">
+    <h3>Architecture Overview</h3>
+    <p>
+      Behind the app, CollectivAI uses a routing layer that speaks to multiple AI APIs.
+      Your MacBook or iPhone acts as the control panel; the heavy lifting happens on
+      external AI backends, always through your ethical and privacy rules.
+    </p>
+    <img src="architecture/diagrams/architecture.svg" class="diagram" alt="Architecture Diagram">
+  </section>
+
+  <!-- SECTION: Use Cases -->
+  <section class="section reveal">
+    <h3>Use Cases</h3>
+    <ul class="principle-list">
+      <li>Scientific research & analysis</li>
+      <li>Climate & environmental modeling</li>
+      <li>Economic forecasting & risk analysis</li>
+      <li>Healthcare & medical AI workflows</li>
+      <li>Public infrastructure & policy support</li>
+      <li>Ethics & governance simulations</li>
+    </ul>
+  </section>
+
+  <!-- SECTION: Roadmap -->
+  <section class="section reveal">
+    <h3>Roadmap 2025–2030</h3>
+    <div class="roadmap">
+      <div class="roadmap-item"><strong>2025</strong><br>Foundation & App concept</div>
+      <div class="roadmap-item"><strong>2026</strong><br>First CollectivAI App prototypes</div>
+      <div class="roadmap-item"><strong>2027</strong><br>Governance & ethics framework</div>
+      <div class="roadmap-item"><strong>2028</strong><br>Expanded API & node integrations</div>
+      <div class="roadmap-item"><strong>2029</strong><br>Multi-backend model suite</div>
+      <div class="roadmap-item"><strong>2030</strong><br>Sovereign public AI network</div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="fade-in">
+    <p>© 2025 CollectivAI — Human-Centered AI for Humanity</p>
+    <p><a href="mailto:info@collectivai.org">info@collectivai.org</a></p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
