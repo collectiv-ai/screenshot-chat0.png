@@ -1,4 +1,4 @@
-// Body soft fade on load (optional – wirkt smoother)
+// Body soft fade on load
 document.addEventListener("DOMContentLoaded", () => {
     document.body.style.opacity = 1;
 });
@@ -16,7 +16,5 @@ function handleScrollReveal() {
     });
 }
 
-// Initial + Scroll
 window.addEventListener("scroll", handleScrollReveal);
 window.addEventListener("load", handleScrollReveal);
-
