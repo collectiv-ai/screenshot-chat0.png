@@ -6,56 +6,85 @@
 }
 
 body {
-    background: #ffffff;       /* Weiss */
+    background: #ffffff;       /* Weiß */
     color: #000000;            /* Schwarze Schrift */
     font-family: Inter, Arial, sans-serif;
     line-height: 1.7;
+    transition: background 0.4s ease, color 0.4s ease;
 }
 
 /* HERO */
 .hero {
     text-align: center;
-    padding: 100px 20px;
+    padding: 100px 20px 80px;
 }
 
 .logo {
-    width: 380px;
+    width: 300px;
     margin-bottom: 20px;
+    transition: transform 0.4s ease;
+}
+
+.logo:hover {
+    transform: scale(1.03);
 }
 
 h1 {
     font-size: 4rem;
     font-weight: 700;
     margin-bottom: 10px;
-    color: #000;       /* Schwarz */
+    color: #000;
 }
 
 h2 {
     font-size: 1.3rem;
     font-weight: 300;
-    color: #333;       /* Dunkelgrau */
+    color: #333;
     margin-bottom: 30px;
 }
 
 /* BUTTONS */
-.btn {
-    background: #000;      /* Schwarz */
-    color: #fff;           /* Weiß */
-    border: none;
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn,
+.btn-outline {
+    display: inline-block;
     padding: 14px 28px;
     font-size: 1rem;
     margin: 10px;
     text-decoration: none;
-    border-radius: 6px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn {
+    background: #000;
+    color: #fff;
+    border: none;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.2);
 }
 
 .btn-outline {
     border: 2px solid #000;
-    padding: 12px 26px;
-    margin: 10px;
-    text-decoration: none;
     color: #000;
-    border-radius: 6px;
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background: #000;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 /* SECTION */
@@ -88,6 +117,12 @@ h3 {
     width: 70%;
     margin-top: 20px;
     opacity: 0.95;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.diagram:hover {
+    transform: translateY(-3px);
+    opacity: 1;
 }
 
 /* ROADMAP */
@@ -96,15 +131,22 @@ h3 {
     overflow-x: auto;
     gap: 40px;
     justify-content: center;
+    padding-top: 10px;
 }
 
 .roadmap-item {
     background: #f4f4f4;
     padding: 20px;
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 12px;
     min-width: 180px;
     color: #000;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.roadmap-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
 }
 
 /* FOOTER */
@@ -119,4 +161,57 @@ footer {
 footer a {
     color: #000;
     text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* ANIMATIONS */
+
+/* Einfaches Fade-in von oben */
+.fade-in {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 0.9s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scroll-Reveal Basiszustand */
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Wenn sichtbar */
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mobile Optimierung */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.8rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+        padding: 0 10px;
+    }
+
+    .diagram {
+        width: 100%;
+    }
+
+    .roadmap {
+        gap: 20px;
+    }
 }
