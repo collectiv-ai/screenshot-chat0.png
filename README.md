@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/logo.png" width="340"/>
+  <img src="logo.jpeg" width="340"/>
 </p>
 
 <h1 align="center">CollectivAI</h1>
