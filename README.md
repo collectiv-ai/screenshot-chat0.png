@@ -1,85 +1,131 @@
 <p align="center">
-  <img src="logo.jpeg" width="400"/>
+  <img src="docs/logo.png" width="340"/>
 </p>
 
 <h1 align="center">CollectivAI</h1>
-<h3 align="center">Democratic • Ethical • Human-Centered AI for Europe</h3>
+<h3 align="center">Human-Centered · Ethical · Democratic AI Infrastructure</h3>
 
 <p align="center">
-CollectivAI is a sovereign, transparent, and democratic AI ecosystem designed for the European public.<br>
-Its mission is to create AI that strengthens society, protects democracy, improves life, and serves humanity — never the opposite.
+A unified control center for all your AI backends — built for humanity, not for corporations.
 </p>
 
 ---
 
-## 🚀 Mission
+# 🚀 Mission
 
-To build Europe's first **public, democratic and ethical AI infrastructure** —  
-owned by its citizens, aligned with European values, and designed to:
+CollectivAI builds the world’s first **human-centered AI infrastructure**:
 
-- protect democracy  
-- support the economy  
-- stabilize geopolitics  
-- accelerate science and research  
-- safeguard the climate  
-- improve quality of life  
-- preserve human dignity  
+- ethical  
+- privacy-first  
+- transparent  
+- open  
+- democratic  
+- model-agnostic  
+- API-driven  
 
-**AI must uplift people. Not replace them. Not harm them. Not control them.**
+Our principle is simple:
 
----
-
-## 🌍 Human-Centered Ethical AI
-
-CollectivAI is built on the principle that AI must:
-
-### ✔ help humanity  
-### ✔ protect society  
-### ✔ enhance wellbeing  
-### ✔ promote peace  
-### ✔ strengthen democracy  
-### ✔ preserve life & dignity  
-
-It supports:
-
-- climate protection  
-- economic stability  
-- medical research  
-- crisis prevention  
-- social wellbeing  
-- citizen empowerment  
-
-This is AI for the future — **AI for good**.
+> **AI must help humanity — never harm it, never replace it, never control it.**
 
 ---
 
-## 📘 Whitepaper
+# 📱 The CollectivAI App
 
-📄 **Full Markdown Version:**  
-👉 [WHITEPAPER.md](WHITEPAPER.md)
+A clean, unified interface that connects to multiple AI providers:
+
+- Gemini  
+- GPT  
+- Ollama  
+- DeepSeek  
+- Custom APIs  
+- Local models  
+
+**One interface — many models.**
+
+The app handles:
+
+- multi-backend routing  
+- privacy & ethics filters  
+- unified responses  
+- secure key management  
+- workflow automation  
+- macOS + iOS support  
 
 ---
 
-## 🧩 Repository Structure
+# 🧠 Core Principles
+
+- ✔ Ethical & Human-Centered  
+- ✔ Transparent & Auditable  
+- ✔ Privacy by Design  
+- ✔ No Black-Box Manipulation  
+- ✔ Open-Source Infrastructure  
+- ✔ Secure & Resilient  
+- ✔ Built for society — not for profit  
+
+---
+
+# 🏛 Architecture Overview
+
+CollectivAI basiert auf drei Schichten:
+
+### 1. Multi-Backend Routing Layer  
+Intelligentes Routing basierend auf Qualität, Kosten, Kontext & Ethik.
+
+### 2. Ethical & Privacy Layer  
+Filter, Logging, Regelwerke & Schutzmechanismen.
+
+### 3. Human-Alignment OS  
+Regeln für Fairness, Sicherheit, Logik & demokratische Werte.
+
+📄 *Architecture Diagram:*  
+`docs/architecture.svg`
+
+---
+
+# 🌍 Use Cases
+
+- Wissenschaft & Forschung  
+- Klimamodellierung & Umwelt  
+- Wirtschaft & Geopolitik  
+- Gesundheitswesen & Medizin  
+- Infrastruktur & Smart Cities  
+- Demokratie & Governance  
+- Bildung & Kultur  
+- Krisenmanagement  
+
+---
+
+# 📘 Whitepaper
+
+📄 **Full PDF:**  
+👉 `docs/CollectivAI_Whitepaper_Full.pdf`
+
+📄 **Markdown Version:**  
+👉 [`WHITEPAPER.md`](WHITEPAPER.md)
+
+---
+
+# 🗂 Repository Structure
 
 ```text
 collectivai/
-├── README.md                # Projektübersicht
-├── WHITEPAPER.md            # Whitepaper als Markdown
-├── LICENSE                  # Lizenz (z.B. MIT)
+├── README.md
+├── WHITEPAPER.md
+├── LICENSE
 │
 ├── docs/
 │   ├── CollectivAI_Whitepaper_Full.pdf
-│   └── logo.png
+│   ├── logo.png
+│   ├── architecture.svg
+│   └── ethics-layer.svg
 │
 ├── architecture/
 │   ├── system-architecture.md
-│   ├── node-network.md
+│   ├── routing-engine.md
 │   ├── security-model.md
 │   └── diagrams/
-│       ├── architecture.svg
-│       ├── governance.svg
-│       └── nodes.svg
+│       └── *.svg
 │
 ├── governance/
 │   ├── governance-model.md
@@ -91,13 +137,6 @@ collectivai/
 │   ├── roadmap-2025-2030.md
 │   ├── milestones.md
 │   └── releases.md
-│
-├── branding/
-│   ├── logo.png
-│   ├── typography.md
-│   ├── colors.md
-│   └── press-kit/
-│       └── CollectivAI-PressPack.zip
 │
 └── contributing/
     ├── CONTRIBUTING.md
