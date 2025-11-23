@@ -3,144 +3,148 @@
 </p>
 
 <h1 align="center">CollectivAI</h1>
-<h3 align="center">Human-Centered · Ethical · Democratic AI Infrastructure</h3>
+<h3 align="center">Human-Centered · Ethical · Transparent AI for Humanity</h3>
 
 <p align="center">
-A unified control center for all your AI backends — built for humanity, not for corporations.
+CollectivAI is a public, human-centered initiative to ensure that artificial intelligence serves society — not the other way around.
 </p>
 
 ---
 
-# 🚀 Mission
+# 🌍 Why CollectivAI?
 
-CollectivAI builds the world’s first **human-centered AI infrastructure**:
+We are entering an age in which artificial intelligence will influence:
 
-- ethical  
-- privacy-first  
-- transparent  
-- open  
-- democratic  
-- model-agnostic  
-- API-driven  
+- how we work  
+- how we learn  
+- how we communicate  
+- how we make decisions as a society  
 
-Our principle is simple:
+But today, most AI is controlled by **a small number of corporations**, often behind closed doors, without transparency, accountability or democratic involvement.
 
-> **AI must help humanity — never harm it, never replace it, never control it.**
+This creates a dangerous imbalance.
 
----
+CollectivAI exists to provide a clear alternative:
 
-# 📱 The CollectivAI App
+### **A world where intelligence is shared, not controlled.**  
+### **A world where AI protects people, not power structures.**  
+### **A world where ethics come before profit.**
 
-A clean, unified interface that connects to multiple AI providers:
+Our mission is simple:
 
-- Gemini  
-- GPT  
-- Ollama  
-- DeepSeek  
-- Custom APIs  
-- Local models  
-
-**One interface — many models.**
-
-The app handles:
-
-- multi-backend routing  
-- privacy & ethics filters  
-- unified responses  
-- secure key management  
-- workflow automation  
-- macOS + iOS support  
+> **AI must remain a tool for humanity — never a weapon, never a mechanism of control, never a force of inequality.**
 
 ---
 
-# 🧠 Core Principles
+# 🧭 Our Principles
 
-- ✔ Ethical & Human-Centered  
-- ✔ Transparent & Auditable  
-- ✔ Privacy by Design  
-- ✔ No Black-Box Manipulation  
-- ✔ Open-Source Infrastructure  
-- ✔ Secure & Resilient  
-- ✔ Built for society — not for profit  
+CollectivAI is built on seven core values:
 
----
+### 1. **Human Dignity First**  
+AI must always respect the inherent worth of every person.
 
-# 🏛 Architecture Overview
+### 2. **Ethics by Design**  
+We embed ethical safeguards into every layer of the system.
 
-CollectivAI basiert auf drei Schichten:
+### 3. **Privacy as a Right**  
+CollectivAI never exploits or sells user data — privacy is a fundamental human right.
 
-### 1. Multi-Backend Routing Layer  
-Intelligentes Routing basierend auf Qualität, Kosten, Kontext & Ethik.
+### 4. **Transparency and Honesty**  
+No dark patterns, no hidden algorithms, no manipulation.
 
-### 2. Ethical & Privacy Layer  
-Filter, Logging, Regelwerke & Schutzmechanismen.
+### 5. **Fairness and Inclusivity**  
+AI must reduce inequality, not amplify it.
 
-### 3. Human-Alignment OS  
-Regeln für Fairness, Sicherheit, Logik & demokratische Werte.
+### 6. **Democratic Governance**  
+The direction of CollectivAI is shaped by people — not corporations.
 
-📄 *Architecture Diagram:*  
-`docs/architecture.svg`
+### 7. **Accessible Intelligence**  
+Every human deserves access to safe, transparent and empowering AI tools.
 
 ---
 
-# 🌍 Use Cases
+# 📱 The CollectivAI App (Coming Soon)
 
-- Wissenschaft & Forschung  
-- Klimamodellierung & Umwelt  
-- Wirtschaft & Geopolitik  
-- Gesundheitswesen & Medizin  
-- Infrastruktur & Smart Cities  
-- Demokratie & Governance  
-- Bildung & Kultur  
-- Krisenmanagement  
+The CollectivAI App is designed as a **safe and ethical gateway** to the world of AI.
+
+A single place where you can:
+
+- access different models (Gemini, GPT, Claude, Ollama, and more)  
+- protect your privacy  
+- apply ethical filters  
+- keep full control over your data  
+- run AI locally or via APIs  
+- create human-centered workflows  
+
+The app is not about speed or profit.  
+It is about **trust, clarity, and empowerment**.
+
+---
+
+# 🧠 What Makes CollectivAI Unique?
+
+### ✔ No token  
+### ✔ No blockchain  
+### ✔ No speculation  
+### ✔ No corporate ownership  
+### ✔ No data harvesting  
+### ✔ No exploitation  
+
+CollectivAI is not a financial system.  
+It is a **public good** — an ethical alternative to corporate AI.
 
 ---
 
 # 📘 Whitepaper
 
-📄 **Full PDF:**  
-👉 `docs/CollectivAI_Whitepaper_Full.pdf`
+To understand the full humanistic and philosophical foundation behind CollectivAI, see:
 
-📄 **Markdown Version:**  
-👉 [`WHITEPAPER.md`](WHITEPAPER.md)
+📄 **Full Whitepaper (PDF)**  
+`docs/CollectivAI_Whitepaper_Full.pdf`
+
+📄 **Markdown Version**  
+[`WHITEPAPER.md`](WHITEPAPER.md)
 
 ---
 
-# 🗂 Repository Structure
+# 🌱 Vision
 
-```text
-collectivai/
-├── README.md
-├── WHITEPAPER.md
-├── LICENSE
-│
-├── docs/
-│   ├── CollectivAI_Whitepaper_Full.pdf
-│   ├── logo.png
-│   ├── architecture.svg
-│   └── ethics-layer.svg
-│
-├── architecture/
-│   ├── system-architecture.md
-│   ├── routing-engine.md
-│   ├── security-model.md
-│   └── diagrams/
-│       └── *.svg
-│
-├── governance/
-│   ├── governance-model.md
-│   ├── voting-process.md
-│   ├── roles.md
-│   └── constitution.md
-│
-├── roadmap/
-│   ├── roadmap-2025-2030.md
-│   ├── milestones.md
-│   └── releases.md
-│
-└── contributing/
-    ├── CONTRIBUTING.md
-    ├── CODE_OF_CONDUCT.md
-    └── issue_templates/
-        ├── bug_report.md
-        └── feature_request.md
+We imagine a future in which:
+
+- AI enhances human creativity  
+- AI supports scientific discovery  
+- AI protects democracy  
+- AI reduces suffering  
+- AI helps stabilize economies  
+- AI improves global well-being  
+- AI strengthens communities  
+- AI respects life and the planet  
+
+Technology does not define our destiny —  
+**our values do.**
+
+CollectivAI stands for a world where humanity remains at the center of intelligence.
+
+---
+
+# 🤝 Join the Mission
+
+CollectivAI is open to all people:
+
+- thinkers  
+- creators  
+- ethicists  
+- researchers  
+- citizens  
+- dreamers  
+
+You can contribute through ideas, discussions, research or development.
+
+👉 See: `contributing/CONTRIBUTING.md`  
+👉 Contact: **info@collectivai.org**
+
+---
+
+<p align="center">
+  <strong>CollectivAI — An AI future shaped by people, for people.</strong>
+</p>
