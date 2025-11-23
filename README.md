@@ -140,7 +140,7 @@ CollectivAI is open to all people:
 
 You can contribute through ideas, discussions, research or development.
 
-👉 See: `contributing/CONTRIBUTING.md`  
+👉 See: **www.collectivai.org**
 👉 Contact: **info@collectivai.org**
 
 ---
