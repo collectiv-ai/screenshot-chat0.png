@@ -10,8 +10,13 @@ body {
     color: #000000;
     font-family: Inter, Arial, sans-serif;
     line-height: 1.7;
-    transition: background 0.4s ease, color 0.4s ease;
-    opacity: 0; /* für Fade-in, wird in script.js auf 1 gesetzt */
+    transition: background 0.4s ease, color 0.4s ease, opacity 0.6s ease-out;
+    opacity: 0;
+}
+
+/* Wird durch JS gesetzt, um den Fade-in zu starten */
+body.ready {
+    opacity: 1;
 }
 
 /* HERO */
@@ -281,6 +286,17 @@ h3 {
     color: #444;
 }
 
+/* Mission list (falls du extra Styling brauchst) */
+.mission-list {
+    list-style: none;
+    margin-top: 16px;
+}
+
+.mission-list li {
+    margin: 8px 0;
+    color: #444;
+}
+
 /* FEATURES GRID */
 .features-grid {
     display: flex;
@@ -317,7 +333,7 @@ h3 {
     box-shadow: 0 16px 34px rgba(0,0,0,0.09);
 }
 
-/* DIAGRAM */
+/* DIAGRAM (falls eingebunden) */
 .diagram {
     width: 70%;
     margin-top: 20px;
@@ -436,7 +452,7 @@ footer a:hover {
     }
 
     .hero-text {
-        align-items: center;
+        text-align: center;
     }
 
     .hero-buttons {
@@ -466,5 +482,12 @@ footer a:hover {
 
     .roadmap {
         gap: 20px;
+    }
+}
+
+/* Logo auf sehr kleinen Screens etwas kleiner */
+@media (max-width: 600px) {
+    .logo {
+        width: 260px;
     }
 }
