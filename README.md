@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="logo.png" width="340"/>
+  <img src="logo.png" width="400"/>
 </p>
 
 <h1 align="center">CollectiVAI</h1>
