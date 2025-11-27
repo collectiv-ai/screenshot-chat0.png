@@ -6,12 +6,12 @@
 <h3 align="center">Human-Centered · Ethical · Transparent AI for Humanity</h3>
 
 <p align="center">
-CollectivAI is a public, human-centered initiative to ensure that artificial intelligence serves society — not the other way around.
+CollectiVAI is a public, human-centered initiative to ensure that artificial intelligence serves society — not the other way around.
 </p>
 
 ---
 
-# 🌍 Why CollectivAI?
+# 🌍 Why CollectiVAI?
 
 We are entering an age in which artificial intelligence will influence:
 
@@ -38,7 +38,7 @@ Our mission is simple:
 
 # 🧭 Our Principles
 
-CollectivAI is built on seven core values:
+CollectiVAI is built on seven core values:
 
 ### 1. **Human Dignity First**  
 AI must always respect the inherent worth of every person.
@@ -65,7 +65,7 @@ Every human deserves access to safe, transparent and empowering AI tools.
 
 # 📱 The CollectivAI App (Coming Soon)
 
-The CollectivAI App is designed as a **safe and ethical gateway** to the world of AI.
+The CollectiVAI App is designed as a **safe and ethical gateway** to the world of AI.
 
 A single place where you can:
 
@@ -81,7 +81,7 @@ It is about **trust, clarity, and empowerment**.
 
 ---
 
-# 🧠 What Makes CollectivAI Unique?
+# 🧠 What Makes CollectiVAI Unique?
 
 ### ✔ No token  
 ### ✔ No blockchain  
@@ -97,7 +97,7 @@ It is a **public good** — an ethical alternative to corporate AI.
 
 # 📘 Whitepaper
 
-To understand the full humanistic and philosophical foundation behind CollectivAI, see:
+To understand the full humanistic and philosophical foundation behind CollectiVAI, see:
 
 📄 **Full Whitepaper (PDF)**  
 `docs/CollectivAI_Whitepaper_Full.pdf`
@@ -123,7 +123,7 @@ We imagine a future in which:
 Technology does not define our destiny —  
 **our values do.**
 
-CollectivAI stands for a world where humanity remains at the center of intelligence.
+CollectiVAI stands for a world where humanity remains at the center of intelligence.
 
 ---
 
