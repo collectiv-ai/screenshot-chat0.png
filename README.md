@@ -162,6 +162,13 @@ The public, non-confidential CollectivAI Business Plan is available here:
 
 ---
 
+## Branding
+
+The CollectiVAI name and logo are protected.  
+For details, see the `branding/README.md` file in this repository.
+
+---
+
 <p align="center">
   <strong>CollectivAI — An AI future shaped by people, for people.</strong>
 </p>
