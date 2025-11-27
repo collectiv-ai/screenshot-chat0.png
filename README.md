@@ -143,13 +143,23 @@ You can contribute through ideas, discussions, research or development.
 **Website:** https://collectivai.org  
 **GitHub:** https://github.com/collectiv-ai  
 **Email:** info@collectivai.org
+
 ---
 
 ### 🔗 Related Repositories
 
 - 🌐 Main website & public docs: [collectiv-ai.github.io](https://github.com/collectiv-ai/collectiv-ai.github.io)
 - 👤 Founder profile & lab: [collectiv-ai-about-founder](https://github.com/collectiv-ai/collectiv-ai-about-founder)
-- 🤝 Sponsors & partners: [collectiv-ai-sponsors](https://github.com/collectiv-ai/collectiv-ai-sponsors)
+- 🤝 Sponsors & partners: [collectiv-ai-sponsors](https://github.com/collectiv-ai/collectiv-ai-sponsors
+
+---
+
+## 📄 Public Business Plan & Strategy
+
+The public, non-confidential CollectivAI Business Plan is available here:
+
+➡️ [BUSINESS_PLAN_PUBLIC.md](docs/BUSINESS_PLAN_PUBLIC.md)
+
 ---
 
 <p align="center">
