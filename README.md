@@ -2,7 +2,7 @@
   <img src="logo.png" width="340"/>
 </p>
 
-<h1 align="center">CollectivAI</h1>
+<h1 align="center">CollectiVAI</h1>
 <h3 align="center">Human-Centered · Ethical · Transparent AI for Humanity</h3>
 
 <p align="center">
