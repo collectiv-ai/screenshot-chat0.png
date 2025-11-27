@@ -142,8 +142,14 @@ You can contribute through ideas, discussions, research or development.
 
 **Website:** https://collectivai.org  
 **GitHub:** https://github.com/collectiv-ai  
-**Email:** info@collectivai.org  
+**Email:** info@collectivai.org
+---
 
+### 🔗 Related Repositories
+
+- 🌐 Main website & public docs: [collectiv-ai.github.io](https://github.com/collectiv-ai/collectiv-ai.github.io)
+- 👤 Founder profile & lab: [collectiv-ai-about-founder](https://github.com/collectiv-ai/collectiv-ai-about-founder)
+- 🤝 Sponsors & partners: [collectiv-ai-sponsors](https://github.com/collectiv-ai/collectiv-ai-sponsors)
 ---
 
 <p align="center">
