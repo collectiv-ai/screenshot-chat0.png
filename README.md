@@ -24,7 +24,7 @@ But today, most AI is controlled by **a small number of corporations**, often be
 
 This creates a dangerous imbalance.
 
-CollectivAI exists to provide a clear alternative:
+CollectiVAI exists to provide a clear alternative:
 
 ### **A world where intelligence is shared, not controlled.**  
 ### **A world where AI protects people, not power structures.**  
@@ -63,7 +63,7 @@ Every human deserves access to safe, transparent and empowering AI tools.
 
 ---
 
-# 📱 The CollectivAI App (Coming Soon)
+# 📱 The CollectiVAI App (Coming Soon)
 
 The CollectiVAI App is designed as a **safe and ethical gateway** to the world of AI.
 
@@ -90,7 +90,7 @@ It is about **trust, clarity, and empowerment**.
 ### ✔ No data harvesting  
 ### ✔ No exploitation  
 
-CollectivAI is not a financial system.  
+CollectiVAI is not a financial system.  
 It is a **public good** — an ethical alternative to corporate AI.
 
 ---
@@ -129,7 +129,7 @@ CollectiVAI stands for a world where humanity remains at the center of intellige
 
 # 🤝 Join the Mission
 
-CollectivAI is open to all people:
+CollectiVAI is open to all people:
 
 - thinkers  
 - creators  
