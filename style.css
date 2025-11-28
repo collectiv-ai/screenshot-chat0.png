@@ -91,7 +91,7 @@ h2 {
 .hero-sub {
     color: #444;
     margin-bottom: 26px;
-    max-width: 480px;
+    max-width: 520px;
 }
 
 .hero-tagline {
@@ -195,6 +195,13 @@ h2 {
     margin-bottom: 16px;
 }
 
+/* Icon in der Pill – wie in der App */
+.pill-icon {
+    margin-right: 6px;
+    font-size: 0.85rem;
+    vertical-align: -1px;
+}
+
 .pill {
     padding: 5px 12px;
     border-radius: 999px;
@@ -202,6 +209,9 @@ h2 {
     font-size: 0.78rem;
     color: #555;
     background: #fff;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
 }
 
 .pill.active {
@@ -273,6 +283,17 @@ h3 {
     font-size: 2rem;
     margin-bottom: 20px;
     color: #000;
+}
+
+/* Provider-Row (unter "The CollectiVAI App") */
+.providers-row {
+    margin-bottom: 22px;
+    color: #222;
+    font-size: 0.95rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
 }
 
 /* LISTS */
