@@ -10,399 +10,364 @@
 
 ## 🧭 Introduction
 
-CollectiVAI is an independent, democratic and human-centred AI ecosystem  
-with a clear focus on **Europe**.
+CollectiVAI is an independent, democratic and human-centred AI project  
+with a strong **European focus**.
 
-In a world where a handful of corporations control access to large-scale intelligence,
+Where today’s AI landscape is dominated by large, closed platforms,  
 CollectiVAI explores a different path:
 
-> **AI must strengthen democracy and human dignity – not undermine them.**
+> **AI as public infrastructure – not just a product.**
 
-The project aims to build **public, transparent and accountable AI infrastructure**  
-that can be used by **cities, universities, NGOs, citizens and public institutions**.
-
-This whitepaper describes:
-
-- the **vision** behind CollectiVAI  
-- the **architecture** (App, Chain, Router)  
-- the **ethical and governance principles**  
-- the **roadmap** for the coming years  
-
-CollectiVAI is not just another chatbot.  
-It is a **democratic AI layer** designed to sit between powerful models and society.
+The goal is to build an open, transparent and accountable ecosystem where  
+citizens, experts and institutions can use AI to understand policies,  
+participate in decisions and design better governance.
 
 ---
 
 ## ⚡ Executive Summary
 
-CollectiVAI connects multiple AI models and backends (e.g. GPT, Gemini, Mistral, LLaMA, local models via Ollama, custom APIs) into a **unified, privacy-aware routing system**.
+CollectiVAI consists of three main building blocks:
 
-On top of that, it adds:
+1. **CollectiVAI App** – a democratic AI companion for  
+   iOS / iPadOS / macOS, helping people understand proposals, policies and civic projects.
 
-- **democratic governance concepts** (roles, proposals, votes)
-- **transparent AI routing** (which model, which provider, why)
-- **human-centred safety layer** (ethics, privacy, dignity)
-- **European focus** (policy, democracy, climate, society)
-- a long-term plan for a **Cosmos-based App-Chain** dedicated to civic governance
+2. **CollectiVAI Chain** – a planned **Cosmos-based App-Chain**  
+   for transparent governance, proposals, votes and public treasury flows.
 
-The ecosystem currently consists of:
+3. **CollectiVAI Router & Governance Backend** –  
+   a multi-provider AI routing layer that connects different models (OpenAI, Gemini, Mistral, Meta, DeepSeek and eventually local models)  
+   with **safety, ethics and democratic governance** on top.
 
-1. **CollectiVAI App**  
-   iOS / iPadOS / macOS client for democratic AI use cases.
+Together, these components form a **democratic AI infrastructure**:
 
-2. **CollectiVAI Chain (planned)**  
-   Cosmos-based App-Chain for governance, voting and public transparency.
-
-3. **Website & public docs**  
-   `collectivai.org` as the entry point for citizens, institutions and partners.
+- focused on **Europe** and public interest,  
+- designed for **cities, universities, NGOs and civic tech projects**,  
+- built around **human dignity, transparency and accountability**.
 
 ---
 
 ## 🌍 Why CollectiVAI Matters
 
-Artificial Intelligence is becoming a core layer of modern infrastructure – similar to energy grids, transport or the internet.
+AI is rapidly becoming a core layer of digital infrastructure.  
+Today, this layer is mostly:
 
-Today, however, AI is often:
-
-- **centralised** (few companies control the stack)  
-- **opaque** (little insight into decisions and models)  
-- **profit-driven** (optimised for engagement or revenue)  
-- **weakly aligned** with democratic and humanistic values  
+- **centralised** – controlled by a few global companies,  
+- **opaque** – models and decisions are hard to audit,  
+- **attention & profit driven** – optimised for engagement, not democracy,  
+- **weakly governed** – unclear responsibilities and safety standards.
 
 This creates risks for:
 
-- democratic processes and public trust  
-- information integrity and polarisation  
-- long-term economic and social stability  
-- privacy, autonomy and fundamental rights  
-- scientific and civic independence  
+- democratic processes and public trust,  
+- social cohesion and polarisation,  
+- economic inequality and dependency,  
+- privacy, human rights and security,  
+- scientific independence and public-interest research.
 
-CollectiVAI aims at the opposite:
+CollectiVAI explores the opposite direction:
 
-> **Open, auditable and human-aligned AI – treated as civic infrastructure, not just a product.**
-
-Especially in Europe, with strong traditions around:
-
-- **human rights**  
-- **data protection (GDPR)**  
-- **democratic institutions**  
-
-…there is a unique opportunity to define a different AI path.
+### **Open, auditable and democratic AI – made in Europe, serving people in Europe.**
 
 ---
 
-# 🔎 Vision
+## 🎯 Vision
 
-CollectiVAI’s long-term vision is to build a **public AI infrastructure for democracy and society**.
+CollectiVAI’s long-term vision is to act as a **public civic AI layer**:
 
-This infrastructure should:
-
-- empower citizens to **understand** complex issues  
-- support institutions in **transparent decision-making**  
-- strengthen **cities, schools, universities and NGOs**  
-- support **climate protection, social cohesion and public goods**  
-- preserve **human dignity, autonomy and fundamental rights**  
-
-It is not about replacing human judgment –  
-but about giving people **better tools** to reason, deliberate and decide.
-
----
-
-# 🧱 High-Level System Overview
-
-CollectiVAI is designed around three main components:
-
-1. **CollectiVAI App (Client)**  
-2. **CollectiVAI Router (Backend)**  
-3. **CollectiVAI Chain (App-Chain, planned)**  
-
-These pieces are modular and can evolve independently.
-
----
-
-## 1. 📱 CollectiVAI App – Democratic AI Client
-
-The **CollectiVAI App** is the primary front-end for:
-
-- citizens  
-- experts and researchers  
-- cities, universities, NGOs, civic tech teams  
-
-Platforms:
-
-- iOS  
-- iPadOS  
-- macOS (SwiftUI)
-
-Core ideas:
-
-- **Chat interface** for democracy, climate, economy, security, research, health  
-- **Modes** (Ethical · Research · Technical) that adapt routing and tone  
-- **Providers** (Auto, OpenAI, Gemini, Mistral, Meta, DeepSeek, local models later)  
-- **Topics** (Democracy, Climate, Economy, Security, Research, Health) as first-class filters  
-
-Key functional areas (current prototype):
-
-1. **Chat** – AI explanations, Q&A, pro/con analysis  
-2. **Contracts** – human-readable civic applications (cities, universities, NGOs, schools, startups)  
-3. **Chain (Dashboard)** – concept view of on-chain governance (no live chain yet)  
-4. **Settings & Info** – routing profiles, privacy preferences, information about the project  
-
-The goal is to make complex topics **understandable and navigable** – for real people.
-
----
-
-## 2. ⚙️ CollectiVAI Router – Multi-Backend AI Layer
-
-The **Router** is a backend component (separate repository / service) that:
-
-- receives requests from the app  
-- selects a suitable **provider + model**  
-- applies **ethical and safety filters**  
-- returns a transparent, annotated response (with routing meta)
+- empowering **citizens** to understand complex topics,  
+- supporting **experts** in analysis and communication,  
+- helping **institutions** design transparent, inclusive participation,  
+- enabling **cities, regions and the EU** to run AI-assisted governance  
+  under democratic rules.
 
 Key design principles:
 
-- **Backend-agnostic**: GPT, Gemini, Mistral, LLaMA, local models, custom APIs  
-- **Context-aware**: chooses models based on topic, mode, cost, privacy needs  
-- **Transparent**: exposes routing decisions back to the client (e.g. “Used GPT-4.1 for legal reasoning”)  
-- **Extendable**: new providers and models can be plugged in  
-
-Routing can be influenced by:
-
-- **Mode** (Ethical / Research / Technical)  
-- **Topic** (Democracy, Climate, etc.)  
-- **Routing profile** (Balanced / Research-heavy / Code & Security)  
-- **Safety policies** (e.g. stricter filters for vulnerable topics)  
+- **Human dignity first** – people are never reduced to data points.  
+- **Democracy by design** – participation, fairness and accountability are core.  
+- **Safety & robustness** – guardrails for high-impact decisions.  
+- **European perspective** – aligned with EU values, rights and standards.  
+- **Open contribution** – code, ideas and methods are open to review.
 
 ---
 
-## 3. ⛓ CollectiVAI Chain – Civic App-Chain (Planned)
+## 🧱 System Overview
 
-The **CollectiVAI Chain** is a planned **Cosmos-based App-Chain** dedicated to:
+At a high level, CollectiVAI is built around three pillars:
 
-- on-chain proposals  
-- on-chain votes  
-- treasury allocations  
-- roles, spaces and governance parameters  
+1. **Client Layer – CollectiVAI App**  
+   - AI companion & civic client for iOS / iPadOS / macOS  
+   - Chat, civic application drafts, chain dashboard, settings & transparency views  
 
-The chain’s role:
+2. **Governance Chain – CollectiVAI Chain (planned)**  
+   - Cosmos-based App-Chain for governance, proposals, votes and treasury  
+   - On-chain roles, parameters and long-term auditability  
 
-- serve as a **neutral ledger** for democratic decisions  
-- keep a public **record** of proposals, votes, changes and funds  
-- separate **infrastructure** (validators, consensus, governance logic)  
-  from **clients** (apps, dashboards, civic portals)
+3. **AI Routing & Safety Backend (planned)**  
+   - Multi-provider router (OpenAI, Gemini, Mistral, Meta, DeepSeek, local models)  
+   - Safety, ethics & policy layer  
+   - Logging, meta-signals and transparency dashboards
 
-Initial design concepts:
-
-- **Spaces** (e.g. city, university, programme, NGO coalition)  
-- **Roles & identities** (citizen, expert, institution, moderator)  
-- **Proposals & votes** (configurable quorums, time windows, thresholds)  
-- **Treasury modules** (transparent funds and allocations)  
-
-In early stages, everything is **simulated** in the app.  
-Later phases will connect to devnet / testnet networks while preserving  
-a strong focus on **human readability and real-world use**.
+The prototype focuses first on the **App**, while Chain and advanced backend  
+are developed gradually.
 
 ---
 
-# 🛡 Ethical & Governance Layer
+## ⚙️ AI Routing Layer
 
-CollectiVAI is built on explicit, non-negotiable principles.
+The CollectiVAI router is designed to act as a **neutral intelligence switchboard**.
 
-### Seven core values
+### Multi-provider routing
 
-1. **Human Priority**  
-   Humans remain the final decision-makers. AI provides analysis and options, not commands.
+Requests can be sent to different AI providers and models, for example:
 
-2. **Democratic Alignment**  
-   AI should strengthen democratic institutions, not weaken them.
+- OpenAI (e.g. GPT-4.x, GPT-4o)  
+- Google Gemini (e.g. Gemini 2.0 Pro / Flash)  
+- Mistral models (e.g. Mistral Large)  
+- Meta Llama Family  
+- DeepSeek models  
+- later: local models (e.g. via Ollama) or research systems
 
-3. **Privacy by Design**  
-   Data minimisation, clear data paths, no surveillance or dark patterns.
+The routing engine considers:
 
-4. **Transparency & Auditability**  
-   Which model was used? Which provider? Under which conditions?  
-   CollectiVAI aims to make these questions answerable.
+- **Mode** – Ethical · Research · Technical  
+- **Topic** – Democracy, climate, economy, security, research, health  
+- **Context** – complexity, sensitivity, required depth  
+- **Cost & latency** – efficiency for large-scale civic usage  
+- **Safety signals** – content risk, ambiguity, potential misuse
 
-5. **Accountability**  
-   Clear separation between infrastructure, operators and users;  
-   transparent governance processes as the project evolves.
+Instead of relying on a single “black box” model, CollectiVAI can:
 
-6. **Bias Reduction**  
-   Continuous work on identifying, measuring and mitigating biases  
-   in both models and data, where technically and organisationally possible.
-
-7. **Security & Safety**  
-   Protection against misuse, manipulation, adversarial attacks and systemic risks.
-
-Ethics are not a marketing layer.  
-They shape **architecture**, **governance** and **feature roadmap**.
+- select suitable models for **analysis**, **explanation**, **coding** or **data work**,  
+- adapt routing strategies for different **user roles** and **use cases**.
 
 ---
 
-# 🌐 Use Cases
+## 🛡 Safety & Ethics Layer
 
-CollectiVAI targets **concrete, civic use cases** rather than abstract benchmarks.
+Above the raw models, CollectiVAI introduces a dedicated **Safety & Ethics layer**:
 
-### 1. Cities & Regions
+- **Policy filters** – democratic, human-rights-oriented guardrails  
+- **Risk scoring** – identify potentially harmful or highly sensitive queries  
+- **Bias & fairness checks** – configurable for context and region  
+- **Traceable decisions** – explain how routing or safety decisions were made  
+- **Opt-in logging** – allow public institutions to keep audit logs for high-stakes use
 
-- climate budgets  
-- citizen councils and participatory budgeting  
-- urban planning consultations  
-- local digital democracy initiatives  
-
-### 2. Universities & Research
-
-- climate & energy labs  
-- AI governance and digital society research  
-- citizen science projects  
-- public-interest innovation labs  
-
-### 3. Schools & Education
-
-- democracy and media literacy projects  
-- youth participation formats  
-- model classrooms for AI & civic tech  
-
-### 4. NGOs & Civil Society
-
-- campaign planning and analysis  
-- fact-checking and counter-disinformation  
-- coalition building and common positions  
-
-### 5. Startups & CivicTech
-
-- pilots that combine public institutions with civic technology  
-- experiments around new voting, funding or participation models  
-
-The common denominator:
-
-> **AI as an enabler for democratic participation – not as a black box.**
+The goal is not to guarantee “perfect” ethics,  
+but to make **assumptions explicit**, **rules transparent**  
+and **behaviour auditable**.
 
 ---
 
-# 🧩 Ecosystem & Hardware
+## 🧩 Governance & Roles (Concept)
 
-CollectiVAI is designed to run on **real hardware people already use**:
+Over time, the CollectiVAI ecosystem can distinguish between:
 
-- personal devices (iPhone, iPad, Mac)  
-- local servers or nodes (e.g. Linux servers, single-board computers)  
-- optional hybrid setups (local + cloud backends, devnets/testnets)
+- **Citizens** – use the app to understand, comment and (later) vote.  
+- **Experts** – contribute analysis, review AI output, highlight blind spots.  
+- **Institutions** – set up spaces (cities, universities, NGOs, EU projects).  
+- **Maintainers & Validators** – operate and secure the CollectiVAI Chain.
 
-Long-term ideas:
+Possible governance features (mid- to long-term):
 
-- **personal intelligence nodes** that run parts of the stack locally  
-- **privacy-preserving routing** where sensitive data never leaves a controlled environment  
-- low-energy, sustainable infrastructure choices where possible  
-
----
-
-# 🛠 For Developers & Partners
-
-CollectiVAI is meant to be **open to contributions** and collaboration.
-
-Planned and existing building blocks:
-
-- SwiftUI app clients (iOS / iPadOS / macOS)  
-- backend router (HTTP/JSON API)  
-- modular AI provider connectors  
-- future Cosmos chain modules (Go / CosmWasm)  
-- documentation and governance drafts on GitHub  
-- public business plan and funding logic  
-
-Potential collaborators:
-
-- civic tech groups  
-- research labs  
-- universities and think tanks  
-- cities and public innovation teams  
-- EU-level and regional programmes  
+- proposal templates for different programmes (city budgets, EU funds, grants),  
+- public discussion and expert annotations,  
+- reputational badges for constructive, transparent contributions,  
+- on-chain parameters (quorums, voting periods, privacy levels),  
+- transparent record of how AI was used in each decision process.
 
 ---
 
-# 📈 Roadmap 2025–2030 (High-Level)
+## 📱 The CollectiVAI App (Alpha Prototype)
 
-### **2025 – Foundation**
+The **CollectiVAI App** is the main client for people and institutions.
 
-- Alpha versions of the CollectiVAI App (chat, contracts, chain dashboard)  
-- Public website and documentation at `collectivai.org`  
-- First router prototypes (multi-provider, ethics layer v1)  
-- Whitepaper v1.1 and public business documents  
+Current prototype (Alpha) – main areas:
 
-### **2026 – Prototypes & Pilots**
+1. **Chat**  
+   - AI chat focused on democracy, climate, economy, security, research, health.  
+   - Mode selection: **Ethical · Research · Technical**.  
+   - Provider selection: **Auto, OpenAI, Gemini, Mistral, Meta, DeepSeek**.  
+   - Optional developer view with routing meta (model used, latency, filters).
 
-- Beta versions of the app for **off-chain** use (simulated governance flows)  
-- pilots with cities, universities or NGOs (analysis + participation)  
-- refinement of routing, safety and transparency features  
+2. **Contracts** – *Civic Application Hub*  
+   - Draft applications for universities, schools, NGOs, cities, startups, custom.  
+   - 3-step wizard:
+     - basics (organisation, country, title),  
+     - content & impact (summary, impact, target groups),  
+     - budget & duration (amount, currency, duration, status).  
+   - All content stays **human-readable**, can later be mirrored to on-chain proposals.
 
-### **2027 – Chain Devnet & Governance Drafts**
+3. **Chain** – *Conceptual Civic Dashboard*  
+   - Not yet connected to a live chain.  
+   - Shows how applications could appear later as:
+     - on-chain proposals,  
+     - votes,  
+     - public treasury allocations.  
 
-- first CollectiVAI Chain devnets / testnets  
-- experimental on-chain proposals and voting in controlled pilots  
-- iterative governance model drafts with real stakeholders  
+4. **Settings & Info**  
+   - Default mode / provider / topic,  
+   - routing profiles (Balanced, Research-heavy, Code & Security),  
+   - text size, haptics, developer options, basic privacy preferences,  
+   - “About” screen explaining how routing and safety work.
 
-### **2028 – Ecosystem Growth**
-
-- more local nodes and routers  
-- richer client apps (spaces, roles, badges, reputations)  
-- integrations with external civic platforms (where appropriate)  
-
-### **2029–2030 – Mature Civic Infrastructure**
-
-- stabilised CollectiVAI Chain and app clients  
-- clear governance, funding and sustainability models  
-- multi-lingual support across Europe  
-- usable tools for citizens, institutions and civil society at scale  
-
-The roadmap is intentionally **flexible** – it will evolve  
-together with partners, pilots and real-world experience.
+The app is built in **SwiftUI** for iOS / iPadOS / macOS.
 
 ---
 
-# 🌱 Humanism as the Foundation
+## 🌐 CollectiVAI Chain (Planned)
 
-At its core, CollectiVAI is built on a simple conviction:
+The **CollectiVAI Chain** is conceived as a **Cosmos-based App-Chain**  
+for democratic governance:
 
-> **AI must serve people, democracy and life – not the other way around.**
+- on-chain proposals and votes,  
+- roles and delegations,  
+- public treasuries and funding allocations,  
+- long-term audit log for democratic decisions.
 
-Therefore, CollectiVAI aims to be:
+Key properties:
 
-- independent  
-- transparent  
-- non-exploitative  
-- focused on public interest  
-- open to scrutiny and dialogue  
+- custom modules (`x/collectivai/`) for civic logic,  
+- clear separation between **infrastructure** (chain) and **clients** (apps),  
+- integration with existing civic processes (e.g. participatory budgets,  
+  university grants, NGO programmes).
 
-It is not a finished solution – it is an **ongoing process**  
-towards better, more democratic and human-centred AI infrastructure.
+In early stages, the Chain is developed in a separate repository and may run as:
 
----
-
-# 🏁 Conclusion
-
-Humanity – and especially Europe – is at a crossroads.
-
-- One path leads to highly centralised, opaque AI systems  
-  controlled by a few actors with unclear incentives.
-
-- The other path is slower and harder, but more promising:  
-  **democratic, transparent and accountable AI**,  
-  built as public infrastructure and governed in the open.
-
-CollectiVAI is an attempt to explore that second path.
-
-If we succeed, **intelligence** becomes a shared resource –  
-used to protect rights, solve real problems and strengthen democracy.
+1. **Devnet** – for local testing and development,  
+2. **Public testnet** – for pilots with cities, universities, NGOs,  
+3. **Future mainnet** – if governance and safety standards are met.
 
 ---
 
-# 📬 Contact
+## 🏙 Example Civic Use Cases
+
+CollectiVAI is designed for concrete, real-world use:
+
+### 1. City Climate Budget
+
+- A city runs a participatory climate budget.  
+- Citizens submit project ideas via the CollectiVAI App.  
+- AI helps explain projects in plain language,  
+  analyse impact and highlight trade-offs.  
+- The Chain records which projects pass,  
+  how funds are allocated and how decisions were made.
+
+### 2. University Climate or Democracy Lab
+
+- A university uses CollectiVAI to organise student projects  
+  on climate, democracy or digital rights.  
+- AI assists in drafting project descriptions, risk analyses and ethics sections.  
+- Lab proposals and results can later be linked to on-chain records or open research.
+
+### 3. NGO Fact-Checking & Democracy Lab
+
+- An NGO runs a “democracy lab” for fact-checking and narrative analysis.  
+- AI helps identify misleading claims, summarise evidence and show multiple perspectives.  
+- Experts retain full control and sign off on final statements;  
+  AI is an assistant, not the final authority.
+
+---
+
+## 🔐 Ethics, Privacy & Security
+
+CollectiVAI is guided by seven core values:
+
+1. **Human dignity & rights** – aligned with European human-rights frameworks.  
+2. **Privacy by design** – minimise data, maximise local processing where possible.  
+3. **Transparency & auditability** – make AI behaviour explainable and reviewable.  
+4. **Accountability** – clear roles for institutions, developers and validators.  
+5. **Bias awareness & mitigation** – continuously test and document limitations.  
+6. **Safety & robustness** – defence in depth for high-impact use cases.  
+7. **Universal access** – aim for accessibility across languages, abilities and devices.
+
+Ethics are treated as a **core part of the architecture**, not an afterthought.
+
+---
+
+## 📈 Roadmap 2025–2030 (High-Level)
+
+**2025 — Alpha Phase**
+
+- CollectiVAI App prototype (chat, contracts, chain dashboard).  
+- Basic multi-provider AI routing via backend.  
+- Public concept and business plan.
+
+**2026 — Beta (Off-Chain Participation)**
+
+- Extended civic workflows (draft → discussion → simulated vote).  
+- Role concepts for citizens, experts, institutions.  
+- Multi-language support (DE/EN first, more later).  
+- First pilots with cities, universities, NGOs.
+
+**2027 — Chain Devnet & Governance Drafts**
+
+- Initial CollectiVAI Chain devnet.  
+- Proposals and voting flows on test networks.  
+- Governance model drafts (roles, parameters, safety).  
+- Collaborative work with civic tech partners.
+
+**2028–2029 — Testnet, Spaces & Reputation**
+
+- Public testnet with selected pilot partners.  
+- Spaces for different organisations (cities, NGOs, labs).  
+- Reputation and badge concepts for constructive participation.  
+- Tools for transparency, audit and research.
+
+**2030+ — Public Democratic AI Layer**
+
+- If governance, safety and partners align:  
+  move towards a stable, long-term public infrastructure layer for democratic AI.
+
+All dates are **exploratory** and depend on partnerships, funding and governance.
+
+---
+
+## 💼 Funding & Independence
+
+CollectiVAI is conceived as an **independent, public-interest project**.
+
+Preferred funding and support avenues include:
+
+- public programmes (cities, regions, EU funds),  
+- philanthropic foundations and democracy funds,  
+- research collaborations with universities and civic labs,  
+- transparent sponsorships for specific modules or pilots.
+
+The project avoids:
+
+- ad-tech driven monetisation,  
+- opaque data-for-access business models,  
+- selling user data or attention.
+
+---
+
+## 🏁 Conclusion
+
+Humanity – and Europe – faces a strategic choice:
+
+- **Path A:** AI as a closed, centralised and profit-optimised platform layer.  
+- **Path B:** AI as transparent, democratic infrastructure serving the public.
+
+CollectiVAI is an experiment on **Path B**.
+
+It does not claim to have all answers.  
+But it provides a concrete architecture and prototype for:
+
+- democratic AI companions,  
+- civic participation tools,  
+- governance chains and AI safety layers  
+  that are explicitly aligned with public interest.
+
+---
+
+## 📬 Contact
 
 **Website:** https://collectivai.org  
 **GitHub:** https://github.com/collectiv-ai  
+**Email:** info@collectivai.org  
 
-For collaborations, pilots or research partnerships,  
-please use the contact information provided on the website.
+If you are a **city, university, NGO, civic tech group or public institution**  
+and want to explore collaborations, pilots or funding ideas,  
+feel free to reach out.
 
 ---
