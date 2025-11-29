@@ -1,174 +1,122 @@
 <p align="center">
-  <img src="logo.png" width="400"/>
+  <img src="logo.png" alt="CollectiVAI Logo" width="400" />
 </p>
 
-<h1 align="center">CollectiVAI</h1>
-<h3 align="center">Human-Centered · Ethical · Transparent AI for Humanity</h3>
+<h1 align="center">CollectiVAI Website & Public Docs</h1>
+<h3 align="center">Democratic AI for Europe</h3>
 
 <p align="center">
-CollectiVAI is a public, human-centered initiative to ensure that artificial intelligence serves society — not the other way around.
+  <a href="https://collectivai.org">
+    <img src="https://img.shields.io/badge/Website-collectivai.org-003399?style=flat" alt="Website" />
+  </a>
+  <a href="https://github.com/collectiv-ai/collectiv-ai-app">
+    <img src="https://img.shields.io/badge/App-Alpha-ffcc00?style=flat" alt="App Alpha" />
+  </a>
+  <a href="https://github.com/collectiv-ai/collectiv-ai-app-chain">
+    <img src="https://img.shields.io/badge/Chain-Pre--Alpha-999999?style=flat" alt="Chain Pre-Alpha" />
+  </a>
+  <img src="https://img.shields.io/badge/Made%20in-Europe-003399?style=flat" alt="Made in Europe" />
 </p>
 
 ---
 
-# 🌍 Why CollectiVAI?
+## About this repository
 
-We are entering an age in which artificial intelligence will influence:
+This repository powers the **official CollectiVAI website**:  
+👉 **https://collectivai.org**
 
-- how we work  
-- how we learn  
-- how we communicate  
-- how we make decisions as a society  
+It serves as the **public entry point** for:
 
-But today, most AI is controlled by **a small number of corporations**, often behind closed doors, without transparency, accountability or democratic involvement.
+- the overall **vision** of CollectiVAI,  
+- **documentation** (overview, architecture, roadmap, governance),  
+- links to the **App**, the **Chain** and related repositories,  
+- information for **citizens, institutions, universities, NGOs and sponsors**.
 
-This creates a dangerous imbalance.
-
-CollectiVAI exists to provide a clear alternative:
-
-### **A world where intelligence is shared, not controlled.**  
-### **A world where AI protects people, not power structures.**  
-### **A world where ethics come before profit.**
-
-Our mission is simple:
-
-> **AI must remain a tool for humanity — never a weapon, never a mechanism of control, never a force of inequality.**
+The content is currently maintained in **English and German**.
 
 ---
 
-# 🧭 Our Principles
+## What you will find here
 
-CollectiVAI is built on seven core values:
+Typical building blocks of this repo:
 
-### 1. **Human Dignity First**  
-AI must always respect the inherent worth of every person.
+- **Landing page**  
+  High-level introduction to CollectiVAI – mission, values and key building blocks.
 
-### 2. **Ethics by Design**  
-We embed ethical safeguards into every layer of the system.
+- **Public documentation** (structure may evolve)  
+  - project overview and concept  
+  - roadmap (Alpha / Beta / Chain Phase)  
+  - examples of civic use cases (cities, universities, NGOs, startups)  
+  - links to business plan, governance drafts and technical docs
 
-### 3. **Privacy as a Right**  
-CollectivAI never exploits or sells user data — privacy is a fundamental human right.
+- **Static assets**  
+  - logos and basic branding assets  
+  - images used on the website  
+  - potentially diagrams or visuals for future docs
 
-### 4. **Transparency and Honesty**  
-No dark patterns, no hidden algorithms, no manipulation.
-
-### 5. **Fairness and Inclusivity**  
-AI must reduce inequality, not amplify it.
-
-### 6. **Democratic Governance**  
-The direction of CollectivAI is shaped by people — not corporations.
-
-### 7. **Accessible Intelligence**  
-Every human deserves access to safe, transparent and empowering AI tools.
+The website is intentionally lightweight and focused on **clarity** and  
+**public understanding**, not on heavy marketing.
 
 ---
 
-# 📱 The CollectiVAI App (Coming Soon)
+## Relation to other CollectiVAI repositories
 
-The CollectiVAI App is designed as a **safe and ethical gateway** to the world of AI.
+The website sits on top of the wider CollectiVAI ecosystem:
 
-A single place where you can:
+- 📱 **CollectiVAI App (iOS / iPadOS / macOS)**  
+  Democratic AI companion & civic client:  
+  [`collectiv-ai-app`](https://github.com/collectiv-ai/collectiv-ai-app)
 
-- access different models (Gemini, GPT, Claude, Ollama, and more)  
-- protect your privacy  
-- apply ethical filters  
-- keep full control over your data  
-- run AI locally or via APIs  
-- create human-centered workflows  
+- ⛓ **CollectiVAI Chain (Cosmos App-Chain)**  
+  Governance & voting infrastructure (pre-alpha):  
+  [`collectiv-ai-app-chain`](https://github.com/collectiv-ai/collectiv-ai-app-chain)
 
-The app is not about speed or profit.  
-It is about **trust, clarity, and empowerment**.
+- 🧭 **Business plan & strategy**  
+  Public business plan, funding logic and roadmap:  
+  [`collectiv-ai-business`](https://github.com/collectiv-ai/collectiv-ai-business)
 
----
+- 🎨 **Branding & visual identity**  
+  Logos, colours, design system:  
+  [`collectiv-ai-branding`](https://github.com/collectiv-ai/collectiv-ai-branding)
 
-# 🧠 What Makes CollectiVAI Unique?
+- 👤 **Founder profile & portfolio**  
+  Background and ecosystem of the founder:  
+  [`collectiv-ai-about-founder`](https://github.com/collectiv-ai/collectiv-ai-about-founder)
 
-### ✔ No token  
-### ✔ No blockchain  
-### ✔ No speculation  
-### ✔ No corporate ownership  
-### ✔ No data harvesting  
-### ✔ No exploitation  
-
-CollectiVAI is not a financial system.  
-It is a **public good** — an ethical alternative to corporate AI.
+- 🤝 **Sponsors & partners**  
+  Information for supporters, institutions and programmes:  
+  [`collectiv-ai-sponsors`](https://github.com/collectiv-ai/collectiv-ai-sponsors)
 
 ---
 
-# 📘 Whitepaper
+## Status
 
-To understand the full humanistic and philosophical foundation behind CollectiVAI, see:
+- ✅ Website live at **collectivai.org**  
+- ✅ Initial public docs & structure  
+- ✅ Integration with GitHub repositories  
+- 🔄 Ongoing updates to documentation and use cases  
+- 🔬 Long-term focus on democratic governance, AI safety and public interest
 
-📄 **Full Whitepaper (PDF)**  
-`docs/CollectivAI_Whitepaper_Full.pdf`
-
-📄 **Markdown Version**  
-[`WHITEPAPER.md`](WHITEPAPER.md)
-
----
-
-# 🌱 Vision
-
-We imagine a future in which:
-
-- AI enhances human creativity  
-- AI supports scientific discovery  
-- AI protects democracy  
-- AI reduces suffering  
-- AI helps stabilize economies  
-- AI improves global well-being  
-- AI strengthens communities  
-- AI respects life and the planet  
-
-Technology does not define our destiny —  
-**our values do.**
-
-CollectiVAI stands for a world where humanity remains at the center of intelligence.
+The website, like the project, is in **active development** and will evolve  
+together with the app, chain and real-world pilots.
 
 ---
 
-# 🤝 Join the Mission
+## Contributing & feedback
 
-CollectiVAI is open to all people:
-
-- thinkers  
-- creators  
-- ethicists  
-- researchers  
-- citizens  
-- dreamers  
-
-You can contribute through ideas, discussions, research or development.
-
-**Website:** https://collectivai.org  
-**GitHub:** https://github.com/collectiv-ai  
-**Email:** info@collectivai.org
+At this stage, CollectiVAI is an **independent, exploratory project**.  
+If you are a **city, university, NGO, civic tech group or public institution**  
+and want to explore collaboration, pilots or funding options, feel free to reach out  
+via the contact information on the website.
 
 ---
 
-### 🔗 Related Repositories
+## Licences & branding
 
-- 🌐 Main website & public docs: [collectiv-ai.github.io](https://github.com/collectiv-ai/collectiv-ai.github.io)
-- 👤 Founder profile & lab: [collectiv-ai-about-founder](https://github.com/collectiv-ai/collectiv-ai-about-founder)
-- 🤝 Sponsors & partners: [collectiv-ai-sponsors](https://github.com/collectiv-ai/collectiv-ai-sponsors
+Source code and content licences for this repository are defined in the  
+`LICENSE` file (if present) or on the website itself.
 
----
+The **CollectiVAI name, logo and visual identity** are protected.  
+Any use in products, services or campaigns requires prior written permission.
 
-## 📄 Public Business Plan & Strategy
-
-The public, non-confidential CollectivAI Business Plan is available here:
-
-➡️ [BUSINESS_PLAN_PUBLIC.md](docs/BUSINESS_PLAN_PUBLIC.md)
-
----
-
-## Branding
-
-The CollectiVAI name and logo are protected.  
-For details, see the `branding/README.md` file in this repository.
-
----
-
-<p align="center">
-  <strong>CollectivAI — An AI future shaped by people, for people.</strong>
-</p>
+© David Miecznikowski, CollectiVAI.
