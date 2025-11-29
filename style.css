@@ -1,45 +1,30 @@
-/* =========================
-   GLOBAL RESET & THEME
-   ========================= */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Design Tokens */
 :root {
-    --bg-page: #f5f5f7;
+    --bg-body: #f7f7f9;
     --bg-hero: #f8f8fb;
     --bg-card: #ffffff;
-    --bg-card-soft: #fafafa;
-    --border-soft: #e2e2ea;
-    --border-strong: #d4d4dd;
-
-    --text-main: #05060b;
-    --text-muted: #55586a;
-    --text-soft: #77798a;
-
-    --accent: #1f4fbf;        /* primärer Akzent (blau) */
-    --accent-soft: #e0e8ff;
-    --accent-dark: #132f7a;
-
-    --shadow-soft: 0 10px 26px rgba(0, 0, 0, 0.06);
-    --shadow-strong: 0 18px 40px rgba(0, 0, 0, 0.14);
-
-    --radius-lg: 20px;
-    --radius-md: 14px;
-    --radius-pill: 999px;
-
+    --border-soft: #e1e2ea;
+    --text-main: #05060a;
+    --text-muted: #555a66;
+    --accent: #0b3a95;
+    --accent-soft: rgba(11, 58, 149, 0.28);
+    --radius-lg: 18px;
+    --shadow-soft: 0 10px 26px rgba(0,0,0,0.06);
     --transition-fast: 0.2s ease;
-    --transition-med: 0.3s ease;
 }
 
 body {
-    background: radial-gradient(circle at top left, #ffffff 0, #f5f5f7 46%, #edf0ff 100%);
+    background: var(--bg-body);
     color: var(--text-main);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", Arial, sans-serif;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
     line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
     transition:
         background 0.4s ease,
         color 0.4s ease,
@@ -52,42 +37,40 @@ body.ready {
     opacity: 1;
 }
 
-/* =========================
-   HERO
-   ========================= */
+/* HERO */
 .hero {
     position: relative;
     text-align: left;
-    padding: 90px 20px 80px;
+    padding: 80px 20px 80px;
     overflow: hidden;
-    background: transparent;
+    background: var(--bg-hero);
 }
 
 /* dezenter animierter Hintergrund im Hero */
 .hero::before {
     content: "";
     position: absolute;
-    inset: -160px;
+    inset: -120px;
     background:
-        radial-gradient(circle at 0% 0%, rgba(31, 79, 191, 0.08), transparent 55%),
-        radial-gradient(circle at 100% 100%, rgba(0, 0, 0, 0.05), transparent 60%);
+        radial-gradient(circle at 0% 0%, rgba(0,0,0,0.06), transparent 55%),
+        radial-gradient(circle at 100% 100%, rgba(0,0,0,0.04), transparent 60%);
     opacity: 0.9;
     z-index: -1;
     animation: heroGlow 18s ease-in-out infinite alternate;
 }
 
 .hero-inner {
-    max-width: 1120px;
+    max-width: 1100px;
     margin: 0 auto;
     display: flex;
-    gap: 52px;
+    gap: 40px;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
 .hero-text {
-    flex: 1 1 340px;
+    flex: 1 1 320px;
     min-width: 280px;
 }
 
@@ -101,69 +84,56 @@ body.ready {
 /* LOGO */
 .logo {
     width: 360px;
-    max-width: 100%;
-    margin-bottom: 18px;
-    transition: transform var(--transition-med), filter var(--transition-med);
-    filter: drop-shadow(0 12px 32px rgba(0, 0, 0, 0.12));
+    margin-bottom: 16px;
+    transition: transform 0.4s ease;
 }
 
 .logo:hover {
-    transform: translateY(-2px) scale(1.02);
-    filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.18));
+    transform: scale(1.03);
 }
 
-/* TYPO HERO */
 h1 {
     font-size: 3.2rem;
     font-weight: 700;
     margin-bottom: 6px;
     color: var(--text-main);
-    letter-spacing: -0.04em;
 }
 
 h2 {
-    font-size: 1.35rem;
-    font-weight: 400;
-    color: #2d2f39;
-    margin-bottom: 20px;
-    max-width: 560px;
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: #333;
+    margin-bottom: 18px;
 }
 
 .hero-sub {
-    color: var(--text-muted);
+    color: #444;
     margin-bottom: 26px;
-    max-width: 560px;
-    font-size: 0.98rem;
+    max-width: 520px;
 }
 
 .hero-tagline {
     margin-top: 16px;
     font-size: 0.95rem;
-    color: var(--text-soft);
+    color: #777;
 }
 
-/* =========================
-   BUTTONS
-   ========================= */
+/* BUTTONS */
 .hero-buttons {
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-    gap: 10px;
 }
 
 .btn,
 .btn-outline {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 13px 26px;
-    font-size: 0.96rem;
-    font-weight: 500;
+    display: inline-block;
+    padding: 14px 28px;
+    font-size: 1rem;
+    margin: 8px 10px 8px 0;
     text-decoration: none;
-    border-radius: var(--radius-pill);
+    border-radius: 999px;
     cursor: pointer;
-    border: 1px solid transparent;
     transition:
         transform var(--transition-fast),
         box-shadow var(--transition-fast),
@@ -175,49 +145,47 @@ h2 {
 .btn {
     background: #000;
     color: #fff;
-    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.18);
+    border: none;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 .btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.24);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.2);
 }
 
 .btn-outline {
-    border-color: #000;
+    border: 2px solid #000;
     color: #000;
-    background: rgba(255, 255, 255, 0.92);
+    background: transparent;
 }
 
 .btn-outline:hover {
     background: #000;
     color: #fff;
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-/* =========================
-   APP CARD (Hero Preview)
-   ========================= */
+/* APP CARD (Hero Preview) */
 .app-card {
     width: 100%;
-    max-width: 380px;
+    max-width: 360px;
     background: var(--bg-card);
-    border-radius: 22px;
+    border-radius: var(--radius-lg);
     border: 1px solid var(--border-soft);
-    box-shadow: var(--shadow-strong);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.12);
     overflow: hidden;
     transform: translateY(6px);
     animation: floatUp 12s ease-in-out infinite alternate;
-    backdrop-filter: blur(8px);
 }
 
 .app-card-header {
     display: flex;
     align-items: center;
     padding: 10px 14px;
-    background: linear-gradient(90deg, #f5f5f7, #ededf6);
-    border-bottom: 1px solid var(--border-soft);
+    background: #f0f0f0;
+    border-bottom: 1px solid #e1e1e1;
     gap: 6px;
 }
 
@@ -234,13 +202,13 @@ h2 {
 
 .app-title {
     margin-left: 10px;
-    font-size: 0.86rem;
-    color: #555869;
+    font-size: 0.85rem;
+    color: #555;
 }
 
 .app-card-body {
     padding: 14px 16px 18px;
-    background: linear-gradient(180deg, #fbfbfd, #f6f6fb);
+    background: #fbfbfb;
 }
 
 .app-pill-row {
@@ -259,15 +227,14 @@ h2 {
 
 .pill {
     padding: 5px 12px;
-    border-radius: var(--radius-pill);
-    border: 1px solid #dddfea;
+    border-radius: 999px;
+    border: 1px solid #ddd;
     font-size: 0.78rem;
-    color: #555666;
-    background: #ffffff;
+    color: #555;
+    background: #fff;
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    backdrop-filter: blur(4px);
 }
 
 .pill.active {
@@ -277,16 +244,16 @@ h2 {
 }
 
 .chat-bubble {
-    border-radius: 16px;
-    padding: 10px 13px;
+    border-radius: 14px;
+    padding: 10px 12px;
     font-size: 0.86rem;
     margin-bottom: 10px;
-    line-height: 1.55;
+    line-height: 1.5;
 }
 
 .chat-bubble.user {
     background: #ffffff;
-    border: 1px solid #e0e2ee;
+    border: 1px solid #e0e0e0;
     text-align: left;
 }
 
@@ -302,7 +269,7 @@ h2 {
     align-items: center;
     gap: 8px;
     font-size: 0.8rem;
-    color: #666a7a;
+    color: #666;
 }
 
 .status-dot {
@@ -316,43 +283,41 @@ h2 {
     letter-spacing: 0.02em;
 }
 
-/* =========================
-   SECTIONS
-   ========================= */
+/* SECTION */
 .section {
     padding: 70px 20px;
-    max-width: 960px;
+    max-width: 900px;
     margin: auto;
     text-align: center;
 }
 
 .section-alt {
-    background: rgba(255, 255, 255, 0.85);
-    border-top: 1px solid rgba(226, 226, 236, 0.8);
-    border-bottom: 1px solid rgba(226, 226, 236, 0.8);
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.03);
+    background: #fafafa;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
 }
 
 .section-sub {
     margin-bottom: 28px;
+    color: #555;
+}
+
+.section-sub-small {
+    margin-bottom: 18px;
+    font-size: 0.9rem;
     color: var(--text-muted);
-    font-size: 0.98rem;
-    max-width: 640px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 h3 {
     font-size: 2rem;
     margin-bottom: 20px;
     color: var(--text-main);
-    letter-spacing: -0.03em;
 }
 
 /* Provider-Row (unter "The CollectiVAI App") */
 .providers-row {
     margin-bottom: 22px;
-    color: #222330;
+    color: #222;
     font-size: 0.95rem;
     display: flex;
     flex-wrap: wrap;
@@ -360,19 +325,18 @@ h3 {
     justify-content: center;
 }
 
-/* =========================
-   LISTS
-   ========================= */
+/* LISTS */
 .principle-list {
     list-style: none;
-    font-size: 1.05rem;
+    font-size: 1.2rem;
 }
 
 .principle-list li {
-    margin: 9px 0;
-    color: #3f414f;
+    margin: 10px 0;
+    color: #444;
 }
 
+/* Mission list */
 .mission-list {
     list-style: none;
     margin-top: 16px;
@@ -380,24 +344,22 @@ h3 {
 
 .mission-list li {
     margin: 8px 0;
-    color: #3f414f;
+    color: #444;
 }
 
-/* =========================
-   FEATURES GRID
-   ========================= */
+/* FEATURES GRID */
 .features-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 22px;
+    gap: 20px;
     justify-content: center;
 }
 
 .feature-card {
     flex: 1 1 260px;
-    max-width: 290px;
+    max-width: 280px;
     background: var(--bg-card);
-    border-radius: var(--radius-lg);
+    border-radius: 14px;
     border: 1px solid var(--border-soft);
     padding: 18px 18px 20px;
     text-align: left;
@@ -410,36 +372,24 @@ h3 {
 }
 
 .feature-card h4 {
-    font-size: 1.08rem;
+    font-size: 1.1rem;
     margin-bottom: 10px;
-    color: #151722;
+    color: #111;
 }
 
 .feature-card p {
     font-size: 0.95rem;
-    color: var(--text-muted);
-}
-
-.feature-card a {
-    color: var(--accent-dark);
-    font-weight: 500;
-    text-decoration: none;
-}
-
-.feature-card a:hover {
-    text-decoration: underline;
+    color: #555;
 }
 
 .feature-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 18px 34px rgba(0, 0, 0, 0.10);
+    box-shadow: 0 16px 34px rgba(0,0,0,0.09);
     border-color: var(--accent-soft);
     background: linear-gradient(180deg, #ffffff, #f9f9ff);
 }
 
-/* =========================
-   APP SCREENSHOTS
-   ========================= */
+/* APP SCREENSHOTS */
 .screens-grid {
     display: flex;
     flex-wrap: wrap;
@@ -464,17 +414,15 @@ h3 {
 .screen-card figcaption {
     margin-top: 10px;
     font-size: 0.9rem;
-    color: var(--text-muted);
+    color: #555;
 }
 
-/* =========================
-   DIAGRAM (falls genutzt)
-   ========================= */
+/* DIAGRAM (falls eingebunden) */
 .diagram {
     width: 70%;
     margin-top: 20px;
     opacity: 0.95;
-    transition: transform var(--transition-med), opacity var(--transition-med);
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .diagram:hover {
@@ -482,71 +430,104 @@ h3 {
     opacity: 1;
 }
 
-/* =========================
-   ROADMAP
-   ========================= */
+/* ROADMAP */
 .roadmap {
     display: flex;
     overflow-x: auto;
     gap: 40px;
     justify-content: center;
     padding-top: 10px;
-    padding-bottom: 4px;
-    scrollbar-width: thin;
 }
 
 .roadmap-item {
-    background: #f4f4f9;
+    background: #f4f4f4;
     padding: 20px;
-    border: 1px solid var(--border-soft);
-    border-radius: 16px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
     min-width: 180px;
-    color: #111319;
-    transition:
-        transform var(--transition-fast),
-        box-shadow var(--transition-fast),
-        border-color var(--transition-fast);
-    font-size: 0.95rem;
-}
-
-.roadmap-item strong {
-    display: block;
-    margin-bottom: 6px;
-    font-size: 0.96rem;
+    color: #000;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .roadmap-item:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
-    border-color: var(--accent-soft);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
 }
 
-/* =========================
-   FOOTER
-   ========================= */
+/* ===== ETHICAL AI & USE CASES SECTION ===== */
+
+.ethics-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.ethics-card {
+    flex: 1 1 320px;
+    max-width: 440px;
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-soft);
+    padding: 22px 22px 24px;
+    text-align: left;
+    box-shadow: var(--shadow-soft);
+    transition:
+        transform var(--transition-fast),
+        box-shadow var(--transition-fast),
+        border-color var(--transition-fast),
+        background var(--transition-fast);
+}
+
+.ethics-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: var(--text-main);
+}
+
+/* Liste in den Karten etwas kompakter & lesbarer */
+.ethics-list {
+    font-size: 0.96rem;
+    text-align: left;
+}
+
+.ethics-list li {
+    margin: 8px 0 10px;
+    color: #3f414f;
+}
+
+.ethics-list li strong {
+    color: #151722;
+}
+
+/* Hover-Effekt wie bei den anderen Cards */
+.ethics-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 34px rgba(0, 0, 0, 0.10);
+    border-color: var(--accent-soft);
+    background: linear-gradient(180deg, #ffffff, #f9f9ff);
+}
+
+/* FOOTER */
 footer {
     text-align: center;
-    padding: 40px 20px 36px;
-    color: var(--text-soft);
-    border-top: 1px solid rgba(210, 210, 225, 0.9);
-    margin-top: 40px;
-    font-size: 0.9rem;
-    background: rgba(255, 255, 255, 0.85);
+    padding: 40px;
+    color: #444;
+    border-top: 1px solid #ddd;
+    margin-top: 50px;
 }
 
 footer a {
     color: #000;
     text-decoration: none;
-    font-weight: 500;
 }
 
 footer a:hover {
     text-decoration: underline;
 }
 
-/* =========================
-   ANIMATIONS
-   ========================= */
+/* ANIMATIONS */
 .fade-in {
     opacity: 0;
     transform: translateY(10px);
@@ -599,18 +580,14 @@ footer a:hover {
     }
 }
 
-/* =========================
-   MOBILE OPTIMIERUNG
-   ========================= */
+/* Mobile Optimierung */
 @media (max-width: 900px) {
     .hero {
         text-align: center;
-        padding-top: 70px;
     }
 
     .hero-inner {
         flex-direction: column;
-        gap: 36px;
     }
 
     .hero-text {
@@ -626,18 +603,16 @@ footer a:hover {
     }
 
     .hero-preview {
-        margin-top: 14px;
+        margin-top: 24px;
     }
 
     h1 {
-        font-size: 2.5rem;
+        font-size: 2.6rem;
     }
 
     h2 {
         font-size: 1.1rem;
         padding: 0 10px;
-        margin-left: auto;
-        margin-right: auto;
     }
 
     .diagram {
@@ -645,11 +620,15 @@ footer a:hover {
     }
 
     .roadmap {
-        gap: 24px;
+        gap: 20px;
     }
 
     .screen-card {
         max-width: 320px;
+    }
+
+    .ethics-card {
+        max-width: 100%;
     }
 }
 
@@ -657,10 +636,5 @@ footer a:hover {
 @media (max-width: 600px) {
     .logo {
         width: 260px;
-        filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.16));
-    }
-
-    .section {
-        padding: 54px 18px;
     }
 }
