@@ -5,30 +5,12 @@
     box-sizing: border-box;
 }
 
-/* Design Tokens */
-:root {
-    --bg-body: #f7f7f9;
-    --bg-hero: #f8f8fb;
-    --bg-card: #ffffff;
-    --border-soft: #e1e2ea;
-    --text-main: #05060a;
-    --text-muted: #555a66;
-    --accent: #0b3a95;
-    --accent-soft: rgba(11, 58, 149, 0.28);
-    --radius-lg: 18px;
-    --shadow-soft: 0 10px 26px rgba(0,0,0,0.06);
-    --transition-fast: 0.2s ease;
-}
-
 body {
-    background: var(--bg-body);
-    color: var(--text-main);
-    font-family: Inter, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+    background: #f8f8f8;
+    color: #000000;
+    font-family: Inter, Arial, sans-serif;
     line-height: 1.7;
-    transition:
-        background 0.4s ease,
-        color 0.4s ease,
-        opacity 0.6s ease-out;
+    transition: background 0.4s ease, color 0.4s ease, opacity 0.6s ease-out;
     opacity: 0;
 }
 
@@ -43,7 +25,7 @@ body.ready {
     text-align: left;
     padding: 80px 20px 80px;
     overflow: hidden;
-    background: var(--bg-hero);
+    background: #f8f8f8;
 }
 
 /* dezenter animierter Hintergrund im Hero */
@@ -96,7 +78,7 @@ h1 {
     font-size: 3.2rem;
     font-weight: 700;
     margin-bottom: 6px;
-    color: var(--text-main);
+    color: #000;
 }
 
 h2 {
@@ -134,12 +116,7 @@ h2 {
     text-decoration: none;
     border-radius: 999px;
     cursor: pointer;
-    transition:
-        transform var(--transition-fast),
-        box-shadow var(--transition-fast),
-        background var(--transition-fast),
-        color var(--transition-fast),
-        border-color var(--transition-fast);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .btn {
@@ -171,9 +148,9 @@ h2 {
 .app-card {
     width: 100%;
     max-width: 360px;
-    background: var(--bg-card);
-    border-radius: var(--radius-lg);
-    border: 1px solid var(--border-soft);
+    background: #f8f8f8;
+    border-radius: 18px;
+    border: 1px solid #e1e1e1;
     box-shadow: 0 18px 40px rgba(0,0,0,0.12);
     overflow: hidden;
     transform: translateY(6px);
@@ -302,16 +279,10 @@ h2 {
     color: #555;
 }
 
-.section-sub-small {
-    margin-bottom: 18px;
-    font-size: 0.9rem;
-    color: var(--text-muted);
-}
-
 h3 {
     font-size: 2rem;
     margin-bottom: 20px;
-    color: var(--text-main);
+    color: #000;
 }
 
 /* Provider-Row (unter "The CollectiVAI App") */
@@ -358,17 +329,13 @@ h3 {
 .feature-card {
     flex: 1 1 260px;
     max-width: 280px;
-    background: var(--bg-card);
+    background: #fff;
     border-radius: 14px;
-    border: 1px solid var(--border-soft);
+    border: 1px solid #e4e4e4;
     padding: 18px 18px 20px;
     text-align: left;
-    box-shadow: var(--shadow-soft);
-    transition:
-        transform var(--transition-fast),
-        box-shadow var(--transition-fast),
-        border-color var(--transition-fast),
-        background var(--transition-fast);
+    box-shadow: 0 10px 26px rgba(0,0,0,0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .feature-card h4 {
@@ -385,8 +352,6 @@ h3 {
 .feature-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 16px 34px rgba(0,0,0,0.09);
-    border-color: var(--accent-soft);
-    background: linear-gradient(180deg, #ffffff, #f9f9ff);
 }
 
 /* APP SCREENSHOTS */
@@ -415,6 +380,109 @@ h3 {
     margin-top: 10px;
     font-size: 0.9rem;
     color: #555;
+}
+
+/* MANIFESTO SECTION */
+.manifesto-section {
+    max-width: 1100px;
+}
+
+.manifesto-header {
+    max-width: 760px;
+    margin: 0 auto 32px auto;
+}
+
+.manifesto-label {
+    display: inline-block;
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #666;
+    border-radius: 999px;
+    border: 1px solid #ddd;
+    padding: 6px 14px;
+    margin-bottom: 10px;
+}
+
+.manifesto-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 26px;
+    text-align: left;
+}
+
+.manifesto-column {
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #e4e4e4;
+    padding: 18px 18px 20px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+}
+
+.manifesto-column h4 {
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+    color: #111;
+}
+
+.manifesto-list {
+    list-style: none;
+    font-size: 0.95rem;
+}
+
+.manifesto-list li {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+.manifesto-list li span {
+    font-size: 0.95rem;
+    margin-top: 1px;
+}
+
+.manifesto-list.manifesto-negative li span {
+    color: #b00020;
+}
+
+.manifesto-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.badge-pill {
+    font-size: 0.78rem;
+    border-radius: 999px;
+    border: 1px solid #ddd;
+    padding: 4px 10px;
+    background: #fafafa;
+    color: #444;
+}
+
+.manifesto-copy {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.manifesto-usecases {
+    list-style: none;
+    font-size: 0.93rem;
+    margin-bottom: 10px;
+}
+
+.manifesto-usecases li {
+    margin-bottom: 6px;
+    color: #444;
+}
+
+.manifesto-note {
+    font-size: 0.85rem;
+    color: #777;
 }
 
 /* DIAGRAM (falls eingebunden) */
@@ -446,67 +514,12 @@ h3 {
     border-radius: 12px;
     min-width: 180px;
     color: #000;
-    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .roadmap-item:hover {
     transform: translateY(-4px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.12);
-}
-
-/* ===== ETHICAL AI & USE CASES SECTION ===== */
-
-.ethics-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
-    justify-content: center;
-    align-items: stretch;
-}
-
-.ethics-card {
-    flex: 1 1 320px;
-    max-width: 440px;
-    background: var(--bg-card);
-    border-radius: var(--radius-lg);
-    border: 1px solid var(--border-soft);
-    padding: 22px 22px 24px;
-    text-align: left;
-    box-shadow: var(--shadow-soft);
-    transition:
-        transform var(--transition-fast),
-        box-shadow var(--transition-fast),
-        border-color var(--transition-fast),
-        background var(--transition-fast);
-}
-
-.ethics-card h3 {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-    color: var(--text-main);
-}
-
-/* Liste in den Karten etwas kompakter & lesbarer */
-.ethics-list {
-    font-size: 0.96rem;
-    text-align: left;
-}
-
-.ethics-list li {
-    margin: 8px 0 10px;
-    color: #3f414f;
-}
-
-.ethics-list li strong {
-    color: #151722;
-}
-
-/* Hover-Effekt wie bei den anderen Cards */
-.ethics-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 18px 34px rgba(0, 0, 0, 0.10);
-    border-color: var(--accent-soft);
-    background: linear-gradient(180deg, #ffffff, #f9f9ff);
 }
 
 /* FOOTER */
@@ -627,8 +640,8 @@ footer a:hover {
         max-width: 320px;
     }
 
-    .ethics-card {
-        max-width: 100%;
+    .manifesto-grid {
+        grid-template-columns: 1fr;
     }
 }
 
