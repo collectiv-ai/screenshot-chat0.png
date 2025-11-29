@@ -49,10 +49,6 @@ Typical building blocks of this repo:
   - examples of civic use cases (cities, universities, NGOs, startups)  
   - links to business plan, governance drafts and technical docs
 
-- **Whitepaper & deep-dive**  
-  - conceptual and philosophical foundations of CollectiVAI  
-  - see [`WHITEPAPER.md`](WHITEPAPER.md) for the current markdown version
-
 - **Static assets**  
   - logos and basic branding assets  
   - images used on the website  
@@ -63,28 +59,64 @@ The website is intentionally lightweight and focused on **clarity** and
 
 ---
 
-## Local development & structure
+## Relation to other CollectiVAI repositories
 
-This is a **static site** (HTML / CSS / JS) served via GitHub Pages.
+The website sits on top of the wider CollectiVAI ecosystem:
 
-Main files:
+- 📱 **CollectiVAI App (iOS / iPadOS / macOS)**  
+  Democratic AI companion & civic client:  
+  [`collectiv-ai-app`](https://github.com/collectiv-ai/collectiv-ai-app)
 
-- `index.html` – landing page  
-- `style.css` – styling and layout  
-- `script.js` – interactive behaviour  
-- `logo*.png`, `icon.png` – branding assets  
-- `WHITEPAPER.md` – public whitepaper in markdown form  
+- ⛓ **CollectiVAI Chain (Cosmos App-Chain)**  
+  Governance & voting infrastructure (pre-alpha):  
+  [`collectiv-ai-app-chain`](https://github.com/collectiv-ai/collectiv-ai-app-chain)
 
-To preview the site locally:
+- 🧭 **Business plan & strategy**  
+  Public business plan, funding logic and roadmap:  
+  [`collectiv-ai-business`](https://github.com/collectiv-ai/collectiv-ai-business)
 
-```bash
-git clone https://github.com/collectiv-ai/collectiv-ai.github.io.git
-cd collectiv-ai.github.io
+- 🎨 **Branding & visual identity**  
+  Logos, colours, design system:  
+  [`collectiv-ai-branding`](https://github.com/collectiv-ai/collectiv-ai-branding)
 
-# Option 1: open directly
-open index.html           # macOS
-# or double-click index.html on Windows/Linux
+- 👤 **Founder profile & portfolio**  
+  Background and ecosystem of the founder:  
+  [`collectiv-ai-about-founder`](https://github.com/collectiv-ai/collectiv-ai-about-founder)
 
-# Option 2: run a simple local web server
-python3 -m http.server 8000
-# then open http://localhost:8000 in your browser
+- 🤝 **Sponsors & partners**  
+  Information for supporters, institutions and programmes:  
+  [`collectiv-ai-sponsors`](https://github.com/collectiv-ai/collectiv-ai-sponsors)
+
+---
+
+## Status
+
+- ✅ Website live at **collectivai.org**  
+- ✅ Initial public docs & structure  
+- ✅ Integration with GitHub repositories  
+- 🔄 Ongoing updates to documentation and use cases  
+- 🔬 Long-term focus on democratic governance, AI safety and public interest
+
+The website, like the project, is in **active development** and will evolve  
+together with the app, chain and real-world pilots.
+
+---
+
+## Contributing & feedback
+
+At this stage, CollectiVAI is an **independent, exploratory project**.  
+If you are a **city, university, NGO, civic tech group or public institution**  
+and want to explore collaboration, pilots or funding options, feel free to reach out  
+via the contact information on the website.
+
+---
+
+## Licences & branding
+
+Source code and content licences for this repository are defined in the  
+`LICENSE` file (if present) or on the website itself.
+
+The **CollectiVAI name, logo and visual identity** are protected.  
+Any use in products, services or campaigns requires prior written permission.
+
+© David Miecznikowski, CollectiVAI.
