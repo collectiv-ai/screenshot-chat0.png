@@ -2,8 +2,12 @@
   <img src="logo.png" alt="CollectiVAI Logo" width="400" />
 </p>
 
-<h1 align="center">CollectiVAI Website & Public Docs</h1>
-<h3 align="center">Democratic AI for Europe</h3>
+<h1 align="center">CollectiVAI Website</h1>
+<h3 align="center">Democratic AI for Europe · Made in Europe</h3>
+
+<p align="center">
+  Public landing page & documentation hub for the CollectiVAI project.
+</p>
 
 <p align="center">
   <a href="https://collectivai.org">
@@ -22,101 +26,88 @@
 
 ## About this repository
 
-This repository powers the **official CollectiVAI website**:  
-👉 **https://collectivai.org**
+This repository contains the source for the **CollectiVAI website**  
+hosted at **[collectivai.org](https://collectivai.org)** via GitHub Pages.
 
-It serves as the **public entry point** for:
+The site gives a **public, human-readable overview** of the project:
 
-- the overall **vision** of CollectiVAI,  
-- **documentation** (overview, architecture, roadmap, governance),  
-- links to the **App**, the **Chain** and related repositories,  
-- information for **citizens, institutions, universities, NGOs and sponsors**.
+- what CollectiVAI is,
+- which components exist (App, Chain, docs),
+- and how institutions, cities, universities, NGOs and supporters can get in touch.
 
-The content is currently maintained in **English and German**.
+It is the main entry point for people who discover CollectiVAI  
+outside of GitHub (e.g. via search, events, talks).
 
 ---
 
 ## What you will find here
 
-Typical building blocks of this repo:
+- **Landing page**
+  - High-level introduction to CollectiVAI  
+  - Core ideas: democratic, human-centred AI for Europe  
+  - Links to app, chain, docs and GitHub
 
-- **Landing page**  
-  High-level introduction to CollectiVAI – mission, values and key building blocks.
+- **Project overview**
+  - How the **CollectiVAI App** and the **CollectiVAI Chain** fit together  
+  - Key civic use cases (cities, universities, NGOs, startups)
 
-- **Public documentation** (structure may evolve)  
-  - project overview and concept  
-  - roadmap (Alpha / Beta / Chain Phase)  
-  - examples of civic use cases (cities, universities, NGOs, startups)  
-  - links to business plan, governance drafts and technical docs
+- **Documentation links**
+  - Business plan & strategy (public)  
+  - Chain documentation (architecture, governance, roadmap)  
+  - Branding & design system
 
-- **Static assets**  
-  - logos and basic branding assets  
-  - images used on the website  
-  - potentially diagrams or visuals for future docs
-
-The website is intentionally lightweight and focused on **clarity** and  
-**public understanding**, not on heavy marketing.
+- **Contact & collaboration info**
+  - For cities, public institutions, universities, NGOs and sponsors  
+  - Entry points for pilots, research collaborations and funding programmes
 
 ---
 
-## Relation to other CollectiVAI repositories
+## Relation to other repositories
 
-The website sits on top of the wider CollectiVAI ecosystem:
+This website is one part of the broader CollectiVAI ecosystem:
 
 - 📱 **CollectiVAI App (iOS / iPadOS / macOS)**  
-  Democratic AI companion & civic client:  
+  Chat-based AI companion & civic client:  
   [`collectiv-ai-app`](https://github.com/collectiv-ai/collectiv-ai-app)
 
 - ⛓ **CollectiVAI Chain (Cosmos App-Chain)**  
-  Governance & voting infrastructure (pre-alpha):  
+  Planned governance & voting infrastructure:  
   [`collectiv-ai-app-chain`](https://github.com/collectiv-ai/collectiv-ai-app-chain)
 
-- 🧭 **Business plan & strategy**  
-  Public business plan, funding logic and roadmap:  
+- 📄 **Business plan & public strategy**  
+  Open business plan, roadmap and civic use cases:  
   [`collectiv-ai-business`](https://github.com/collectiv-ai/collectiv-ai-business)
 
 - 🎨 **Branding & visual identity**  
-  Logos, colours, design system:  
+  Logos, colours, typography, design assets:  
   [`collectiv-ai-branding`](https://github.com/collectiv-ai/collectiv-ai-branding)
 
-- 👤 **Founder profile & portfolio**  
-  Background and ecosystem of the founder:  
-  [`collectiv-ai-about-founder`](https://github.com/collectiv-ai/collectiv-ai-about-founder)
-
-- 🤝 **Sponsors & partners**  
-  Information for supporters, institutions and programmes:  
-  [`collectiv-ai-sponsors`](https://github.com/collectiv-ai/collectiv-ai-sponsors)
+The website links to these projects and explains them in a way  
+that non-technical audiences can understand.
 
 ---
 
-## Status
+## Tech notes
 
-- ✅ Website live at **collectivai.org**  
-- ✅ Initial public docs & structure  
-- ✅ Integration with GitHub repositories  
-- 🔄 Ongoing updates to documentation and use cases  
-- 🔬 Long-term focus on democratic governance, AI safety and public interest
+- Static site hosted via **GitHub Pages**
+- Repository: `collectiv-ai/collectiv-ai.github.io`
+- Deployment: automatic via GitHub Pages (main branch)
 
-The website, like the project, is in **active development** and will evolve  
-together with the app, chain and real-world pilots.
+As the project evolves, the site can be extended with:
 
----
-
-## Contributing & feedback
-
-At this stage, CollectiVAI is an **independent, exploratory project**.  
-If you are a **city, university, NGO, civic tech group or public institution**  
-and want to explore collaboration, pilots or funding options, feel free to reach out  
-via the contact information on the website.
+- more detailed docs (e.g. `/docs` pages),
+- case studies from pilots,
+- and links to devnet / testnet explorers once the chain is live.
 
 ---
 
-## Licences & branding
-
-Source code and content licences for this repository are defined in the  
-`LICENSE` file (if present) or on the website itself.
+## Branding & usage
 
 The **CollectiVAI name, logo and visual identity** are protected.  
 Any use in products, services or campaigns requires prior written permission.
+
+Screenshots and references to the project are welcome  
+for documentation, research or news coverage –  
+as long as CollectiVAI is clearly named as the original source.
 
 © David Miecznikowski, CollectiVAI.
