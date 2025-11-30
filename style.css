@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: #f8f8f8;
     color: #000000;
@@ -19,11 +23,102 @@ body.ready {
     opacity: 1;
 }
 
+/* TOP NAVIGATION */
+.top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 64px;
+    z-index: 50;
+    background: rgba(248, 248, 248, 0.94);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    transition: box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.top-nav.scrolled {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    background: rgba(248, 248, 248, 0.98);
+}
+
+.nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+    gap: 8px;
+}
+
+.nav-logo-img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: contain;
+}
+
+.nav-logo-text {
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    font-size: 0.98rem;
+    text-transform: uppercase;
+}
+
+/* NAV LINKS */
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 0.92rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #222;
+    padding: 6px 10px;
+    border-radius: 999px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-links a:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* NAV TOGGLE (MOBILE) */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+}
+
+.nav-toggle-line {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #000;
+    margin: 4px 0;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
 /* HERO */
 .hero {
     position: relative;
     text-align: left;
-    padding: 80px 20px 80px;
+    padding: 120px 20px 80px; /* 120px wegen fester Navigation */
     overflow: hidden;
     background: #f8f8f8;
 }
@@ -212,6 +307,7 @@ h2 {
     display: inline-flex;
     align-items: center;
     gap: 4px;
+    cursor: pointer;
 }
 
 .pill.active {
@@ -537,6 +633,69 @@ h3 {
     box-shadow: 0 10px 20px rgba(0,0,0,0.12);
 }
 
+/* FOUNDER SECTION */
+.founder-grid {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.founder-card {
+    flex: 1 1 280px;
+    max-width: 460px;
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid #e4e4e4;
+    padding: 20px 20px 24px;
+    text-align: left;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.05);
+}
+
+.founder-card h4 {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+    color: #111;
+}
+
+.founder-role {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.founder-text {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.founder-links {
+    list-style: none;
+    font-size: 0.92rem;
+    margin-top: 8px;
+}
+
+.founder-links li {
+    margin-bottom: 6px;
+}
+
+.founder-links a {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+}
+
+.founder-links a:hover {
+    border-bottom-color: #000;
+}
+
+.founder-card.founder-cta .btn {
+    margin-top: 10px;
+}
+
 /* FOOTER */
 footer {
     text-align: center;
@@ -658,11 +817,55 @@ footer a:hover {
     .manifesto-grid {
         grid-template-columns: 1fr;
     }
+
+    /* NAV responsive */
+    .nav-links {
+        position: absolute;
+        top: 64px;
+        right: 0;
+        left: 0;
+        background: rgba(248, 248, 248, 0.98);
+        flex-direction: column;
+        gap: 0;
+        padding: 8px 16px 16px;
+        border-bottom: 1px solid rgba(0,0,0,0.06);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.25s ease;
+    }
+
+    .nav-links.open {
+        max-height: 280px;
+    }
+
+    .nav-links li {
+        padding: 4px 0;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 8px 10px;
+    }
+
+    .nav-toggle {
+        display: inline-block;
+    }
 }
 
 /* Logo auf sehr kleinen Screens etwas kleiner */
 @media (max-width: 600px) {
     .logo {
         width: 260px;
+    }
+}
+
+/* (Optional) Light respect for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    .hero::before,
+    .app-card {
+        animation: none;
     }
 }
