@@ -119,4 +119,4 @@ Source code and content licences for this repository are defined in the
 The **CollectiVAI name, logo and visual identity** are protected.  
 Any use in products, services or campaigns requires prior written permission.
 
-© David Miecznikowski, CollectiVAI.
+© David Compasso, CollectiVAI.
