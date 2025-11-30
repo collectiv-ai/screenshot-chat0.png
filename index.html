@@ -6,477 +6,1704 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="CollectiVAI is a sovereign, transparent and democratic AI ecosystem designed for people in Europe. App, Router, SDKs and Chain for public-good, human-centered AI."
+    content="CollectiVAI is a sovereign, transparent and democratic AI ecosystem for people, cities, universities, NGOs and public institutions across Europe."
   />
+  <!-- Open Graph / Social -->
   <meta property="og:title" content="CollectiVAI – Democratic AI for Europe" />
-  <meta
-    property="og:description"
-    content="Sovereign, transparent and democratic AI ecosystem for people in Europe – app, router, SDKs and chain."
-  />
+  <meta property="og:description" content="Sovereign, transparent and democratic AI for people in Europe – app, router, SDKs and chain." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://collectivai.org" />
   <meta property="og:image" content="https://collectivai.org/collectivai_logo_1_unified.png" />
+
   <link rel="icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <!-- Inter font (optional, kannst du weglassen wenn du willst) -->
+
+  <!-- Font (Inter) -->
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    :root {
+      --bg: #05060a;
+      --bg-alt: #0b0d15;
+      --bg-soft: #101119;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --accent: #2f7df6;
+      --accent-soft: rgba(47, 125, 246, 0.12);
+      --accent-strong: #5aa3ff;
+      --text: #f5f5f7;
+      --muted: #a0a4b8;
+      --muted-soft: #6f7487;
+      --danger: #ff4b6a;
+      --success: #4cd964;
+      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.55);
+      --radius-lg: 18px;
+      --radius-xl: 26px;
+      --radius-pill: 999px;
+      --nav-height: 70px;
+      --section-gap: 96px;
+    }
+
+    body.light {
+      --bg: #f7f7fb;
+      --bg-alt: #ffffff;
+      --bg-soft: #f0f1f7;
+      --border-subtle: rgba(5, 6, 10, 0.08);
+      --accent: #2155d6;
+      --accent-soft: rgba(47, 125, 246, 0.12);
+      --accent-strong: #1b45aa;
+      --text: #05060a;
+      --muted: #53566b;
+      --muted-soft: #7b8098;
+      --shadow-soft: 0 18px 45px rgba(13, 18, 40, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at top, #16182a 0, var(--bg) 42%, #05060a 100%);
+      color: var(--text);
+      min-height: 100vh;
+      scroll-behavior: smooth;
+      transition: background 0.5s ease, color 0.4s ease;
+      opacity: 0;
+      transform: translateY(8px);
+    }
+
+    body.ready {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 20px 80px;
+    }
+
+    /* NAVBAR */
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(
+        to bottom,
+        rgba(5, 6, 10, 0.96),
+        rgba(5, 6, 10, 0.92),
+        rgba(5, 6, 10, 0.85)
+      );
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    body.light .nav {
+      background: linear-gradient(
+        to bottom,
+        rgba(247, 247, 251, 0.96),
+        rgba(247, 247, 251, 0.92),
+        rgba(247, 247, 251, 0.9)
+      );
+    }
+
+    .nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: var(--nav-height);
+      gap: 16px;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-logo img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-title {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .nav-title-main {
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      font-size: 0.98rem;
+      text-transform: uppercase;
+    }
+
+    .nav-title-sub {
+      font-size: 0.75rem;
+      color: var(--muted-soft);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 0.9rem;
+    }
+
+    .nav-link {
+      padding: 6px 0;
+      position: relative;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .nav-link:hover {
+      color: var(--text);
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -4px;
+      height: 2px;
+      border-radius: 999px;
+      transform: scaleX(0);
+      transform-origin: center;
+      background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+      transition: transform 0.18s ease-out;
+    }
+
+    .nav-link.active::after {
+      transform: scaleX(1);
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-cta {
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: linear-gradient(135deg, rgba(47, 125, 246, 0.1), rgba(47, 247, 214, 0.06));
+      font-size: 0.8rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    body.light .nav-cta {
+      background: linear-gradient(135deg, rgba(33, 85, 214, 0.1), rgba(33, 214, 168, 0.06));
+    }
+
+    .nav-cta span.icon {
+      font-size: 0.95rem;
+    }
+
+    .theme-toggle {
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: radial-gradient(circle at top, #ffffff22, transparent 60%);
+      width: 34px;
+      height: 34px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    body.light .theme-toggle {
+      background: radial-gradient(circle at top, #00000010, transparent 60%);
+      border-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-burger {
+      display: none;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: transparent;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .nav-burger span {
+      width: 16px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 999px;
+      position: relative;
+      display: block;
+    }
+
+    .nav-burger span::before,
+    .nav-burger span::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 16px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 999px;
+    }
+
+    .nav-burger span::before {
+      top: -5px;
+    }
+
+    .nav-burger span::after {
+      top: 5px;
+    }
+
+    body.nav-open .nav-links {
+      display: flex;
+    }
+
+    /* HERO */
+
+    .section {
+      padding-top: var(--section-gap);
+    }
+
+    .section:first-of-type {
+      padding-top: 40px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+      gap: 32px;
+      align-items: center;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px 4px 4px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: radial-gradient(circle at left, rgba(47, 125, 246, 0.2), transparent 50%);
+      font-size: 0.75rem;
+      color: var(--muted-soft);
+      margin-bottom: 16px;
+    }
+
+    body.light .hero-kicker {
+      border-color: rgba(5, 6, 10, 0.08);
+      background: radial-gradient(circle at left, rgba(33, 85, 214, 0.12), transparent 50%);
+    }
+
+    .hero-kicker-pill {
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      background: rgba(0, 0, 0, 0.35);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #ffffffcc;
+    }
+
+    body.light .hero-kicker-pill {
+      background: rgba(0, 0, 0, 0.75);
+      color: #f7f7fb;
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 3.1vw, 3rem);
+      line-height: 1.05;
+      margin: 0 0 14px;
+      letter-spacing: 0.01em;
+    }
+
+    .hero-gradient {
+      background: linear-gradient(120deg, #ffffff, #d1e2ff, #86c5ff);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    body.light .hero-gradient {
+      background: linear-gradient(120deg, #05060a, #283a72, #2155d6);
+      -webkit-background-clip: text;
+    }
+
+    .hero-subtitle {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 0.98rem;
+      max-width: 34rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .badge {
+      font-size: 0.72rem;
+      padding: 6px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: var(--muted-soft);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    body.light .badge {
+      border-color: rgba(5, 6, 10, 0.08);
+    }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .btn {
+      border-radius: var(--radius-pill);
+      padding: 9px 18px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, background 0.15s ease-out,
+        border-color 0.15s ease-out, color 0.15s ease-out;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: radial-gradient(circle at top left, #74b2ff, #2f7df6);
+      color: #05060a;
+      box-shadow: 0 12px 32px rgba(26, 96, 234, 0.55);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 40px rgba(26, 96, 234, 0.7);
+    }
+
+    .btn-ghost {
+      background: rgba(0, 0, 0, 0.35);
+      border-color: rgba(255, 255, 255, 0.18);
+      color: var(--muted-soft);
+    }
+
+    body.light .btn-ghost {
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--muted-soft);
+    }
+
+    .btn-ghost:hover {
+      transform: translateY(-1px);
+      background: rgba(0, 0, 0, 0.6);
+      color: #ffffff;
+    }
+
+    body.light .btn-ghost:hover {
+      background: #e7e9f4;
+    }
+
+    .hero-meta {
+      font-size: 0.8rem;
+      color: var(--muted-soft);
+    }
+
+    .hero-meta strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* Hero Right: App/Router Preview */
+
+    .hero-right {
+      display: grid;
+      gap: 16px;
+    }
+
+    .card {
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-subtle);
+      background: radial-gradient(circle at top, #1a1e33, var(--bg-alt));
+      box-shadow: var(--shadow-soft);
+      padding: 16px 16px 18px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    body.light .card {
+      background: linear-gradient(145deg, #ffffff, #f5f6fc);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .chip {
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      background: rgba(0, 0, 0, 0.4);
+      font-size: 0.72rem;
+      color: var(--muted-soft);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    body.light .chip {
+      background: rgba(243, 244, 250, 0.9);
+      border-color: rgba(5, 6, 10, 0.08);
+    }
+
+    .card-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin-right: 6px;
+    }
+
+    .status-ok {
+      background: var(--success);
+      box-shadow: 0 0 0 4px rgba(76, 217, 100, 0.18);
+    }
+
+    .status-label {
+      font-size: 0.78rem;
+      color: var(--muted-soft);
+      display: flex;
+      align-items: center;
+    }
+
+    .provider-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 8px;
+      font-size: 0.75rem;
+    }
+
+    .provider-pill {
+      padding: 4px 8px;
+      border-radius: var(--radius-pill);
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: var(--muted-soft);
+    }
+
+    body.light .provider-pill {
+      background: rgba(243, 244, 250, 0.9);
+      border-color: rgba(5, 6, 10, 0.08);
+    }
+
+    .app-window {
+      margin-top: 6px;
+      border-radius: 16px;
+      background: radial-gradient(circle at top, #252940, #05060b);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 10px 12px;
+      font-size: 0.76rem;
+      color: var(--muted);
+    }
+
+    body.light .app-window {
+      background: linear-gradient(150deg, #f9f9ff, #dde2ff);
+      color: #3c405a;
+    }
+
+    .app-window-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .traffic-lights {
+      display: flex;
+      gap: 4px;
+    }
+
+    .traffic-light {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      opacity: 0.9;
+    }
+
+    .traffic-red {
+      background: #ff5f57;
+    }
+
+    .traffic-yellow {
+      background: #ffbd2f;
+    }
+
+    .traffic-green {
+      background: #28c840;
+    }
+
+    .code-lines {
+      font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+        monospace;
+      line-height: 1.55;
+    }
+
+    .code-line-prefix {
+      opacity: 0.6;
+      margin-right: 4px;
+    }
+
+    .code-line-ok {
+      color: #8af7c5;
+    }
+
+    .code-line-arrow {
+      color: #86c5ff;
+    }
+
+    /* Router Demo */
+
+    .router-scenarios {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .router-scenario-button {
+      padding: 5px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: transparent;
+      font-size: 0.72rem;
+      color: var(--muted-soft);
+      cursor: pointer;
+    }
+
+    .router-scenario-button.active {
+      background: var(--accent-soft);
+      color: #ffffff;
+      border-color: rgba(122, 179, 255, 0.9);
+    }
+
+    body.light .router-scenario-button.active {
+      color: #05060a;
+    }
+
+    .router-meta {
+      font-size: 0.75rem;
+      margin-top: 4px;
+      color: var(--muted-soft);
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .router-meta span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .router-meta strong {
+      font-weight: 600;
+      color: var(--accent-strong);
+    }
+
+    /* SECTION HEADINGS */
+
+    .section-header {
+      margin-bottom: 20px;
+    }
+
+    .section-kicker {
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted-soft);
+      margin-bottom: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      margin: 0 0 4px;
+    }
+
+    .section-subtitle {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 36rem;
+    }
+
+    /* GRID / LAYOUT HELPERS */
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 26px;
+      align-items: flex-start;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      font-size: 0.75rem;
+      margin-top: 6px;
+    }
+
+    .pill {
+      padding: 4px 9px;
+      border-radius: var(--radius-pill);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--muted-soft);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    body.light .pill {
+      background: rgba(255, 255, 255, 0.8);
+      border-color: rgba(5, 6, 10, 0.08);
+    }
+
+    .text-soft {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .list {
+      padding-left: 1.1rem;
+      margin: 0.2rem 0 0.6rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .list li + li {
+      margin-top: 0.2rem;
+    }
+
+    /* Ecosystem Status */
+
+    .status-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .status-card {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 10px 10px 11px;
+      background: radial-gradient(circle at top left, rgba(70, 103, 255, 0.1), var(--bg-soft));
+      font-size: 0.8rem;
+    }
+
+    body.light .status-card {
+      background: linear-gradient(145deg, #ffffff, #ecf0ff);
+    }
+
+    .status-card-title {
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.72rem;
+      padding: 3px 7px;
+      border-radius: var(--radius-pill);
+      background: rgba(0, 0, 0, 0.4);
+      color: var(--muted-soft);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    body.light .status-pill {
+      background: rgba(243, 244, 250, 0.9);
+      border-color: rgba(5, 6, 10, 0.08);
+    }
+
+    .status-dot-small {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+    }
+
+    .dot-alpha {
+      background: #f5a623;
+    }
+
+    .dot-research {
+      background: #9b59b6;
+    }
+
+    .dot-pilot {
+      background: #2ecc71;
+    }
+
+    .dot-future {
+      background: #95a5a6;
+    }
+
+    .status-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 5px;
+      font-size: 0.75rem;
+      color: var(--accent-strong);
+    }
+
+    .status-link span.arrow {
+      font-size: 0.9rem;
+    }
+
+    /* Who it's for & Use Cases */
+
+    .card-simple {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 14px 14px 16px;
+      background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.02), var(--bg-soft));
+      font-size: 0.88rem;
+    }
+
+    body.light .card-simple {
+      background: #ffffff;
+    }
+
+    .card-simple-title {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .card-simple-kicker {
+      font-size: 0.78rem;
+      color: var(--muted-soft);
+      margin-bottom: 6px;
+    }
+
+    /* Manifesto */
+
+    .manifest-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: 20px;
+    }
+
+    .manifest-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .manifest-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 4px 0;
+    }
+
+    .manifest-icon {
+      font-size: 1rem;
+      margin-top: 2px;
+    }
+
+    /* Roadmap */
+
+    .timeline {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 14px 14px 16px;
+      background: radial-gradient(circle at top, rgba(47, 125, 246, 0.1), var(--bg-soft));
+      font-size: 0.9rem;
+    }
+
+    body.light .timeline {
+      background: linear-gradient(140deg, #ffffff, #edf2ff);
+    }
+
+    .timeline-row {
+      display: grid;
+      grid-template-columns: 90px minmax(0, 1fr);
+      gap: 12px;
+      padding: 4px 0;
+      align-items: baseline;
+    }
+
+    .timeline-year {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .timeline-marker {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(47, 125, 246, 0.25);
+      margin-right: 6px;
+    }
+
+    .timeline-content {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* Founder */
+
+    .founder-card {
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-subtle);
+      padding: 18px 18px 20px;
+      background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.08), var(--bg-soft));
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 18px;
+      align-items: flex-start;
+    }
+
+    body.light .founder-card {
+      background: linear-gradient(145deg, #ffffff, #f4f4fb);
+    }
+
+    .founder-name {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .founder-role {
+      font-size: 0.86rem;
+      color: var(--muted-soft);
+      margin-bottom: 8px;
+    }
+
+    .founder-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 0.8rem;
+      margin-top: 10px;
+    }
+
+    .chip-link {
+      padding: 6px 11px;
+      border-radius: var(--radius-pill);
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    body.light .chip-link {
+      background: rgba(255, 255, 255, 0.9);
+      border-color: rgba(5, 6, 10, 0.08);
+    }
+
+    .contact-panel {
+      border-radius: var(--radius-lg);
+      border: 1px dashed var(--border-subtle);
+      padding: 12px 14px 14px;
+      font-size: 0.88rem;
+      background: rgba(0, 0, 0, 0.35);
+      color: var(--muted);
+    }
+
+    body.light .contact-panel {
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .contact-panel strong {
+      color: var(--text);
+    }
+
+    /* FAQ */
+
+    .faq {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      background: radial-gradient(circle at top, rgba(255, 255, 255, 0.04), var(--bg-soft));
+      padding: 14px 14px 16px;
+      font-size: 0.9rem;
+    }
+
+    body.light .faq {
+      background: #ffffff;
+    }
+
+    .faq-item + .faq-item {
+      margin-top: 10px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 10px;
+    }
+
+    body.light .faq-item + .faq-item {
+      border-top-color: rgba(5, 6, 10, 0.06);
+    }
+
+    .faq-q {
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+
+    .faq-a {
+      color: var(--muted);
+    }
+
+    /* Footer */
+
+    .footer {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 18px 20px 34px;
+      font-size: 0.8rem;
+      color: var(--muted-soft);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    body.light .footer {
+      border-top-color: rgba(5, 6, 10, 0.08);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .footer-right {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .footer-right span {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* Reveal Animations */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 960px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-right {
+        order: -1;
+      }
+
+      .grid-2 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .founder-card {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 860px) {
+      .status-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav-links {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: var(--nav-height);
+        background: inherit;
+        flex-direction: column;
+        padding: 10px 20px 12px;
+        display: none;
+      }
+
+      .nav-burger {
+        display: inline-flex;
+      }
+
+      .nav-right {
+        gap: 6px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .grid-3 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .grid-4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .status-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .manifest-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 520px) {
+      main {
+        padding-inline: 16px;
+      }
+
+      .section {
+        padding-top: 72px;
+      }
+
+      .section:first-of-type {
+        padding-top: 32px;
+      }
+
+      .card,
+      .founder-card {
+        border-radius: 18px;
+      }
+
+      .hero-title {
+        font-size: 1.9rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <!-- Top Navigation -->
-  <header class="site-header">
-    <div class="site-header-inner">
-      <a href="#top" class="brand">
-        <img
-          src="collectivai_logo_1_unified.png"
-          alt="CollectiVAI logo"
-          class="brand-logo"
-        />
-        <div class="brand-text">
-          <span class="brand-name">CollectiVAI</span>
-          <span class="brand-tagline">Democratic AI for Europe</span>
-        </div>
-      </a>
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="nav-left">
+        <a href="#top" class="nav-logo">
+          <img src="collectivai_logo_1_unified.png" alt="CollectiVAI logo" />
+          <div class="nav-title">
+            <span class="nav-title-main">CollectiVAI</span>
+            <span class="nav-title-sub">Democratic AI for Europe</span>
+          </div>
+        </a>
+      </div>
 
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
-        <span></span>
-      </button>
-
-      <nav class="nav" id="nav">
-        <a href="#app" class="nav-link">App</a>
-        <a href="#router" class="nav-link">Router</a>
-        <a href="#sdk" class="nav-link">SDK</a>
-        <a href="#chain" class="nav-link">Chain</a>
-        <a href="#who" class="nav-link">Who it's for</a>
-        <a href="#manifesto" class="nav-link">Manifesto</a>
-        <a href="#roadmap" class="nav-link">Roadmap</a>
-        <a href="#contact" class="nav-link">Contact</a>
+      <nav class="nav-links">
+        <a class="nav-link" href="#app">App</a>
+        <a class="nav-link" href="#router">Router</a>
+        <a class="nav-link" href="#sdk">SDKs</a>
+        <a class="nav-link" href="#chain">Chain</a>
+        <a class="nav-link" href="#who">Who it’s for</a>
+        <a class="nav-link" href="#manifesto">Manifesto</a>
+        <a class="nav-link" href="#roadmap">Roadmap</a>
+        <a class="nav-link" href="#contact">Contact</a>
       </nav>
+
+      <div class="nav-right">
+        <a class="nav-cta" href="https://github.com/collectiv-ai" target="_blank" rel="noreferrer">
+          <span class="icon">⬈</span>
+          <span>GitHub ecosystem</span>
+        </a>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode">
+          <span id="theme-toggle-icon">🌙</span>
+        </button>
+        <button class="nav-burger" id="nav-burger" aria-label="Toggle navigation">
+          <span></span>
+        </button>
+      </div>
     </div>
   </header>
 
   <main id="top">
     <!-- HERO -->
-    <section class="section hero reveal">
-      <div class="hero-main">
-        <!-- HIER war der Fehler: className -> class -->
-        <p class="hero-kicker">Public-minded AI · Made in Europe</p>
+    <section class="section hero reveal" id="hero">
+      <div>
+        <div class="hero-kicker">
+          <span class="hero-kicker-pill">Public-minded AI</span>
+          <span>For people, cities, universities, NGOs & institutions in Europe</span>
+        </div>
         <h1 class="hero-title">
-          CollectiVAI – Democratic AI for Europe · Made in Europe.
+          <span class="hero-gradient">CollectiVAI – Democratic AI for Europe</span>
         </h1>
-        <p class="hero-lead">
-          CollectiVAI is a sovereign, transparent, and democratic AI ecosystem designed for people in
-          Europe. Its mission is to create AI that strengthens society, protects democracy, improves
-          life, and serves humanity — never the opposite.
+        <p class="hero-subtitle">
+          A sovereign, transparent and democratic AI ecosystem designed to strengthen society,
+          protect democracy, support research and improve everyday life – not the opposite.
         </p>
+
+        <div class="hero-badges">
+          <div class="badge">
+            <span class="badge-dot"></span>
+            <span>App · Router · SDKs · Chain</span>
+          </div>
+          <div class="badge">
+            <span class="badge-dot"></span>
+            <span>Human-centered · Civic-first</span>
+          </div>
+          <div class="badge">
+            <span class="badge-dot"></span>
+            <span>No surveillance ads · No casino DeFi</span>
+          </div>
+        </div>
+
         <div class="hero-actions">
-          <a
-            href="https://github.com/collectiv-ai"
-            target="_blank"
-            rel="noreferrer"
-            class="btn btn-primary"
-          >
-            GitHub · CollectiVAI
+          <a href="https://github.com/collectiv-ai" class="btn btn-primary" target="_blank" rel="noreferrer">
+            <span>Open GitHub ecosystem</span>
+            <span>⬈</span>
           </a>
           <a
             href="https://github.com/collectiv-ai/collectiv-ai-whitepaper"
+            class="btn btn-ghost"
             target="_blank"
             rel="noreferrer"
-            class="btn btn-secondary"
           >
-            Whitepaper
+            <span>Read whitepaper</span>
+            <span>📄</span>
           </a>
         </div>
-        <p class="hero-subline">
-          One ecosystem – App, Router, SDKs and Chain for democratic, human-centered AI.
+
+        <p class="hero-meta">
+          <strong>One ecosystem</strong> – app, router, SDKs and chain for democratic, human-centered AI in Europe.
         </p>
       </div>
 
-      <!-- Router Highlight Card -->
-      <aside class="router-highlight">
-        <div class="router-card">
-          <div class="router-card-header">
-            <span class="router-label">CollectiVAI · Router</span>
-            <span class="router-status-dot"></span>
-            <span class="router-status-text">Connected · API routing secured</span>
+      <div class="hero-right">
+        <!-- App Preview Card -->
+        <article class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">CollectiVAI App · Preview</div>
+              <div class="chip">SwiftUI prototype for iOS, iPadOS & macOS</div>
+            </div>
+            <div class="status-label">
+              <span class="status-dot status-ok"></span>
+              <span>Alpha · Chat + Routing</span>
+            </div>
           </div>
-          <div class="router-providers">
-            ✨Auto · OpenAI · ✴️Gemini · 〰️Mistral · Ⓜ️Meta · DeepSeek
+
+          <div class="app-window">
+            <div class="app-window-header">
+              <div class="traffic-lights">
+                <span class="traffic-light traffic-red"></span>
+                <span class="traffic-light traffic-yellow"></span>
+                <span class="traffic-light traffic-green"></span>
+              </div>
+              <span style="font-size: 0.7rem; color: var(--muted-soft);">collectiv-ai.app</span>
+            </div>
+            <div class="code-lines">
+              <div><span class="code-line-prefix">user ›</span>How can we explain our climate plan to citizens?</div>
+              <div class="code-line-ok">
+                <span class="code-line-prefix">cvai ›</span>Analysing prompt, checking providers, applying safeguards…
+              </div>
+              <div>
+                <span class="code-line-prefix">route ›</span>Selected: <strong>Gemini</strong> (policy & reasoning)
+              </div>
+              <div class="code-line-arrow">
+                <span class="code-line-prefix">↳</span>Drafting citizen-friendly explainer with neutral language.
+              </div>
+            </div>
           </div>
-          <div class="router-console">
-            <p>Route this civic research question through the best AI backend automatically.</p>
-            <ul>
-              <li>✓ Analyzing prompt</li>
-              <li>✓ Selecting backend: Gemini</li>
-              <li>✓ Applying ethical &amp; privacy filters</li>
-              <li>→ Returning CollectiVAI answer…</li>
-            </ul>
+
+          <div class="pill-row">
+            <span class="pill">Multi-provider routing</span>
+            <span class="pill">Ethical & privacy layer</span>
+            <span class="pill">Civic-focused interface</span>
           </div>
-        </div>
-      </aside>
-    </section>
-
-    <!-- WHAT IS COLLECTIVAI -->
-    <section class="section reveal" id="what">
-      <header class="section-header">
-        <h2>What is CollectiVAI?</h2>
-        <p>
-          Mission: Build a public, democratic and ethical AI infrastructure that:
-        </p>
-      </header>
-      <ul class="bullet-list">
-        <li>protects democracy and strengthens society</li>
-        <li>supports the economy and stabilises geopolitics</li>
-        <li>accelerates science, research and innovation</li>
-        <li>safeguards the climate and environment</li>
-        <li>improves quality of life and preserves human dignity</li>
-      </ul>
-    </section>
-
-    <!-- APP -->
-    <section class="section reveal" id="app">
-      <header class="section-header">
-        <h2>The CollectiVAI App</h2>
-        <p>
-          A democratic AI companion for people, institutions and projects in Europe – built on top of
-          a multi-provider AI router. One interface, many backends.
-        </p>
-      </header>
-
-      <div class="pill-row">
-        <span class="pill">✨Auto</span>
-        <span class="pill">OpenAI</span>
-        <span class="pill">✴️Gemini</span>
-        <span class="pill">〰️Mistral</span>
-        <span class="pill">Ⓜ️Meta</span>
-        <span class="pill">DeepSeek</span>
-      </div>
-
-      <div class="grid grid-two">
-        <article class="card-soft">
-          <h3>Multi-Backend Routing</h3>
-          <p>
-            Connect different AI providers (e.g. OpenAI, Gemini, Mistral, DeepSeek) and route prompts
-            to the most suitable backend via the CollectiVAI Router.
-          </p>
         </article>
 
-        <article class="card-soft">
-          <h3>Ethical &amp; Privacy Layer</h3>
-          <p>
-            No API keys in the app. All secrets stay in the backend. Add filters, rules and logging
-            around prompts and responses to respect privacy, safety and human-centered ethics.
-          </p>
-        </article>
+        <!-- Router Demo Card -->
+        <article class="card" id="router-demo">
+          <div class="card-header">
+            <div>
+              <div class="card-title">CollectiVAI Router</div>
+              <div class="chip">FastAPI backend · Secrets stay in the infrastructure</div>
+            </div>
+            <div class="status-label">
+              <span class="status-dot status-ok"></span>
+              <span>Connected · API routing secured</span>
+            </div>
+          </div>
 
-        <article class="card-soft">
-          <h3>Civic-Focused Interface</h3>
-          <p>
-            A clean, app-like UI for democracy, policy, research and civic projects – without
-            juggling tools or provider dashboards.
-          </p>
+          <div class="provider-pills">
+            <span class="provider-pill">✨ Auto</span>
+            <span class="provider-pill">OpenAI</span>
+            <span class="provider-pill">✴️ Gemini</span>
+            <span class="provider-pill">〰️ Mistral</span>
+            <span class="provider-pill">Ⓜ️ Meta</span>
+            <span class="provider-pill">DeepSeek</span>
+          </div>
+
+          <div class="router-scenarios">
+            <button class="router-scenario-button active" data-scenario="city">
+              🏙 City climate dialogue
+            </button>
+            <button class="router-scenario-button" data-scenario="university">
+              🎓 University ethics companion
+            </button>
+            <button class="router-scenario-button" data-scenario="ngo">
+              🕊 NGO policy radar
+            </button>
+            <button class="router-scenario-button" data-scenario="institution">
+              🏛 Public institution analysis
+            </button>
+          </div>
+
+          <div class="app-window" id="router-log">
+            <div class="app-window-header">
+              <div class="traffic-lights">
+                <span class="traffic-light traffic-red"></span>
+                <span class="traffic-light traffic-yellow"></span>
+                <span class="traffic-light traffic-green"></span>
+              </div>
+              <span style="font-size: 0.7rem; color: var(--muted-soft);">router.collectiv-ai</span>
+            </div>
+            <div class="code-lines" id="router-log-lines">
+              <!-- JS injects content -->
+            </div>
+          </div>
+
+          <div class="router-meta">
+            <span><strong>Secrets:</strong> API keys stay in the router, never in the app.</span>
+            <span><strong>Filters:</strong> Ethics, privacy, logging & guardrails around every prompt.</span>
+          </div>
         </article>
       </div>
     </section>
 
     <!-- ECOSYSTEM -->
-    <section class="section reveal" id="ecosystem">
+    <section class="section reveal" id="app">
       <header class="section-header">
-        <h2>CollectiVAI Ecosystem</h2>
-        <p>
-          CollectiVAI is more than an app – it is an ecosystem of open repositories: app, router,
-          SDKs, chain, civic contracts and public documentation.
+        <div class="section-kicker">
+          <span>CollectiVAI Ecosystem</span>
+        </div>
+        <h2 class="section-title">One ecosystem – app, router, SDKs & chain</h2>
+        <p class="section-subtitle">
+          CollectiVAI is more than a single app. It’s a set of open components that can be combined,
+          extended and audited – from prototypes to large-scale civic deployments.
         </p>
       </header>
 
-      <div class="grid grid-two">
-        <article class="card-outline">
-          <h3 id="app-repo">CollectiVAI App (Xcode)</h3>
-          <p>
-            SwiftUI prototype for iOS, iPadOS and macOS. The human-centered client for democratic AI,
-            civic contracts and future governance features.
+      <div class="grid-2">
+        <div>
+          <h3>The CollectiVAI App</h3>
+          <p class="text-soft">
+            A democratic AI companion for people, projects and institutions in Europe. One clean,
+            focused interface on top of a multi-provider router – no provider dashboard juggling.
           </p>
-          <a
-            href="https://github.com/collectiv-ai/collectiv-ai-app"
-            target="_blank"
-            rel="noreferrer"
-            class="text-link"
-          >
-            View app repo on GitHub →
-          </a>
-        </article>
+          <ul class="list">
+            <li>Chat experience tuned for democracy, policy, research and civic work.</li>
+            <li>Transparent routing view: see which provider answered and why.</li>
+            <li>About view with mission, safeguards and links – no black boxes.</li>
+          </ul>
 
-        <article class="card-outline" id="router">
-          <h3>CollectiVAI Router (Backend)</h3>
-          <p>
-            FastAPI-based multi-provider routing backend (OpenAI, Gemini, Mistral, Meta, DeepSeek,
-            optional custom). No secrets in the app – all API keys live in the router and
-            infrastructure.
+          <h3 id="router" style="margin-top: 22px;">CollectiVAI Router</h3>
+          <p class="text-soft">
+            A backend that connects OpenAI, Gemini, Mistral, Meta, DeepSeek and custom models. It
+            decides where to send prompts and wraps every call with ethical rules and logging.
           </p>
-          <a
-            href="https://github.com/collectiv-ai/collectiv-ai-router"
-            target="_blank"
-            rel="noreferrer"
-            class="text-link"
-          >
-            View router backend →
-          </a>
-        </article>
+          <ul class="list">
+            <li>No API keys in the app – secrets live in the router and infra.</li>
+            <li>Provider selection rules per use case, topic or organisation.</li>
+            <li>Central logging and policy enforcement instead of scattered configs.</li>
+          </ul>
+        </div>
 
-        <article class="card-outline" id="sdk">
-          <h3>CollectiVAI SDKs</h3>
-          <p>
-            Language clients (starting with TypeScript/JavaScript and Python) to connect existing
-            systems, portals or civic platforms directly to the CollectiVAI Router and ecosystem.
+        <div>
+          <h3 id="sdk">CollectiVAI SDKs</h3>
+          <p class="text-soft">
+            Language clients so that existing systems, portals or civic platforms can connect
+            directly to the router and ecosystem.
           </p>
-          <a
-            href="https://github.com/collectiv-ai/collectiv-ai-sdks"
-            target="_blank"
-            rel="noreferrer"
-            class="text-link"
-          >
-            Explore SDKs →
-          </a>
-        </article>
+          <ul class="list">
+            <li>Starting with TypeScript/JavaScript and Python SDKs.</li>
+            <li>Focus on simple, well-documented civic use-case examples.</li>
+            <li>Designed to be integrated into portals, tools and research workflows.</li>
+          </ul>
 
-        <article class="card-outline" id="chain">
-          <h3>⚖️ CollectiVAI Chain (Cosmos App-Chain)</h3>
-          <p>
-            Cosmos-based app-chain (pre-alpha: research &amp; design) for transparent governance:
-            proposals, votes, parameters and treasury with a civic focus in Europe – not DeFi, not a
-            casino.
+          <h3 id="chain" style="margin-top: 22px;">CollectiVAI Chain</h3>
+          <p class="text-soft">
+            A Cosmos-based app-chain concept (pre-alpha, research & design) for transparent
+            governance: proposals, votes, parameters and treasury – with a civic, not casino focus.
           </p>
-          <a
-            href="https://github.com/collectiv-ai/collectiv-ai-chain"
-            target="_blank"
-            rel="noreferrer"
-            class="text-link"
-          >
-            Chain concept &amp; repo →
-          </a>
-        </article>
+          <ul class="list">
+            <li>On-chain proposals for rules, parameters and budgets.</li>
+            <li>Transparent decision making and long-term governance.</li>
+            <li>No focus on speculation – designed for public-minded infrastructure.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="status-grid">
+        <div class="status-card">
+          <div class="status-card-title">App</div>
+          <div class="status-pill">
+            <span class="status-dot-small dot-alpha"></span>
+            <span>SwiftUI prototype</span>
+          </div>
+          <div class="status-link">
+            <span>View app repo</span>
+            <span class="arrow">⬈</span>
+          </div>
+        </div>
+        <div class="status-card">
+          <div class="status-card-title">Router</div>
+          <div class="status-pill">
+            <span class="status-dot-small dot-alpha"></span>
+            <span>Backend alpha</span>
+          </div>
+          <div class="status-link">
+            <span>Router backend</span>
+            <span class="arrow">⬈</span>
+          </div>
+        </div>
+        <div class="status-card">
+          <div class="status-card-title">SDKs</div>
+          <div class="status-pill">
+            <span class="status-dot-small dot-research"></span>
+            <span>Design & early work</span>
+          </div>
+          <div class="status-link">
+            <span>SDK concept</span>
+            <span class="arrow">⬈</span>
+          </div>
+        </div>
+        <div class="status-card">
+          <div class="status-card-title">Chain</div>
+          <div class="status-pill">
+            <span class="status-dot-small dot-research"></span>
+            <span>App-chain research</span>
+          </div>
+          <div class="status-link">
+            <span>Chain concept</span>
+            <span class="arrow">⬈</span>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- WHO IT'S FOR -->
     <section class="section reveal" id="who">
       <header class="section-header">
-        <h2>Who is CollectiVAI for?</h2>
-        <p>
-          CollectiVAI is built for public-good use cases – not ad-tech, not casino-style DeFi.
+        <div class="section-kicker">
+          <span>Who it’s for</span>
+        </div>
+        <h2 class="section-title">Built for public-good, not for casino use-cases</h2>
+        <p class="section-subtitle">
+          CollectiVAI is aimed at people and organisations that need trustworthy AI in sensitive,
+          high-impact contexts – not ad-tech, not speculative finance.
         </p>
       </header>
 
-      <div class="grid grid-four">
-        <article class="card-soft">
-          <h3>Cities &amp; Regions</h3>
-          <p>
-            Use AI to support participatory processes, climate plans, mobility concepts and citizen
-            consultations – with transparent routing and clear safeguards.
+      <div class="grid-4">
+        <article class="card-simple">
+          <div class="card-simple-kicker">🏙 Cities & regions</div>
+          <div class="card-simple-title">Participation & climate</div>
+          <p class="text-soft">
+            Support participatory processes, climate plans, mobility concepts and citizen
+            consultations with transparent AI flows and safeguards.
           </p>
         </article>
 
-        <article class="card-soft">
-          <h3>Universities &amp; Research Labs</h3>
-          <p>
-            Build ethical AI research assistants, course companions and tools for analysis, drafting
-            and simulation – across multiple AI backends.
+        <article class="card-simple">
+          <div class="card-simple-kicker">🎓 Universities & labs</div>
+          <div class="card-simple-title">Research & teaching</div>
+          <p class="text-soft">
+            Build ethical AI research assistants, course companions and tools for analysis,
+            drafting and simulation – across multiple providers.
           </p>
         </article>
 
-        <article class="card-soft">
-          <h3>NGOs &amp; Civil Society</h3>
-          <p>
-            Understand complex regulations, draft position papers, coordinate campaigns and empower
-            communities with trustworthy, documented AI flows.
+        <article class="card-simple">
+          <div class="card-simple-kicker">🕊 NGOs & civil society</div>
+          <div class="card-simple-title">Policy & advocacy</div>
+          <p class="text-soft">
+            Understand new regulations, draft position papers, coordinate campaigns and empower
+            communities with clearly documented AI routes.
           </p>
         </article>
 
-        <article class="card-soft">
-          <h3>Public Institutions &amp; European Networks</h3>
-          <p>
-            Analyse policy options, perform impact assessments and experiment with new participation
-            formats – on top of a democratic AI layer for Europe.
+        <article class="card-simple">
+          <div class="card-simple-kicker">🏛 Public institutions</div>
+          <div class="card-simple-title">Impact & analysis</div>
+          <p class="text-soft">
+            Analyse options, perform impact assessments and test new participation formats – with a
+            democratic AI layer built for Europe.
           </p>
         </article>
       </div>
     </section>
 
-    <!-- EXAMPLE USE CASES -->
-    <section class="section reveal" id="use-cases">
+    <!-- USE CASES -->
+    <section class="section reveal">
       <header class="section-header">
-        <h2>Example Use Cases</h2>
-        <p>A few concrete scenarios where CollectiVAI can make a difference.</p>
+        <div class="section-kicker">
+          <span>Example use cases</span>
+        </div>
+        <h2 class="section-title">Where CollectiVAI can make a concrete difference</h2>
+        <p class="section-subtitle">
+          A few real-world scenarios that show how a democratic, multi-provider AI layer can help.
+        </p>
       </header>
 
-      <div class="grid grid-three">
-        <article class="card-soft">
-          <h3>City Climate Dialogues</h3>
-          <p>
-            A European city uses CollectiVAI to summarise climate proposals, prepare citizen-friendly
+      <div class="grid-3">
+        <article class="card-simple">
+          <div class="card-simple-kicker">🏙 City climate dialogues</div>
+          <div class="card-simple-title">From proposals to citizen explainers</div>
+          <p class="text-soft">
+            A city uses CollectiVAI to summarise climate proposals, create citizen-friendly
             explainers and collect structured feedback from residents.
           </p>
         </article>
 
-        <article class="card-soft">
-          <h3>University Ethics Companion</h3>
-          <p>
+        <article class="card-simple">
+          <div class="card-simple-kicker">🎓 University ethics companion</div>
+          <div class="card-simple-title">Teaching AI & regulation</div>
+          <p class="text-soft">
             A university builds a course companion that helps students explore AI ethics, European
-            regulations and standards, and real-world case studies – powered by transparent
-            multi-provider AI.
+            regulations, standards and real-world case studies.
           </p>
         </article>
 
-        <article class="card-soft">
-          <h3>NGO Policy Radar</h3>
-          <p>
-            An NGO uses CollectiVAI to track new European policy proposals, analyse impact, generate
-            drafts for responses and explain complex topics to members and citizens.
+        <article class="card-simple">
+          <div class="card-simple-kicker">🕊 NGO policy radar</div>
+          <div class="card-simple-title">Tracking proposals & impact</div>
+          <p class="text-soft">
+            An NGO uses CollectiVAI to follow policy proposals, analyse impact, draft responses and
+            explain complex topics to members and citizens.
           </p>
         </article>
-      </div>
-    </section>
-
-    <!-- APP PREVIEW (Screenshots) -->
-    <section class="section reveal" id="app-preview">
-      <header class="section-header">
-        <h2>CollectiVAI App – Preview</h2>
-        <p>
-          A first look at the CollectiVAI app prototype – chat, ethical routing and a transparent
-          About view.
-        </p>
-      </header>
-
-      <!-- Du kannst hier deine echten Bilder einbauen, Platzhalter-Klassen sind vorbereitet -->
-      <div class="grid grid-three app-preview-grid">
-        <figure class="app-preview-card">
-          <img src="app-screen-chat.png" alt="CollectiVAI chat screen on iPhone" />
-          <figcaption>Welcome screen &amp; first chat message.</figcaption>
-        </figure>
-        <figure class="app-preview-card">
-          <img src="app-screen-routing.png" alt="CollectiVAI provider routing settings" />
-          <figcaption>Ethical routing across multiple AI providers.</figcaption>
-        </figure>
-        <figure class="app-preview-card">
-          <img src="app-screen-about.png" alt="CollectiVAI About screen" />
-          <figcaption>About CollectiVAI – mission, values and links.</figcaption>
-        </figure>
       </div>
     </section>
 
     <!-- MANIFESTO -->
     <section class="section reveal" id="manifesto">
       <header class="section-header">
-        <h2>CollectiVAI · AI Manifesto</h2>
-        <p>
-          Human-Centered Ethical AI – For People, For Europe
+        <div class="section-kicker">
+          <span>Manifesto</span>
+        </div>
+        <h2 class="section-title">Human-centered ethical AI – for people, for Europe</h2>
+        <p class="section-subtitle">
+          The manifesto guides every design, product and governance decision – from prototypes to
+          large-scale deployments.
         </p>
       </header>
 
-      <p>
-        CollectiVAI is built as a public-minded AI layer. Below is the core manifesto that guides
-        every design and product decision.
-      </p>
-
-      <div class="grid grid-two manifesto-grid">
+      <div class="manifest-grid">
         <div>
-          <h3>Core Principles</h3>
-          <ul class="bullet-list">
-            <li>✔ help humanity and improve everyday life</li>
-            <li>✔ protect society and public spaces</li>
-            <li>✔ enhance wellbeing – not stress or addiction</li>
-            <li>✔ promote peace and cooperation</li>
-            <li>✔ strengthen democracy and participation</li>
-            <li>✔ preserve life, dignity and human rights</li>
+          <h3>Core principles</h3>
+          <ul class="manifest-list">
+            <li>
+              <span class="manifest-icon">✔</span>
+              <span>Help humanity and improve everyday life – not undermine it.</span>
+            </li>
+            <li>
+              <span class="manifest-icon">✔</span>
+              <span>Protect society, public spaces and democratic processes.</span>
+            </li>
+            <li>
+              <span class="manifest-icon">✔</span>
+              <span>Promote wellbeing and resilience – not stress or addiction.</span>
+            </li>
+            <li>
+              <span class="manifest-icon">✔</span>
+              <span>Support peace, cooperation and shared understanding.</span>
+            </li>
+            <li>
+              <span class="manifest-icon">✔</span>
+              <span>Strengthen participation, transparency and accountability.</span>
+            </li>
+            <li>
+              <span class="manifest-icon">✔</span>
+              <span>Preserve life, dignity and fundamental rights.</span>
+            </li>
           </ul>
         </div>
         <div>
-          <h3>What CollectiVAI Will Never Be</h3>
-          <ul class="bullet-list">
-            <li>✖ no dark patterns, no tricking users</li>
-            <li>✖ no surveillance advertising or tracking SDKs</li>
-            <li>✖ no casino-style DeFi features or speculation focus</li>
-            <li>✖ no manipulation of political opinions for profit</li>
-            <li>✖ no hidden optimisation against people or communities</li>
+          <h3>What CollectiVAI will never be</h3>
+          <ul class="manifest-list">
+            <li>
+              <span class="manifest-icon">✖</span>
+              <span>No dark patterns and no tricking users into choices.</span>
+            </li>
+            <li>
+              <span class="manifest-icon">✖</span>
+              <span>No surveillance advertising or tracking SDKs.</span>
+            </li>
+            <li>
+              <span class="manifest-icon">✖</span>
+              <span>No casino-style DeFi mechanisms or speculation focus.</span>
+            </li>
+            <li>
+              <span class="manifest-icon">✖</span>
+              <span>No manipulation of political opinions for profit.</span>
+            </li>
+            <li>
+              <span class="manifest-icon">✖</span>
+              <span>No hidden optimisation against people or communities.</span>
+            </li>
           </ul>
 
-          <p class="tagline-row">
-            <span class="tag">Human-centered</span>
-            <span class="tag">Democratic</span>
-            <span class="tag">Transparent routing</span>
-            <span class="tag">For people in Europe</span>
-          </p>
+          <div class="pill-row" style="margin-top: 10px;">
+            <span class="pill">Human-centered</span>
+            <span class="pill">Democratic</span>
+            <span class="pill">Transparent routing</span>
+            <span class="pill">For people in Europe</span>
+          </div>
         </div>
-      </div>
-
-      <div class="manifesto-extra">
-        <h3>Real-World Use Cases</h3>
-        <p>
-          CollectiVAI is aimed at public institutions, researchers, civil-society organisations and
-          citizens who need trustworthy AI – not black boxes.
-        </p>
-        <ul class="bullet-list">
-          <li>Scientific research &amp; acceleration</li>
-          <li>Climate modelling &amp; environmental protection</li>
-          <li>Economic forecasting &amp; crisis prevention</li>
-          <li>Healthcare &amp; medical AI (with strong safeguards)</li>
-          <li>Smart public infrastructure &amp; mobility</li>
-          <li>Ethics, governance &amp; participation systems</li>
-        </ul>
-        <p>
-          The long-term goal: a civic AI layer that people in Europe can trust – because its values
-          are written down, visible and enforceable.
-        </p>
       </div>
     </section>
 
     <!-- ROADMAP -->
     <section class="section reveal" id="roadmap">
       <header class="section-header">
-        <h2>Roadmap 2025–2030</h2>
-        <p>
-          From core concept to a sovereign public AI network for people in Europe.
+        <div class="section-kicker">
+          <span>Roadmap 2025–2030</span>
+        </div>
+        <h2 class="section-title">From concept to sovereign public AI layer</h2>
+        <p class="section-subtitle">
+          A long-term path towards a civic AI infrastructure that people in Europe can trust.
         </p>
       </header>
 
       <div class="timeline">
-        <div class="timeline-item">
+        <div class="timeline-row">
           <div class="timeline-year">2025</div>
           <div class="timeline-content">
-            Core concept, GitHub ecosystem, App &amp; Router alpha
+            <span class="timeline-marker"></span>
+            Core concept, GitHub ecosystem, app & router alpha.
           </div>
         </div>
-        <div class="timeline-item">
+        <div class="timeline-row">
           <div class="timeline-year">2026</div>
           <div class="timeline-content">
-            First pilots &amp; civic use cases (cities, universities, NGOs)
+            <span class="timeline-marker"></span>
+            First pilots and civic use cases with cities, universities and NGOs.
           </div>
         </div>
-        <div class="timeline-item">
+        <div class="timeline-row">
           <div class="timeline-year">2027</div>
           <div class="timeline-content">
-            Governance &amp; CollectiVAI Chain devnet / testnet
+            <span class="timeline-marker"></span>
+            Governance work and CollectiVAI chain devnet / testnet.
           </div>
         </div>
-        <div class="timeline-item">
+        <div class="timeline-row">
           <div class="timeline-year">2028</div>
           <div class="timeline-content">
-            Expanded AI grid, SDK integrations &amp; cross-city collaborations
+            <span class="timeline-marker"></span>
+            Expanded AI grid, SDK integrations and cross-city collaborations.
           </div>
         </div>
-        <div class="timeline-item">
+        <div class="timeline-row">
           <div class="timeline-year">2029</div>
           <div class="timeline-content">
-            Mature civic AI suite &amp; multi-backend providers in production
+            <span class="timeline-marker"></span>
+            Mature civic AI suite and multi-backend providers in production.
           </div>
         </div>
-        <div class="timeline-item">
+        <div class="timeline-row">
           <div class="timeline-year">2030</div>
           <div class="timeline-content">
-            Sovereign public AI network for people in Europe
+            <span class="timeline-marker"></span>
+            Towards a sovereign public AI network for people in Europe.
           </div>
         </div>
       </div>
@@ -485,72 +1712,386 @@
     <!-- FOUNDER & CONTACT -->
     <section class="section reveal" id="contact">
       <header class="section-header">
-        <h2>Founder &amp; Contact</h2>
-        <p>
-          CollectiVAI is an independent European project – combining engineering, AI, security and
-          civic tech.
+        <div class="section-kicker">
+          <span>Founder & Contact</span>
+        </div>
+        <h2 class="section-title">CollectiVAI is an independent European project</h2>
+        <p class="section-subtitle">
+          Combining engineering, AI, security and civic tech into one long-term public-minded
+          initiative.
         </p>
       </header>
 
-      <div class="grid grid-two founder-grid">
+      <div class="founder-card">
         <div>
-          <h3>David Compasso</h3>
-          <p class="muted">Founder &amp; Builder – CollectiVAI</p>
-          <p>
-            Engineering background with 20+ years of hands-on experience in field service, machines
-            and systems – now focused on AI, cybersecurity, civic tech and public-good
-            infrastructure for Europe.
+          <div class="founder-name">David Compasso</div>
+          <div class="founder-role">Founder & Builder · CollectiVAI</div>
+          <p class="text-soft">
+            Engineering background with over 20 years of hands-on experience in machines and
+            systems. Now focused on AI, cybersecurity, civic tech and public-good infrastructure for
+            Europe – building CollectiVAI as a democratic AI layer.
           </p>
-          <ul class="contact-links">
-            <li>
-              <a
-                href="https://github.com/collectiv-ai"
-                target="_blank"
-                rel="noreferrer"
-              >
-                GitHub · CollectiVAI
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://github.com/collectiv-ai/collectiv-ai-profile"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Founder profile &amp; portfolio
-              </a>
-            </li>
-            <li>Email: <a href="mailto:info@collectivai.org">info@collectivai.org</a></li>
-          </ul>
+
+          <div class="founder-links">
+            <a
+              href="https://github.com/collectiv-ai"
+              class="chip-link"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span>⬈</span>
+              <span>GitHub · CollectiVAI</span>
+            </a>
+            <a
+              href="https://github.com/collectiv-ai/collectiv-ai-profile"
+              class="chip-link"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span>👤</span>
+              <span>Founder profile & portfolio</span>
+            </a>
+            <a href="mailto:info@collectivai.org" class="chip-link">
+              <span>✉️</span>
+              <span>info@collectivai.org</span>
+            </a>
+          </div>
         </div>
 
-        <div class="card-soft">
-          <h3>Work with CollectiVAI</h3>
-          <p>
-            Interested in pilots, research collaborations, civic experiments or funding? CollectiVAI
-            is open for conversations with cities, universities, NGOs, European and international
-            programmes, and public institutions.
+        <div class="contact-panel">
+          <p style="margin-top: 0;">
+            <strong>Work with CollectiVAI</strong>
           </p>
-          <ul class="bullet-list">
-            <li>discuss pilot ideas or use cases</li>
-            <li>explore research &amp; innovation projects</li>
-            <li>talk about funding and long-term governance</li>
+          <p style="margin-top: 0; margin-bottom: 6px;">
+            CollectiVAI is open for pilots, research collaborations, civic experiments and funding
+            discussions – with cities, universities, NGOs, programmes and public institutions.
+          </p>
+          <ul class="list" style="margin-bottom: 0;">
+            <li>Discuss pilot ideas or civic projects.</li>
+            <li>Explore research & innovation proposals.</li>
+            <li>Talk about funding, governance and long-term strategy.</li>
           </ul>
-          <p>
-            Contact: <a href="mailto:info@collectivai.org">info@collectivai.org</a>
-          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section reveal">
+      <header class="section-header">
+        <div class="section-kicker">
+          <span>FAQ</span>
+        </div>
+        <h2 class="section-title">Questions people usually ask</h2>
+        <p class="section-subtitle">
+          A few quick answers. For everything else, just send a mail to info@collectivai.org.
+        </p>
+      </header>
+
+      <div class="faq">
+        <div class="faq-item">
+          <div class="faq-q">Is there a CollectiVAI token?</div>
+          <div class="faq-a">
+            No. The focus is on public-minded infrastructure, governance and real-world use cases –
+            not on speculative token mechanisms.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Who controls CollectiVAI?</div>
+          <div class="faq-a">
+            CollectiVAI starts as an independent project and is designed to evolve towards a
+            transparent, democratic governance model, where rules and parameters can be inspected
+            and shaped collectively.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How is privacy handled?</div>
+          <div class="faq-a">
+            API keys stay in the router and infrastructure, not in the app. The goal is to wrap
+            every provider call with clear ethics, privacy rules and logging – so organisations can
+            build on top with confidence.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Can our organisation run its own router or chain node?</div>
+          <div class="faq-a">
+            Yes, that’s part of the long-term vision: cities, universities, NGOs and other actors
+            in Europe running their own components – interoperable and aligned with shared
+            democratic values.
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="site-footer-inner">
-      <span>© 2025 CollectiVAI — Human-Centered AI for Humanity</span>
-      <span><a href="mailto:info@collectivai.org">info@collectivai.org</a></span>
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>© 2025 CollectiVAI — Human-Centered AI for Humanity</div>
+      <div class="footer-right">
+        <span>✉️ <a href="mailto:info@collectivai.org">info@collectivai.org</a></span>
+        <span>⬈ <a href="https://github.com/collectiv-ai" target="_blank" rel="noreferrer">GitHub</a></span>
+      </div>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Body fade-in
+      requestAnimationFrame(() => {
+        document.body.classList.add("ready");
+      });
+
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      // Scroll reveal
+      if (!prefersReducedMotion && "IntersectionObserver" in window) {
+        const revealEls = document.querySelectorAll(".reveal");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.15 }
+        );
+
+        revealEls.forEach((el) => observer.observe(el));
+      } else {
+        document.querySelectorAll(".reveal").forEach((el) => {
+          el.classList.add("visible");
+        });
+      }
+
+      // Theme toggle with localStorage
+      const body = document.body;
+      const themeToggle = document.getElementById("theme-toggle");
+      const themeIcon = document.getElementById("theme-toggle-icon");
+      const storedTheme = window.localStorage.getItem("collectivai-theme");
+
+      function applyTheme(theme) {
+        if (theme === "light") {
+          body.classList.add("light");
+          themeIcon.textContent = "☀️";
+        } else {
+          body.classList.remove("light");
+          themeIcon.textContent = "🌙";
+        }
+      }
+
+      if (storedTheme === "light" || storedTheme === "dark") {
+        applyTheme(storedTheme);
+      } else {
+        // Prefer system
+        const prefersLight = window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: light)").matches;
+        applyTheme(prefersLight ? "light" : "dark");
+      }
+
+      themeToggle.addEventListener("click", () => {
+        const nextTheme = body.classList.contains("light") ? "dark" : "light";
+        applyTheme(nextTheme);
+        window.localStorage.setItem("collectivai-theme", nextTheme);
+      });
+
+      // Mobile nav
+      const burger = document.getElementById("nav-burger");
+      const navLinks = document.querySelector(".nav-links");
+
+      burger.addEventListener("click", () => {
+        const open = body.classList.toggle("nav-open");
+        if (open) {
+          navLinks.style.display = "flex";
+        } else {
+          navLinks.style.display = "";
+        }
+      });
+
+      navLinks.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          if (body.classList.contains("nav-open")) {
+            body.classList.remove("nav-open");
+            navLinks.style.display = "";
+          }
+        });
+      });
+
+      // Active nav link on scroll
+      const sections = [
+        { id: "app", link: null },
+        { id: "router", link: null },
+        { id: "sdk", link: null },
+        { id: "chain", link: null },
+        { id: "who", link: null },
+        { id: "manifesto", link: null },
+        { id: "roadmap", link: null },
+        { id: "contact", link: null }
+      ];
+
+      const navLinkEls = document.querySelectorAll(".nav-link");
+      sections.forEach((s) => {
+        s.link = Array.from(navLinkEls).find((a) => a.getAttribute("href") === "#" + s.id);
+      });
+
+      function updateActiveNav() {
+        const scrollY = window.scrollY;
+        let activeId = null;
+
+        sections.forEach((s) => {
+          const el = document.getElementById(s.id);
+          if (!el) return;
+          const offsetTop = el.offsetTop - 90;
+          if (scrollY >= offsetTop) {
+            activeId = s.id;
+          }
+        });
+
+        navLinkEls.forEach((link) => link.classList.remove("active"));
+        if (activeId) {
+          const activeLink = Array.from(navLinkEls).find(
+            (a) => a.getAttribute("href") === "#" + activeId
+          );
+          if (activeLink) activeLink.classList.add("active");
+        }
+      }
+
+      window.addEventListener("scroll", updateActiveNav);
+      updateActiveNav();
+
+      // Router demo logic
+      const routerScenarios = {
+        city: [
+          { prefix: "input ›", text: "Help us explain our climate plan to residents.", cls: "" },
+          {
+            prefix: "router ›",
+            text: "Analysing topic, sensitivity & language.",
+            cls: "code-line-ok"
+          },
+          {
+            prefix: "route ›",
+            text: "Selected: Gemini (policy & reasoning) for this civic climate question.",
+            cls: ""
+          },
+          {
+            prefix: "filters ›",
+            text: "Applying neutrality, factual checks and accessibility filters.",
+            cls: ""
+          },
+          {
+            prefix: "↳",
+            text: "Returning citizen-friendly explainer in clear language.",
+            cls: "code-line-arrow"
+          }
+        ],
+        university: [
+          { prefix: "input ›", text: "Outline a seminar on AI ethics and European regulation.", cls: "" },
+          {
+            prefix: "router ›",
+            text: "Classifying request: education · ethics · regulation.",
+            cls: "code-line-ok"
+          },
+          {
+            prefix: "route ›",
+            text: "Selected: OpenAI (teaching material) with research snippets.",
+            cls: ""
+          },
+          {
+            prefix: "filters ›",
+            text: "Ensuring transparent references and no hallucinated citations.",
+            cls: ""
+          },
+          {
+            prefix: "↳",
+            text: "Drafting seminar structure + reading list for students.",
+            cls: "code-line-arrow"
+          }
+        ],
+        ngo: [
+          { prefix: "input ›", text: "Track new policy proposals on digital rights.", cls: "" },
+          {
+            prefix: "router ›",
+            text: "Checking for monitoring / summarisation patterns.",
+            cls: "code-line-ok"
+          },
+          {
+            prefix: "route ›",
+            text: "Selected: Mistral (fast summaries) + DeepSeek (detailed analysis).",
+            cls: ""
+          },
+          {
+            prefix: "filters ›",
+            text: "Highlighting human-rights impact, risks and opportunities.",
+            cls: ""
+          },
+          {
+            prefix: "↳",
+            text: "Creating a briefing for the NGO policy team.",
+            cls: "code-line-arrow"
+          }
+        ],
+        institution: [
+          {
+            prefix: "input ›",
+            text: "Compare three options for a new participation programme.",
+            cls: ""
+          },
+          {
+            prefix: "router ›",
+            text: "Detecting multi-option policy comparison request.",
+            cls: "code-line-ok"
+          },
+          {
+            prefix: "route ›",
+            text: "Selected: Gemini (reasoning) + Meta (scenario generation).",
+            cls: ""
+          },
+          {
+            prefix: "filters ›",
+            text: "Avoiding biased framing and political targeting.",
+            cls: ""
+          },
+          {
+            prefix: "↳",
+            text: "Returning neutral comparison and citizen-friendly summary.",
+            cls: "code-line-arrow"
+          }
+        ]
+      };
+
+      const routerButtons = document.querySelectorAll(".router-scenario-button");
+      const routerLogLines = document.getElementById("router-log-lines");
+
+      function renderScenario(key) {
+        const lines = routerScenarios[key];
+        if (!lines) return;
+        routerLogLines.innerHTML = "";
+        lines.forEach((line) => {
+          const div = document.createElement("div");
+          if (line.cls) div.classList.add(line.cls);
+          const prefixSpan = document.createElement("span");
+          prefixSpan.className = "code-line-prefix";
+          prefixSpan.textContent = line.prefix;
+          div.appendChild(prefixSpan);
+          const textNode = document.createTextNode(line.text);
+          div.appendChild(textNode);
+          routerLogLines.appendChild(div);
+        });
+      }
+
+      routerButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          routerButtons.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          const key = btn.getAttribute("data-scenario");
+          renderScenario(key);
+        });
+      });
+
+      // initial scenario
+      renderScenario("city");
+    });
+  </script>
 </body>
 </html>
