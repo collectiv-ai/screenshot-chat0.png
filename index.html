@@ -1,13 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="top">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CollectiVAI – Democratic AI for Europe</title>
+
+    <!-- Basic SEO -->
+    <meta name="description" content="CollectiVAI – Democratic AI for Europe. A human-centered, multi-provider AI ecosystem and app for cities, universities, NGOs and public institutions in Europe.">
+
+    <!-- Open Graph / Social Preview -->
+    <meta property="og:title" content="CollectiVAI – Democratic AI for Europe">
+    <meta property="og:description" content="A democratic, human-centered AI ecosystem for people and institutions in Europe.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://collectivai.org/">
+    <meta property="og:image" content="https://collectivai.org/logo.png">
+
+    <!-- Simple favicon (kannst du später ersetzen) -->
+    <link rel="icon" href="logo.png" type="image/png">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+    <!-- TOP NAVIGATION -->
+    <nav class="top-nav">
+        <div class="nav-inner">
+            <a href="#top" class="nav-logo">
+                <img src="logo.png" alt="CollectiVAI Logo" class="nav-logo-img">
+                <span class="nav-logo-text">CollectiVAI</span>
+            </a>
+
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span class="nav-toggle-line"></span>
+                <span class="nav-toggle-line"></span>
+            </button>
+
+            <ul class="nav-links">
+                <li><a href="#app">App</a></li>
+                <li><a href="#router">Router</a></li>
+                <li><a href="#sdk">SDK</a></li>
+                <li><a href="#chain">Chain</a></li>
+                <li><a href="#who">Who it's for</a></li>
+                <li><a href="#manifesto">Manifesto</a></li>
+                <li><a href="#roadmap">Roadmap</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
     <!-- HERO SECTION -->
     <header class="hero fade-in">
@@ -27,6 +67,10 @@
                     <a href="https://github.com/collectiv-ai" class="btn">GitHub · CollectiVAI</a>
                     <a href="https://github.com/collectiv-ai/collectiv-ai.github.io/blob/main/WHITEPAPER.md" class="btn-outline">Whitepaper</a>
                 </div>
+
+                <p class="hero-tagline">
+                    One ecosystem – App, Router, SDKs and Chain for democratic, human-centered AI.
+                </p>
             </div>
 
             <div class="hero-preview">
@@ -39,24 +83,24 @@
                     </div>
                     <div class="app-card-body">
                         <div class="app-pill-row">
-                            <span class="pill active">
+                            <button class="pill active" data-provider-demo="Auto">
                                 <span class="pill-icon">✨</span>Auto
-                            </span>
-                            <span class="pill">
+                            </button>
+                            <button class="pill" data-provider-demo="OpenAI">
                                 <span class="pill-icon">🧠</span>OpenAI
-                            </span>
-                            <span class="pill">
+                            </button>
+                            <button class="pill" data-provider-demo="Gemini">
                                 <span class="pill-icon">✴️</span>Gemini
-                            </span>
-                            <span class="pill">
+                            </button>
+                            <button class="pill" data-provider-demo="Mistral">
                                 <span class="pill-icon">〰️</span>Mistral
-                            </span>
-                            <span class="pill">
+                            </button>
+                            <button class="pill" data-provider-demo="Meta">
                                 <span class="pill-icon">Ⓜ️</span>Meta
-                            </span>
-                            <span class="pill">
+                            </button>
+                            <button class="pill" data-provider-demo="DeepSeek">
                                 <span class="pill-icon">🔍</span>DeepSeek
-                            </span>
+                            </button>
                         </div>
 
                         <div class="chat-bubble user">
@@ -64,7 +108,7 @@
                             the best AI backend automatically.
                         </div>
 
-                        <div class="chat-bubble ai">
+                        <div class="chat-bubble ai" id="router-demo-output">
                             ✓ Analyzing prompt<br>
                             ✓ Selecting backend: <strong>Gemini</strong><br>
                             ✓ Applying ethical &amp; privacy filters<br>
@@ -82,7 +126,7 @@
     </header>
 
     <!-- 🧠 WHAT IS COLLECTIVAI -->
-    <section class="section reveal">
+    <section class="section reveal" id="what">
         <h3>🧠 What is CollectiVAI?</h3>
         <p>
             🚀 Mission: Build a public, democratic and ethical AI infrastructure that:
@@ -97,7 +141,7 @@
     </section>
 
     <!-- 📱 APP FEATURES -->
-    <section class="section section-alt reveal">
+    <section class="section section-alt reveal" id="app">
         <h3>📱 The CollectiVAI App</h3>
         <p class="section-sub">
             A democratic AI companion for people, institutions and projects in Europe – 
@@ -130,7 +174,7 @@
                 </p>
             </div>
             <div class="feature-card">
-                <h4>Unified Civic Interface</h4>
+                <h4>Civic-Focused Interface</h4>
                 <p>
                     A clean, app-like UI for democracy, policy, research and civic projects –
                     without juggling tools or provider dashboards.
@@ -140,7 +184,7 @@
     </section>
 
     <!-- 🔗 ECOSYSTEM / GITHUB OVERVIEW -->
-    <section class="section reveal">
+    <section class="section reveal" id="ecosystem">
         <h3>🔗 CollectiVAI Ecosystem</h3>
         <p class="section-sub">
             CollectiVAI is more than an app – it is an ecosystem of open repositories:
@@ -148,7 +192,7 @@
         </p>
 
         <div class="features-grid">
-            <div class="feature-card">
+            <div class="feature-card" id="app-card">
                 <h4>📱 CollectiVAI App (Xcode)</h4>
                 <p>
                     SwiftUI prototype for iOS, iPadOS and macOS. The human-centered client
@@ -156,17 +200,17 @@
                 </p>
                 <p>
                     <a href="https://github.com/collectiv-ai/collectiv-ai-app" class="link-inline">
-                        View repo on GitHub →
+                        View app repo on GitHub →
                     </a>
                 </p>
             </div>
 
-            <div class="feature-card">
+            <div class="feature-card" id="router">
                 <h4>🧠 CollectiVAI Router (Backend)</h4>
                 <p>
                     FastAPI-based multi-provider routing backend (OpenAI, Gemini, Mistral,
-                    Meta, DeepSeek, custom). No secrets in the app – all API keys live in
-                    the router and infrastructure.
+                    Meta, DeepSeek, optional custom). No secrets in the app – all API keys
+                    live in the router and infrastructure.
                 </p>
                 <p>
                     <a href="https://github.com/collectiv-ai/collectiv-ai-router" class="link-inline">
@@ -175,7 +219,7 @@
                 </p>
             </div>
 
-            <div class="feature-card">
+            <div class="feature-card" id="sdk">
                 <h4>🧩 CollectiVAI SDKs</h4>
                 <p>
                     Language clients (starting with TypeScript/JavaScript and Python) to
@@ -189,7 +233,7 @@
                 </p>
             </div>
 
-            <div class="feature-card">
+            <div class="feature-card" id="chain">
                 <h4>⚖️ CollectiVAI Chain (Cosmos App-Chain)</h4>
                 <p>
                     Cosmos-based app-chain (pre-alpha: research &amp; design) for transparent
@@ -205,8 +249,82 @@
         </div>
     </section>
 
+    <!-- 🎯 WHO IT'S FOR -->
+    <section class="section section-alt reveal" id="who">
+        <h3>🎯 Who is CollectiVAI for?</h3>
+        <p class="section-sub">
+            CollectiVAI is built for public-good use cases – not ad-tech, not casino-style DeFi.
+        </p>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <h4>🏙 Cities &amp; Regions</h4>
+                <p>
+                    Use AI to support participatory processes, climate plans, mobility concepts
+                    and citizen consultations – with transparent routing and clear safeguards.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h4>🧪 Universities &amp; Research Labs</h4>
+                <p>
+                    Build ethical AI research assistants, course companions and tools for
+                    analysis, drafting and simulation – across multiple AI backends.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h4>🤝 NGOs &amp; Civil Society</h4>
+                <p>
+                    Understand complex regulations, draft position papers, coordinate campaigns
+                    and empower communities with trustworthy, documented AI flows.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h4>🇪🇺 EU &amp; Public Institutions</h4>
+                <p>
+                    Analyse policy options, perform impact assessments and experiment with
+                    new participation formats – on top of a democratic AI layer.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🧪 EXAMPLE USE CASES -->
+    <section class="section reveal" id="usecases">
+        <h3>🧪 Example Use Cases</h3>
+        <p class="section-sub">
+            A few concrete scenarios where CollectiVAI can make a difference.
+        </p>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <h4>City Climate Dialogues</h4>
+                <p>
+                    A European city uses CollectiVAI to summarise climate proposals,
+                    prepare citizen-friendly explainers and collect structured feedback from residents.
+                </p>
+            </div>
+            <div class="feature-card">
+                <h4>University Ethics Companion</h4>
+                <p>
+                    A university builds a course companion that helps students explore AI ethics,
+                    EU regulations and case studies – powered by transparent multi-provider AI.
+                </p>
+            </div>
+            <div class="feature-card">
+                <h4>NGO Policy Radar</h4>
+                <p>
+                    An NGO uses CollectiVAI to track new EU proposals, analyse impact,
+                    generate drafts for responses and explain complex topics to members and citizens.
+                </p>
+            </div>
+        </div>
+    </section>
+
     <!-- 📸 APP SCREENSHOTS -->
-    <section class="section reveal">
+    <section class="section reveal" id="screens">
         <h3>📸 CollectiVAI App – Preview</h3>
         <p class="section-sub">
             A first look at the CollectiVAI app prototype – chat, ethical routing and a transparent About view.
@@ -231,7 +349,7 @@
     </section>
 
     <!-- 🌍 MANIFESTO: ETHICAL AI FOR PEOPLE IN EUROPE -->
-    <section class="section manifesto-section reveal">
+    <section class="section manifesto-section reveal" id="manifesto">
         <div class="manifesto-header">
             <span class="manifesto-label">CollectiVAI · AI Manifesto</span>
             <h3>🌍 Human-Centered Ethical AI – For People, For Europe</h3>
@@ -298,7 +416,7 @@
     </section>
 
     <!-- 🏁 ROADMAP -->
-    <section class="section reveal">
+    <section class="section reveal" id="roadmap">
         <h3>🏁 Roadmap 2025–2030</h3>
         <div class="roadmap">
             <div class="roadmap-item">
@@ -324,6 +442,65 @@
             <div class="roadmap-item">
                 <strong>2030</strong><br>
                 Sovereign public AI network for people in Europe
+            </div>
+        </div>
+    </section>
+
+    <!-- 👤 FOUNDER & CONTACT -->
+    <section class="section section-alt reveal" id="contact">
+        <h3>👤 Founder &amp; Contact</h3>
+        <p class="section-sub">
+            CollectiVAI is an independent European project – combining engineering, AI, security and civic tech.
+        </p>
+
+        <div class="founder-grid">
+            <div class="founder-card">
+                <h4>David Compasso</h4>
+                <p class="founder-role">
+                    Founder &amp; Builder – CollectiVAI
+                </p>
+                <p class="founder-text">
+                    Engineering background with 20+ years of hands-on experience in field service, machines
+                    and systems – now focused on AI, cybersecurity, civic tech and public-good infrastructure
+                    for Europe.
+                </p>
+                <ul class="founder-links">
+                    <li>
+                        <a href="https://github.com/collectiv-ai" target="_blank" rel="noopener noreferrer">
+                            GitHub · CollectiVAI
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/collectiv-ai/collectiv-ai-about-founder" target="_blank" rel="noopener noreferrer">
+                            Founder profile &amp; portfolio
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:info@collectivai.org">
+                            Email: info@collectivai.org
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="founder-card founder-cta">
+                <h4>🤝 Work with CollectiVAI</h4>
+                <p class="founder-text">
+                    Interested in pilots, research collaborations, civic experiments or funding?
+                    CollectiVAI is open for conversations with cities, universities, NGOs, EU programmes
+                    and public institutions.
+                </p>
+                <p class="founder-text">
+                    You can reach out to:
+                </p>
+                <ul class="founder-links">
+                    <li>discuss pilot ideas or use cases</li>
+                    <li>explore research &amp; innovation projects</li>
+                    <li>talk about funding and long-term governance</li>
+                </ul>
+                <a href="mailto:info@collectivai.org" class="btn">
+                    Contact CollectiVAI
+                </a>
             </div>
         </div>
     </section>
