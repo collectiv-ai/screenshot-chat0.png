@@ -1,153 +1,262 @@
-// Body soft fade on load + Scroll-Reveal + Nav + Demo-Card
-// Respektiert "Reduce Motion" (System-Einstellung).
-
 document.addEventListener("DOMContentLoaded", () => {
-    // Body-Fade aktivieren (CSS: body.ready { opacity: 1; })
+  // Body fade-in
+  requestAnimationFrame(() => {
     document.body.classList.add("ready");
+  });
 
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    // -----------------------------
-    // Scroll Reveal
-    // -----------------------------
-    const revealElements = Array.from(document.querySelectorAll(".reveal"));
+  // Scroll reveal
+  if (!prefersReducedMotion && "IntersectionObserver" in window) {
+    const revealEls = document.querySelectorAll(".reveal");
 
-    let allRevealed = false;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
 
-    function handleScrollReveal() {
-        if (allRevealed || !revealElements.length) return;
+    revealEls.forEach((el) => observer.observe(el));
+  } else {
+    document.querySelectorAll(".reveal").forEach((el) => {
+      el.classList.add("visible");
+    });
+  }
 
-        const windowHeight = window.innerHeight;
+  // Theme toggle with localStorage
+  const body = document.body;
+  const themeToggle = document.getElementById("theme-toggle");
+  const themeIcon = document.getElementById("theme-toggle-icon");
+  const storedTheme = window.localStorage.getItem("collectivai-theme");
 
-        for (const el of revealElements) {
-            if (el.classList.contains("visible")) continue;
-
-            const rect = el.getBoundingClientRect();
-            if (rect.top < windowHeight - 80) {
-                el.classList.add("visible");
-            }
-        }
-
-        const remaining = revealElements.some(el => !el.classList.contains("visible"));
-        if (!remaining) {
-            allRevealed = true;
-            window.removeEventListener("scroll", onScrollThrottled);
-            window.removeEventListener("resize", onScrollThrottled);
-        }
-    }
-
-    // Simple Throttling für Scroll/Resize
-    let ticking = false;
-    function onScrollThrottled() {
-        if (!ticking) {
-            window.requestAnimationFrame(() => {
-                handleScrollReveal();
-                ticking = false;
-            });
-            ticking = true;
-        }
-    }
-
-    if (prefersReducedMotion.matches) {
-        // Nutzer möchte weniger Animationen → alles direkt anzeigen
-        revealElements.forEach((el) => el.classList.add("visible"));
+  function applyTheme(theme) {
+    if (theme === "light") {
+      body.classList.add("light");
+      themeIcon.textContent = "☀️";
     } else {
-        window.addEventListener("scroll", onScrollThrottled);
-        window.addEventListener("resize", onScrollThrottled);
-        window.addEventListener("load", handleScrollReveal);
-        // Einmal initial aufrufen
-        handleScrollReveal();
+      body.classList.remove("light");
+      themeIcon.textContent = "🌙";
     }
+  }
 
-    // -----------------------------
-    // Navigation: Shadow bei Scroll + Mobile Toggle
-    // -----------------------------
-    const nav = document.querySelector(".top-nav");
-    const navLinks = document.querySelector(".nav-links");
-    const navToggle = document.querySelector(".nav-toggle");
+  if (storedTheme === "light" || storedTheme === "dark") {
+    applyTheme(storedTheme);
+  } else {
+    // Prefer system
+    const prefersLight =
+      window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches;
+    applyTheme(prefersLight ? "light" : "dark");
+  }
 
-    function handleNavShadow() {
-        if (!nav) return;
-        if (window.scrollY > 10) {
-            nav.classList.add("scrolled");
-        } else {
-            nav.classList.remove("scrolled");
-        }
+  themeToggle.addEventListener("click", () => {
+    const nextTheme = body.classList.contains("light") ? "dark" : "light";
+    applyTheme(nextTheme);
+    window.localStorage.setItem("collectivai-theme", nextTheme);
+  });
+
+  // Mobile nav
+  const burger = document.getElementById("nav-burger");
+  const navLinks = document.querySelector(".nav-links");
+
+  burger.addEventListener("click", () => {
+    const open = body.classList.toggle("nav-open");
+    if (open) {
+      navLinks.style.display = "flex";
+    } else {
+      navLinks.style.display = "";
     }
+  });
 
-    window.addEventListener("scroll", handleNavShadow);
-    handleNavShadow();
+  navLinks.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      if (body.classList.contains("nav-open")) {
+        body.classList.remove("nav-open");
+        navLinks.style.display = "";
+      }
+    });
+  });
 
-    if (navToggle && navLinks) {
-        navToggle.addEventListener("click", () => {
-            navLinks.classList.toggle("open");
-        });
+  // Active nav link on scroll
+  const sections = [
+    { id: "app", link: null },
+    { id: "router", link: null },
+    { id: "sdk", link: null },
+    { id: "chain", link: null },
+    { id: "who", link: null },
+    { id: "manifesto", link: null },
+    { id: "roadmap", link: null },
+    { id: "contact", link: null }
+  ];
 
-        // Mobile: Menü schließen, wenn ein Link geklickt wird
-        navLinks.addEventListener("click", (event) => {
-            if (event.target.tagName.toLowerCase() === "a") {
-                navLinks.classList.remove("open");
-            }
-        });
-    }
+  const navLinkEls = document.querySelectorAll(".nav-link");
+  sections.forEach((s) => {
+    s.link = Array.from(navLinkEls).find((a) => a.getAttribute("href") === "#" + s.id);
+  });
 
-    // -----------------------------
-    // Sanftes Scrollen für nav-Links (optional, falls Browser kein smooth scrollen kann)
-    // -----------------------------
-    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+  function updateActiveNav() {
+    const scrollY = window.scrollY;
+    let activeId = null;
 
-    anchorLinks.forEach(link => {
-        link.addEventListener("click", (event) => {
-            const targetId = link.getAttribute("href");
-            if (!targetId || targetId === "#") return;
-
-            const targetEl = document.querySelector(targetId);
-            if (!targetEl) return;
-
-            event.preventDefault();
-
-            const navHeight = nav ? nav.offsetHeight : 0;
-            const rect = targetEl.getBoundingClientRect();
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            const targetOffset = rect.top + scrollTop - navHeight - 12; // kleines Offset
-
-            if (prefersReducedMotion.matches) {
-                window.scrollTo(0, targetOffset);
-            } else {
-                window.scrollTo({
-                    top: targetOffset,
-                    behavior: "smooth",
-                });
-            }
-        });
+    sections.forEach((s) => {
+      const el = document.getElementById(s.id);
+      if (!el) return;
+      const offsetTop = el.offsetTop - 90;
+      if (scrollY >= offsetTop) {
+        activeId = s.id;
+      }
     });
 
-    // -----------------------------
-    // Router-Demo (Hero): Provider-Tabs
-    // -----------------------------
-    const demoOutput = document.getElementById("router-demo-output");
-    const demoPills = document.querySelectorAll("[data-provider-demo]");
-
-    if (demoOutput && demoPills.length) {
-        demoPills.forEach(pill => {
-            pill.addEventListener("click", () => {
-                const provider = pill.getAttribute("data-provider-demo") || "Auto";
-
-                demoPills.forEach(p => p.classList.remove("active"));
-                pill.classList.add("active");
-
-                let providerLabel = provider;
-                if (provider === "Auto") {
-                    providerLabel = "Auto (best backend)";
-                }
-
-                demoOutput.innerHTML = `
-                    ✓ Analyzing prompt<br>
-                    ✓ Selecting backend: <strong>${providerLabel}</strong><br>
-                    ✓ Applying ethical &amp; privacy filters<br>
-                    → Returning CollectiVAI answer…
-                `;
-            });
-        });
+    navLinkEls.forEach((link) => link.classList.remove("active"));
+    if (activeId) {
+      const activeLink = Array.from(navLinkEls).find(
+        (a) => a.getAttribute("href") === "#" + activeId
+      );
+      if (activeLink) activeLink.classList.add("active");
     }
+  }
+
+  window.addEventListener("scroll", updateActiveNav);
+  updateActiveNav();
+
+  // Router demo logic
+  const routerScenarios = {
+    city: [
+      { prefix: "input ›", text: "Help us explain our climate plan to residents.", cls: "" },
+      {
+        prefix: "router ›",
+        text: "Analysing topic, sensitivity & language.",
+        cls: "code-line-ok"
+      },
+      {
+        prefix: "route ›",
+        text: "Selected: Gemini (policy & reasoning) for this civic climate question.",
+        cls: ""
+      },
+      {
+        prefix: "filters ›",
+        text: "Applying neutrality, factual checks and accessibility filters.",
+        cls: ""
+      },
+      {
+        prefix: "↳",
+        text: "Returning citizen-friendly explainer in clear language.",
+        cls: "code-line-arrow"
+      }
+    ],
+    university: [
+      {
+        prefix: "input ›",
+        text: "Outline a seminar on AI ethics and European regulation.",
+        cls: ""
+      },
+      {
+        prefix: "router ›",
+        text: "Classifying request: education · ethics · regulation.",
+        cls: "code-line-ok"
+      },
+      {
+        prefix: "route ›",
+        text: "Selected: OpenAI (teaching material) with research snippets.",
+        cls: ""
+      },
+      {
+        prefix: "filters ›",
+        text: "Ensuring transparent references and no hallucinated citations.",
+        cls: ""
+      },
+      {
+        prefix: "↳",
+        text: "Drafting seminar structure + reading list for students.",
+        cls: "code-line-arrow"
+      }
+    ],
+    ngo: [
+      { prefix: "input ›", text: "Track new policy proposals on digital rights.", cls: "" },
+      {
+        prefix: "router ›",
+        text: "Checking for monitoring / summarisation patterns.",
+        cls: "code-line-ok"
+      },
+      {
+        prefix: "route ›",
+        text: "Selected: Mistral (fast summaries) + DeepSeek (detailed analysis).",
+        cls: ""
+      },
+      {
+        prefix: "filters ›",
+        text: "Highlighting human-rights impact, risks and opportunities.",
+        cls: ""
+      },
+      {
+        prefix: "↳",
+        text: "Creating a briefing for the NGO policy team.",
+        cls: "code-line-arrow"
+      }
+    ],
+    institution: [
+      {
+        prefix: "input ›",
+        text: "Compare three options for a new participation programme.",
+        cls: ""
+      },
+      {
+        prefix: "router ›",
+        text: "Detecting multi-option policy comparison request.",
+        cls: "code-line-ok"
+      },
+      {
+        prefix: "route ›",
+        text: "Selected: Gemini (reasoning) + Meta (scenario generation).",
+        cls: ""
+      },
+      {
+        prefix: "filters ›",
+        text: "Avoiding biased framing and political targeting.",
+        cls: ""
+      },
+      {
+        prefix: "↳",
+        text: "Returning neutral comparison and citizen-friendly summary.",
+        cls: "code-line-arrow"
+      }
+    ]
+  };
+
+  const routerButtons = document.querySelectorAll(".router-scenario-button");
+  const routerLogLines = document.getElementById("router-log-lines");
+
+  function renderScenario(key) {
+    const lines = routerScenarios[key];
+    if (!lines) return;
+    routerLogLines.innerHTML = "";
+    lines.forEach((line) => {
+      const div = document.createElement("div");
+      if (line.cls) div.classList.add(line.cls);
+      const prefixSpan = document.createElement("span");
+      prefixSpan.className = "code-line-prefix";
+      prefixSpan.textContent = line.prefix;
+      div.appendChild(prefixSpan);
+      const textNode = document.createTextNode(line.text);
+      div.appendChild(textNode);
+      routerLogLines.appendChild(div);
+    });
+  }
+
+  routerButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      routerButtons.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      const key = btn.getAttribute("data-scenario");
+      renderScenario(key);
+    });
+  });
+
+  // initial scenario
+  renderScenario("city");
 });
