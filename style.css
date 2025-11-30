@@ -5,10 +5,14 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: #f8f8f8;
     color: #000000;
-    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    font-family: Inter, Arial, sans-serif;
     line-height: 1.7;
     transition: background 0.4s ease, color 0.4s ease, opacity 0.6s ease-out;
     opacity: 0;
@@ -21,110 +25,100 @@ body.ready {
 
 /* TOP NAVIGATION */
 .top-nav {
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 100;
-    background: rgba(248, 248, 248, 0.97);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid #e0e0e0;
+    left: 0;
+    right: 0;
+    height: 64px;
+    z-index: 50;
+    background: rgba(248, 248, 248, 0.94);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    transition: box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.top-nav.scrolled {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    background: rgba(248, 248, 248, 0.98);
 }
 
 .nav-inner {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 10px 20px;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 24px;
-}
-
-.nav-brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    color: #000;
+    padding: 0 16px;
 }
 
 .nav-logo {
-    width: 40px;
-    height: 40px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+    gap: 8px;
+}
+
+.nav-logo-img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
     object-fit: contain;
 }
 
-.nav-title {
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    font-size: 0.95rem;
+.nav-logo-text {
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    font-size: 0.98rem;
     text-transform: uppercase;
 }
 
+/* NAV LINKS */
 .nav-links {
+    list-style: none;
     display: flex;
     align-items: center;
-    gap: 18px;
-    font-size: 0.9rem;
+    gap: 16px;
+    font-size: 0.92rem;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #333;
-    padding: 6px 0;
-    position: relative;
-}
-
-.nav-links a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -2px;
-    height: 2px;
-    background: #000;
-    transform: scaleX(0);
-    transform-origin: center;
-    transition: transform 0.2s ease;
-}
-
-.nav-links a:hover::after {
-    transform: scaleX(1);
-}
-
-.nav-cta {
-    padding: 7px 14px;
+    color: #222;
+    padding: 6px 10px;
     border-radius: 999px;
-    border: 1px solid #000;
-    font-weight: 500;
+    transition: background 0.2s ease, color 0.2s ease;
 }
 
-.nav-cta:hover {
+.nav-links a:hover {
     background: #000;
     color: #fff;
 }
 
-/* Hamburger for mobile */
+/* NAV TOGGLE (MOBILE) */
 .nav-toggle {
     display: none;
-    flex-direction: column;
-    gap: 4px;
+    background: none;
     border: none;
-    background: transparent;
     cursor: pointer;
+    padding: 6px;
 }
 
-.nav-toggle-bar {
+.nav-toggle-line {
+    display: block;
     width: 20px;
     height: 2px;
     background: #000;
-    border-radius: 999px;
+    margin: 4px 0;
+    transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 /* HERO */
 .hero {
     position: relative;
     text-align: left;
-    padding: 80px 20px 80px;
+    padding: 120px 20px 80px; /* 120px wegen fester Navigation */
     overflow: hidden;
     background: #f8f8f8;
 }
@@ -135,8 +129,8 @@ body.ready {
     position: absolute;
     inset: -120px;
     background:
-        radial-gradient(circle at 0% 0%, rgba(0, 0, 0, 0.06), transparent 55%),
-        radial-gradient(circle at 100% 100%, rgba(0, 0, 0, 0.04), transparent 60%);
+        radial-gradient(circle at 0% 0%, rgba(0,0,0,0.06), transparent 55%),
+        radial-gradient(circle at 100% 100%, rgba(0,0,0,0.04), transparent 60%);
     opacity: 0.9;
     z-index: -1;
     animation: heroGlow 18s ease-in-out infinite alternate;
@@ -196,26 +190,9 @@ h2 {
 }
 
 .hero-tagline {
-    margin-top: 10px;
+    margin-top: 16px;
     font-size: 0.95rem;
     color: #777;
-}
-
-/* HERO STATUS PILLS */
-.hero-status {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 18px;
-}
-
-.status-pill {
-    font-size: 0.78rem;
-    border-radius: 999px;
-    border: 1px solid #ddd;
-    padding: 4px 10px;
-    background: #fafafa;
-    color: #444;
 }
 
 /* BUTTONS */
@@ -234,24 +211,19 @@ h2 {
     text-decoration: none;
     border-radius: 999px;
     cursor: pointer;
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        background 0.2s ease,
-        color 0.2s ease,
-        border-color 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .btn {
     background: #000;
     color: #fff;
     border: none;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 .btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.2);
 }
 
 .btn-outline {
@@ -264,7 +236,7 @@ h2 {
     background: #000;
     color: #fff;
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 /* APP CARD (Hero Preview) */
@@ -274,7 +246,7 @@ h2 {
     background: #f8f8f8;
     border-radius: 18px;
     border: 1px solid #e1e1e1;
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.12);
     overflow: hidden;
     transform: translateY(6px);
     animation: floatUp 12s ease-in-out infinite alternate;
@@ -296,15 +268,9 @@ h2 {
     display: inline-block;
 }
 
-.app-dot.red {
-    background: #ff5f57;
-}
-.app-dot.yellow {
-    background: #febc2e;
-}
-.app-dot.green {
-    background: #28c840;
-}
+.app-dot.red { background: #ff5f57; }
+.app-dot.yellow { background: #febc2e; }
+.app-dot.green { background: #28c840; }
 
 .app-title {
     margin-left: 10px;
@@ -393,7 +359,7 @@ h2 {
 /* SECTION */
 .section {
     padding: 70px 20px;
-    max-width: 1100px;
+    max-width: 900px;
     margin: auto;
     text-align: center;
 }
@@ -427,6 +393,17 @@ h3 {
 }
 
 /* LISTS */
+.principle-list {
+    list-style: none;
+    font-size: 1.2rem;
+}
+
+.principle-list li {
+    margin: 10px 0;
+    color: #444;
+}
+
+/* Mission list */
 .mission-list {
     list-style: none;
     margin-top: 16px;
@@ -447,13 +424,13 @@ h3 {
 
 .feature-card {
     flex: 1 1 260px;
-    max-width: 300px;
+    max-width: 280px;
     background: #fff;
     border-radius: 14px;
     border: 1px solid #e4e4e4;
     padding: 18px 18px 20px;
     text-align: left;
-    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 10px 26px rgba(0,0,0,0.06);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -470,134 +447,22 @@ h3 {
 
 .feature-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.09);
+    box-shadow: 0 16px 34px rgba(0,0,0,0.09);
 }
 
-.feature-link a {
+/* Inline links inside cards (Ecosystem section) */
+.link-inline {
     font-size: 0.9rem;
-    text-decoration: none;
-    color: #000;
-}
-
-.feature-link a:hover {
-    text-decoration: underline;
-}
-
-/* ECOSYSTEM GRID */
-.ecosystem-grid {
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-/* DEV QUICKSTART */
-.dev-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.dev-card {
-    flex: 1 1 320px;
-    max-width: 500px;
-    background: #fff;
-    border-radius: 14px;
-    border: 1px solid #e4e4e4;
-    padding: 18px 18px 20px;
-    text-align: left;
-    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.05);
-}
-
-.dev-card h4 {
-    margin-bottom: 12px;
-    font-size: 1.05rem;
-}
-
-.dev-card pre {
-    font-family: "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    font-size: 0.8rem;
-    background: #101010;
-    color: #f8f8f8;
-    padding: 12px 14px;
-    border-radius: 10px;
-    overflow-x: auto;
-}
-
-.dev-links {
-    margin-top: 18px;
-    font-size: 0.9rem;
-    display: flex;
-    gap: 8px;
-    justify-content: center;
-    align-items: center;
-}
-
-.dev-links a {
     color: #000;
     text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
 }
 
-.dev-links a:hover {
-    text-decoration: underline;
-}
-
-/* WHO GRID */
-.who-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    margin-bottom: 26px;
-}
-
-.who-card {
-    flex: 1 1 220px;
-    max-width: 260px;
-    background: #fff;
-    border-radius: 14px;
-    border: 1px solid #e4e4e4;
-    padding: 18px;
-    text-align: left;
-    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.05);
-}
-
-.who-card h4 {
-    margin-bottom: 8px;
-    font-size: 1.02rem;
-}
-
-.who-card p {
-    font-size: 0.9rem;
-    color: #555;
-}
-
-/* USECASES */
-.usecases-title {
-    margin-bottom: 14px;
-    font-size: 1.2rem;
-}
-
-.usecases-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 18px;
-    justify-content: center;
-}
-
-.usecase-card {
-    flex: 1 1 260px;
-    max-width: 310px;
-    background: #fff;
-    border-radius: 14px;
-    border: 1px solid #e4e4e4;
-    padding: 16px 18px;
-    text-align: left;
-    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.05);
-}
-
-.usecase-card h5 {
-    font-size: 1rem;
-    margin-bottom: 8px;
+.link-inline:hover {
+    border-bottom-color: #000;
+    padding-right: 2px;
 }
 
 /* APP SCREENSHOTS */
@@ -662,7 +527,7 @@ h3 {
     border-radius: 16px;
     border: 1px solid #e4e4e4;
     padding: 18px 18px 20px;
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.06);
 }
 
 .manifesto-column h4 {
@@ -731,6 +596,19 @@ h3 {
     color: #777;
 }
 
+/* DIAGRAM (falls eingebunden) */
+.diagram {
+    width: 70%;
+    margin-top: 20px;
+    opacity: 0.95;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.diagram:hover {
+    transform: translateY(-3px);
+    opacity: 1;
+}
+
 /* ROADMAP */
 .roadmap {
     display: flex;
@@ -752,43 +630,52 @@ h3 {
 
 .roadmap-item:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
 }
 
-/* FOUNDER & CONTACT */
+/* FOUNDER SECTION */
 .founder-grid {
+    max-width: 1000px;
+    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-    text-align: left;
 }
 
 .founder-card {
-    flex: 1 1 300px;
-    max-width: 480px;
+    flex: 1 1 280px;
+    max-width: 460px;
     background: #fff;
     border-radius: 16px;
     border: 1px solid #e4e4e4;
-    padding: 20px 22px;
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.04);
+    padding: 20px 20px 24px;
+    text-align: left;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.05);
+}
+
+.founder-card h4 {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+    color: #111;
 }
 
 .founder-role {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.founder-text {
     font-size: 0.95rem;
     color: #555;
     margin-bottom: 10px;
 }
 
-.founder-copy {
-    font-size: 0.95rem;
-    color: #555;
-    margin-bottom: 12px;
-}
-
 .founder-links {
     list-style: none;
-    font-size: 0.9rem;
+    font-size: 0.92rem;
+    margin-top: 8px;
 }
 
 .founder-links li {
@@ -798,16 +685,15 @@ h3 {
 .founder-links a {
     color: #000;
     text-decoration: none;
+    border-bottom: 1px solid transparent;
 }
 
 .founder-links a:hover {
-    text-decoration: underline;
+    border-bottom-color: #000;
 }
 
-.founder-btn {
-    margin-top: 14px;
-    display: inline-block;
-    padding-inline: 24px;
+.founder-card.founder-cta .btn {
+    margin-top: 10px;
 }
 
 /* FOOTER */
@@ -826,12 +712,6 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
-}
-
-.back-to-top {
-    display: inline-block;
-    margin-top: 8px;
-    font-size: 0.9rem;
 }
 
 /* ANIMATIONS */
@@ -887,7 +767,7 @@ footer a:hover {
     }
 }
 
-/* MOBILE / RESPONSIVE */
+/* Mobile Optimierung */
 @media (max-width: 900px) {
     .hero {
         text-align: center;
@@ -938,35 +818,37 @@ footer a:hover {
         grid-template-columns: 1fr;
     }
 
-    .nav-toggle {
-        display: flex;
-    }
-
+    /* NAV responsive */
     .nav-links {
         position: absolute;
+        top: 64px;
         right: 0;
         left: 0;
-        top: 100%;
         background: rgba(248, 248, 248, 0.98);
         flex-direction: column;
-        padding: 10px 20px 14px;
-        gap: 10px;
-        border-bottom: 1px solid #e0e0e0;
-        transform-origin: top;
-        transform: scaleY(0);
-        opacity: 0;
-        pointer-events: none;
-        transition: transform 0.2s ease, opacity 0.2s ease;
+        gap: 0;
+        padding: 8px 16px 16px;
+        border-bottom: 1px solid rgba(0,0,0,0.06);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.25s ease;
     }
 
     .nav-links.open {
-        transform: scaleY(1);
-        opacity: 1;
-        pointer-events: auto;
+        max-height: 280px;
+    }
+
+    .nav-links li {
+        padding: 4px 0;
     }
 
     .nav-links a {
-        padding: 4px 0;
+        display: block;
+        padding: 8px 10px;
+    }
+
+    .nav-toggle {
+        display: inline-block;
     }
 }
 
@@ -975,4 +857,15 @@ footer a:hover {
     .logo {
         width: 260px;
     }
-} 
+}
+
+/* (Optional) Light respect for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    .hero::before,
+    .app-card {
+        animation: none;
+    }
+}
