@@ -71,6 +71,14 @@ The website sits on top of the wider CollectiVAI ecosystem:
   Governance & voting infrastructure (pre-alpha):  
   [`collectiv-ai-app-chain`](https://github.com/collectiv-ai/collectiv-ai-app-chain)
 
+- 🔀 **CollectiVAI Router (multi-provider backend)**  
+  Routing layer between different AI providers and local models:  
+  [`collectiv-ai-router`](https://github.com/collectiv-ai/collectiv-ai-router)
+
+- 🖥 **macOS M2 Max Ecosystem (Lab & Control Center)**  
+  Local AI, security and blockchain environment:  
+  [`collectiv-ai-macbook-pro`](https://github.com/collectiv-ai/collectiv-ai-macbook-pro)
+
 - 🧭 **Business plan & strategy**  
   Public business plan, funding logic and roadmap:  
   [`collectiv-ai-business`](https://github.com/collectiv-ai/collectiv-ai-business)
@@ -111,9 +119,9 @@ via the contact information on the website.
 
 ---
 
-## Licences & branding
+## Licenses & branding
 
-Source code and content licences for this repository are defined in the  
+Source code and content licenses for this repository are defined in the  
 `LICENSE` file (if present) or on the website itself.
 
 The **CollectiVAI name, logo and visual identity** are protected.  
